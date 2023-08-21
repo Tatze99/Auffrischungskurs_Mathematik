@@ -1,0 +1,59 @@
+\thispagestyle{plain}
+\section{Lineare Gleichungssysteme}
+
+In diesem Kapitel beschäftigen wir uns mit der Verknüpfung von zwei oder mehreren Gleichungen zu einem Gleichungssystem und diskutieren den Mengenbegriff.
+
+Grundsätzlich können wir Gleichungen in vier Arten unterscheiden:
+\begin{itemize}
+    \item \emph{Identische Gleichungen} sind Darstellungen wahrer mathematischer Aussagen, z.\,B. $5+2=7$ oder $a\cdot b = b\cdot a$. 
+    \item \emph{Funktionsgleichungen} stellen Zusammenhänge zwischen verschieden variablen Größen her; beispielsweise gehorcht der Flächeninhalt $A$ eines Kreises in Abhängigkeit des Radius $r$ der Gleichung $A(r) = \pi r^2$. 
+    \item \emph{Definitionsgleichungen} ordnen mathematischen Ausdrücken eine Bezeichnung durch ein Symbol zu; man schreibt z.\,B. $z := 2x^2 +1$.
+    \item \emph{Bestimmungsgleichungen} enthalten eine Variable, deren Wert grundsätzlich jede (reelle) Zahl sein kann. Die Menge aller Werte der Variable, für die eine Gleichung den Wahrheitswert ``wahr'' hat, heißt \emph{Lösungsmenge} $\mathbb{L}$ dieser Gleichung.
+\end{itemize}
+In diesem Abschnitt geht es um lineare Gleichungen, also Bestimmungsgleichungen, deren Variablen höchstens in erster Potenz auftreten.
+
+
+\subsection{Mengen und Intervalle}
+
+Eine \emph{Menge} ist eine Zusammenfassung von Objekten, die Elemente der Menge genannt werden. Ist ein Element $e$ in einer Menge $M$ enthalten, so schreibt man $e \in M$.
+
+Mengen können mit Hilfe der Mengenklammer $\{\hdots\}$ definiert werden, überlicherweise geschieht dies über eine explizite Auflistung, bspw. $M=\{a,b,k,s\}$, oder durch Angabe einer definierenden Eigenschaft ihrer Elemente beispielsweise ist $M$
+\begin{align}
+    M = \{n |\, n \text{ ist eine gerade Zahl}\},
+\end{align}
+die Menge der geraden Zahlen. Mengen können ebenfalls Mengen als Elemente enthalten. Zum Beispiel enthält die Menge $N$ als Element die Menge $\{a,b\}$
+\begin{align}
+    N = \{1,\{a,b\}, 3\}.
+\end{align}
+Wichtige Mengen sind die Zahlenbereiche, insbesondere 
+\begin{table}[htp]
+    \centering
+    \begin{tabular}{l l}
+        die natürlichen Zahlen & $\mathbb{N} = \{1,2,3,\hdots\}$;\\
+        die ganzen Zahlen & $\mathbb{Z} = \{\hdots,-3,-2,-1,0,1,2,3,\hdots\}$;\\
+        die rationalen Zahlen & $\mathbb{Q} = \{\frac{p}{q} | p,q \in \mathbb{Z}, q\neq 0\}$;\\
+        die reellen Zahlen & $\mathbb{R}$.
+    \end{tabular}
+\end{table}
+Diese speziellen Mengen haben die besondere Eigenschaft, einer Ordnungsrelation zu unterliegen, d.\,h. man kann angeben, ob ein bestimmtes Element kleiner, größer oder gleich einem anderen Element ist. Dadurch ist es möglich, \emph{Intervalle} zu definieren.
+
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \node(A) at (-3,1){$a<b :$};
+        \draw[very thick, -{latex}] (-2,1) -- +(4,0)node[right]{$x$};
+        \draw[thick] (-1,1+0.1) -- +(0,-0.2)node[below]{$\vphantom{b}a$};
+        \draw[thick] (1,1+0.1) -- +(0,-0.2)node[below]{$b$};
+        \node(A) at (-3,0){$a=b :$};
+        \draw[very thick, -{latex}] (-2,0) -- +(4,0)node[right]{$x$};
+        \draw[thick] (0,0.1) -- +(0,-0.2)node[below]{$a=b$};
+        \node(A) at (-3,-1){$a>b :$};
+        \draw[very thick, -{latex}] (-2,-1) -- +(4,0)node[right]{$x$};
+        \draw[thick] (1,-1+0.1) -- +(0,-0.2)node[below]{$\vphantom{b}a$};
+        \draw[thick] (-1,-1+0.1) -- +(0,-0.2)node[below]{$b$};
+    \end{tikzpicture}
+    \caption{}
+    \label{}
+\end{figure}
+
+
