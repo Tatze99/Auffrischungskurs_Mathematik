@@ -118,6 +118,67 @@ Im Umgang mit Ungleichungen sind folgende Rechenregeln zu beachten:
     \begin{split}
         a < b &\Longleftrightarrow b>a, \\
         a < b &\Longleftrightarrow a+c < b+c,\\
-        a < b \wedge c > 0 &\Longleftrightarrow ca < cb, 
+        a < b \wedge c > 0 &\Longleftrightarrow ca < cb, \\
+        a < b \wedge c < 0 &\Longleftrightarrow ca > cb, 
     \end{split}
 \end{align}
+Es ist ``$\wedge$'' das zeichen für ein logisches ``und''. Wichtig ist, dass die Multiplikation mit einer negativen Zahl eine Umkehrung des Relationszeichens impliziert, beispielsweise 
+\begin{align}
+    3 &< 5 \quad |\; \cdot (-2) \notag \\
+    -6 &> -10. 
+\end{align}
+Aus diesem Grund müssen bei der Auflösung von Ungleichungen mit einer Unbekannten oft \emph{Fallunterscheidungen} vorgenommen werden. Ein Beispiel ist 
+\begin{align}
+    \frac{2x-1}{x+2} > 3, \quad x\neq -2.
+\end{align}
+
+\begin{minipage}{0.45\textwidth}
+    \begin{align*}
+        x &> -2: x+2 \qq{positiv}\\
+        \frac{2x-1}{x+2} &> 3\hphantom{x+6} \quad |\cdot (x+2) \\
+        2x-1 &> 3x+6  \quad |\cdot -2x-6 \\
+        -7 &< x   \qq{Widerspruch zu} x > -2. \\
+        \Rightarrow & \qq{keine Lösung}
+    \end{align*}
+\end{minipage}
+\hfill\vline\hfill
+\begin{minipage}{0.45\textwidth}
+    \begin{align*}
+        x &< -2: x+2 \qq{negativ}\\
+        \frac{2x-1}{x+2} &> 3\hphantom{x+6} \quad |\cdot (x+2) \\
+        2x-1 &< 3x+6  \quad |\cdot -2x-6 \\
+        -7 &< x   \qq{Widerspruch zu} x > -2. \\
+        \Rightarrow & -7 < x < -2
+    \end{align*}
+\end{minipage}
+
+Damit ist die Lösungsmenge der Ungleichung $\mathbb{L} = (-7,-2) = \{x\in \mathbb{R}|-7 < x<-2\}$.
+
+
+\subsection{Linear Gleichungssysteme mit 2 Unbekannten}
+
+Die allgemeine Form eines solchen Gleichungssystems lautet 
+\begin{subequations}
+\begin{align}
+        a_1 x + b_1 y &= k_1, \label{eqn:2_LGS_a}\\
+        a_2 x + b_2 y &= k_2,\label{eqn:2_LGS_b}
+    \end{align}
+\end{subequations}
+mit den festen Größen $a_i, b_i, k_i (i=1,2)$ und Unbekannten (Variablen) $x,y$.
+
+Die Lösung erfolgt nun im Allgemeinen durch Rückführung auf zwei Gleichungen mit jeweils einer Unbekannten. 
+
+\paragraph{1.) Additions-/Subtraktionsmethode}$~$
+
+Durch Linearkombination der Gleichungen wird zunächst eine Variable eliminiert, $a_2 \cdot \eqref{eqn:2_LGS_a} - a_1 \eqref{eqn:2_LGS_b}$: 
+\begin{align}
+    \cancel{a_2 a_1 x} + a_2 b_1 y - \cancel{a_1a_2 x} - a_1 b_2 y &= a_2 k_1 -a_1 k_2 \notag \\
+    (a_2 b_1 -a_1 b_2) y &= a_2 k_1 - a_1 k_2 \notag \\
+    \Rightarrow y &= \frac{a_2 k_1 - a_1 k_2}{a_2 b_1 - a_1 b_2}, \qq{sofern} a_2 b_1 - a_1 b_2 \neq 0.\\
+\intertext{Analog erhält man aus $b_1\cdot \eqref{eqn:2_LGS_a} - b_1 \cdot \eqref{eqn:2_LGS_b}$}
+    x &= \frac{b_2 k_1 - b_1 k_2}{a_1 b_2 -a_2 b_1}.
+\end{align}
+
+\paragraph{2.) Lösung durch Einsetzen}$~$
+
+
