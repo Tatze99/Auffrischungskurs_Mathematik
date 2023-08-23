@@ -1,0 +1,143 @@
+% \usepackage[english]{babel}         % Deutsches Sprachpaket
+
+\usepackage{iftex}
+\ifPDFTeX
+   \usepackage[utf8]{inputenc}% Eingaben codieren
+   \usepackage{fourier}
+   % \usepackage[T1]{fontenc}   % Umlaute codieren, Silbentrennung
+\else
+   \usepackage{lmodern}
+   % \usepackage[no-math]{fontspec}
+   % \setmainfont{Utopia Std}
+\fi
+
+\usepackage{amsmath, amssymb}       % Mathe, \mathbb{R}
+\usepackage{amsthm,amstext}         % Theoreme, \text im Mathe-Modus
+\usepackage{mathtools}              % \Aboxed für Boxen in Align Umgebungen
+\usepackage[arrowdel]{physics}      % Ableitungen \dv{B}{t} \pdv \dd{t}
+\usepackage[left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{graphicx}               % \includegraphics
+\usepackage[extendedchars]{grffile} % extends file name processing of graphics
+\usepackage[section]{placeins}      % \Floatbarrier
+\usepackage{wrapfig}                % Bilder umfließen
+\usepackage{enumerate}              % Aufzählungen
+\usepackage{enumitem}               % \begin{enumerate}[label=\alph*]
+\usepackage{footnote}               % Fußzeilen
+\usepackage{booktabs}               % publication quality tables
+\usepackage{tikz, pgfplots}         % TIKZ ist kein Zeichenprogramm
+\usepackage[europeanvoltages,europeanresistors]{circuitikz}
+\usepackage{bm}                     % bold symbols \bm{r}
+\usepackage{dsfont}                 % identity matrix \mathds{1}
+\usepackage{esint}                  % Doppelintegrale
+\usepackage{mathrsfs}               % \mathscr{} statt \mathcal{}
+\usepackage{placeins}               % FloatBarrier
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{mdframed}               % Deckblatt
+\usepackage{xcolor}                 % Deckblatt
+\usepackage{fancyhdr}               % Kopfzeile
+\usepackage{aligned-overset}        % Ausrichtungen mit stackrel oder overset
+\usepackage{cancel}
+\usepackage{float}
+\usepackage{cite}
+\usepackage[version=4]{mhchem}                 % Chemistry Package
+% \usepackage{multicol}
+% \usepackage{pdfpages}             % insert whole pdf files
+
+\definecolor{FSUblau}{cmyk}{1,0.7,0.1,0.5}
+\definecolor{PAForange}{cmyk}{0.1,0.7,1,0}
+\definecolor{Gruen}{cmyk}{1,0.1,0.7,0.5}
+
+\usepackage[final,
+    pdfauthor={Martin Beyer},
+    pdffitwindow=false,     % resize document window to fit document size
+    pdftoolbar=false        % Adobe Toolbar
+    bookmarks=true,         % Anzeigen der Kapitel
+    bookmarksopen=true,
+    bookmarksopenlevel=0,
+    bookmarksnumbered=true,
+    colorlinks=true,        % fuer Druckversion auf "false"
+    linkcolor=FSUblau,         % Table of Contents, Footnotes
+    urlcolor=FSUblau,          % fuer eingebunden URLs
+    citecolor=FSUblau,         % Equations, References
+    filecolor=FSUblau,
+    pdfborder={0 0 0},      % keine Rahmen um Verlinkungen: {0 0 0}
+    pagebackref=false
+]{hyperref}
+
+\pgfplotsset{compat=1.18}
+\newcommand\mydots{\makebox[1em][c]{.\hfil.\hfil.}}
+\newcommand{\minus}{\scalebox{0.75}[1.0]{$-$}}
+\newcommand{\e}{\mathrm{e}}
+\renewcommand{\i}{\mathrm{i}}
+
+\usepackage[detect-all,
+            locale=DE,
+            binary-units,
+            exponent-product = \cdot,
+            per-mode=fraction]{siunitx}
+\usepackage[position=below,
+            tableposition=top,
+            format=hang,
+            figurename=Fig.,
+            labelfont={bf},
+            font=small]{caption}
+
+\sisetup{range-phrase = {\mydots}}
+% Commands
+\usetikzlibrary{positioning,intersections,calc,external}
+\usepgfplotslibrary{fillbetween, groupplots}
+\pgfplotsset{
+tick label style={font=\small},
+label style={font=\small},
+legend style={font=\footnotesize},
+every axis post/.style={legend cell align={left}}}
+\tikzstyle{every node}=[font=\small]
+
+
+\setlength{\parindent}{0px}         % keine Absätze durch Leerzeilen im Code
+\numberwithin{equation}{section}
+
+% Remove page number from \thispagestyle{empty}
+\makeatletter\let\ps@plain\ps@fancy\makeatother
+
+% Deckblatt
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\Deckblatt}[5][\LaTeX-Satz und Design von Martin Beyer]{
+  \begin{titlepage}
+    \center
+    \textsc{\LARGE Friedrich-Schiller-Universität Jena\\[1ex]
+    \Large Physikalisch-Astronomische-Fakultät}
+    \begin{figure}[h!]
+       \centering
+       \includegraphics[scale=0.75]{uni-Logo_neu.pdf}
+    \end{figure}\\
+    \vspace{2em}
+    \textsc{\Large #2}\\[0.35cm]
+    \HRule \\[0.4cm]
+    { \Huge \bfseries #3}\\[0.15cm]
+    \HRule \\[0.5cm]
+    \textsc{\Large #4}\\[0.35cm]
+    \vfill
+    \begin{mdframed}[backgroundcolor=gray!20]
+      \begin{center}
+        #1
+      \end{center}
+    \end{mdframed}
+  \end{titlepage}
+
+  \pagestyle{fancy}
+  \fancyhead[R]{\textbf{#5}}
+  \fancyfoot[C]{\bfseries\thepage}
+  \fancyhead[L]{\rightmark}
+
+  \fancypagestyle{plain}{
+    \fancyfoot[C]{\bfseries\thepage}
+    \fancyhead[R]{}
+    \fancyhead[L]{}
+    \renewcommand{\headrulewidth}{0pt}
+  }
+}
+\renewcommand{\sectionmark}[1]{\markright{#1}}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
