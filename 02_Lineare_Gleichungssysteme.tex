@@ -154,8 +154,42 @@ Aus diesem Grund müssen bei der Auflösung von Ungleichungen mit einer Unbekann
 
 Damit ist die Lösungsmenge der Ungleichung $\mathbb{L} = (-7,-2) = \{x\in \mathbb{R}|-7 < x<-2\}$.
 
+\subsection{Lineare Funktionen} 
 
-\subsection{Linear Gleichungssysteme mit 2 Unbekannten}
+Unter einer \emph{Funktion} $f$ versteht man eine Vorschrift, die jedem Element $x$ aus einer Menge $\mathbb{D}$ \emph{genau} ein Element $y$ aus einer Menge $\mathbb{W}$ zuordnet. Wir schreiben $y = f(x)$. Wir bezeichnen dabei 
+\begin{itemize}
+    \item $x$ - unabhängige Variable oder Argument 
+    \item $y$ - abhängige Variable oder Funktionswert 
+    \item $\mathbb{D}$ - Definitionsbereich der Funktion 
+    \item $\mathbb{W}$ - Wertebereich der Funktion
+\end{itemize}
+Die mathematische Schreibweise zur Definition einer Funktion lautet 
+\begin{align}
+        f: \mathbb{D} \to \mathbb{W}, \quad x \mapsto y = f(x).
+\end{align}
+In der Physik findet man viele \emph{lineare} Abhängigkeiten, unter anderem 
+\begin{itemize}
+    \item die Fallgeschwindigkeit $v$ als Funktion der Zeit $t$,
+    \begin{align}
+            v(t) = g \cdot t + v_0 \qq{($g$: Erdbeschleunigung);}
+    \end{align}
+    \item das Ohmsche Gesetz für die Spannung $U$ als Funktion des Stromes $I$ 
+    \begin{align}
+            U(I) = R\cdot I \qq{($R$: elektrischer Widerstand);} 
+    \end{align}
+    \item Beim äußeren photoelektrischen Effekt gilt für die kinetische Energie des Photoelektrons $E_\text{kin}$ als Funktion der Frequenz $\nu$ des Lichtes 
+    \begin{align}
+            E_\text{kin}(\nu) = h \nu - W_A \qquad &\text{($h$: Plancksches Wirkungsquantum} \\
+            &\text{$W_A$: Austrittsarbeit).} \notag
+    \end{align}
+\end{itemize}
+Die allgemeine Form einer linearen Funktion ist 
+\begin{mymathbox}[ams align, title={lineare Funktion}, colframe={FSUblau}]
+    f(x) = m x + n,  \qquad &\text{$m$: Anstieg} \\
+    &\text{$n$: Verschiebung entlange der $y$-Achse} \notag
+\end{mymathbox}
+
+\subsection{Lineare Gleichungssysteme mit 2 Unbekannten}
 
 Die allgemeine Form eines solchen Gleichungssystems lautet 
 \begin{subequations}
@@ -180,5 +214,49 @@ Durch Linearkombination der Gleichungen wird zunächst eine Variable eliminiert,
 \end{align}
 
 \paragraph{2.) Lösung durch Einsetzen}$~$
-Auflösen von~\eqref{eqn:2_LGS_a} nach $y$ ergibt $y = \frac{k_1 - a_1 x}{b1}, \; (b_1 \neq 0)$ und Einsetzen in~\eqref{eqn:2_LGS_b} führt auf
 
+Auflösen von~\eqref{eqn:2_LGS_a} nach $y$ ergibt $y = \frac{k_1 - a_1 x}{b1}, \; (b_1 \neq 0)$ und Einsetzen in~\eqref{eqn:2_LGS_b} führt auf
+\begin{align}
+    a_2 x + \frac{b_2}{b_1}(k_1-a_1 x) &= k_2 \hphantom{b_1} \quad |\cdot b_1 \notag \\
+    a_2 b_1 x + b_2 k_1 - a_1 b_2 x &= b_1 k_2 \quad |-b_2 k_1 \notag \\
+    (a_2 b_1 -a_1 b_2) x &= b_1 k_2 - b_2 k_1 \notag \\
+    \Rightarrow x&= \frac{b_1 k_2 -b_2 k_1}{a_2b_1-a_1b_2}, \qq{sofern} a_2 b_1 - a_1 b_2 \neq 0.
+\end{align}
+
+Einsetzen in den Ausdruck für $y$ ergibt 
+\begin{align}
+    y &= \frac{1}{b_1}\qty(k_1 - a_1 \frac{b_1 k_2 -b_2 k_1}{a_2 b_1 -a_1b_2}) = \frac{1}{\cancel{b_1}} \frac{a_2 \cancel{b_1}k_1 -\bcancel{a_1 b_2 k_1} - a_1 \cancel{b_1} k_2 + \bcancel{a_1 b_2 k_1}}{a_2 b_1 -a_1b_2} \notag \\
+    &= \frac{a_2 k_1 - a_1 k_2}{a_2 b_1 -a_1 b_2}.
+\end{align}
+Nach Auffinden der Lösung ist stets die Probe durch Einsetzen in beide Gleichugnen durchzuführen. 
+
+Schauen wir uns nun ein spezielles Beispiel an: 
+\begin{subequations}
+    \begin{align}
+            ax + by &= 2a \label{eqn:2_LGS_Bsp_a} \\
+            a^2 x-b^2 y &= a^2+b^2. \label{eqn:2_LGS_Bsp_b}
+    \end{align}
+\end{subequations}
+Wir addieren nun $b\cdot \eqref{eqn:2_LGS_Bsp_a} + \eqref{eqn:2_LGS_Bsp_b}$ 
+\begin{align}
+        abx + \cancel{b^2 y} + a^2 x -\cancel{b^2 y} &= 2ab + a^2 + b^2  \notag \\
+        a \cancel{(a+b)} x \overset{\eqref{eqn:1_binomische_Formeln}}&{=} (a+b)^{\cancel{2}}\qq{,} a+b \neq 0 \notag \\
+        \Rightarrow x = \frac{a+b}{a} \qq{,} a\neq 0. 
+\end{align}
+
+Betrachten wir abschließend noch zwei Spezialfälle: 
+\begin{align}
+    \begin{split}
+        &1.)\quad b_1 = 0  \quad a_1 x = k_1 \hphantom{\frac{k_1}{a_1} + b_2}\Rightarrow x = \frac{k_1}{a_1} \\
+        &\hphantom{1.)\quad b_1 = 0 } \quad a_2 \frac{k_1}{a_1} + b_2 y = k_2 \Rightarrow y = \frac{a_1 k_2 - a_2 k_1}{a_1 b_2}
+    \end{split}\\
+    \begin{split}
+        &2.)\quad a_2 b_1 - a_1 b_2 = 0 \quad a_2 \cdot \eqref{eqn:2_LGS_Bsp_a}: \quad a_1 a_2 x + \textcolor{PAForange}{a_2 b_1} y = a_2 k_1 \\
+        &\hphantom{2.)\quad a_2 b_1 - a_1 b_2 = 0 \quad a_2 \cdot \eqref{eqn:2_LGS_Bsp_a}:}\quad\; a_1 a_2 x + \textcolor{PAForange}{a_1 b_2}y = a_2 k_1  \\
+        &\hphantom{2.)\quad a_2 b_1 - a_1 b_2 = 0 \quad a_2 \cdot \eqref{eqn:2_LGS_Bsp_a}:}\quad\; a_1 \underbrace{(a_2 x + b_2 y)}_{\eqref{eqn:2_LGS_b} = k_2} = a_2 k_1 \\
+        &\qquad \Rightarrow a_1 k_2 \overset{!}{=} a_2 k_1.
+    \end{split}
+\end{align}
+Gilt diese (von $x$ und $y$ unabhängige) Bedingung nicht, so hat das Gleichungssystem keine Lösung. Die Lösungsmenge ist dann die leere Menge, $\mathbb{L} = \emptyset$. 
+
+Gilt die Bedingung hingegen, so gilt $a_2 \cdot \eqref{eqn:2_LGS_a} = a_1 \eqref{eqn:2_LGS_b}$, das heißt die Gleichungen sind \emph{linear abhängig}. Damit ist jedes Paar $(x,y)$, das eine der Gleichungen erfüllt, Lösung des gesamten Gleichungssystems und es gibt unendlich viele Lösungen, die im Parameterraum $(x,y)$ eine Linie aufspannen. 
