@@ -6,6 +6,7 @@
 % \input{../Tikz_Definitionen.tex}
 
 \numberwithin{equation}{section}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
 \usepackage{tcolorbox}
 \tcbuselibrary{theorems}
 \newtcolorbox{mymathbox}[1][]{colback=white, sharp corners, #1}
@@ -23,12 +24,14 @@
           {Mathematik - Ein Vorkurs für Studienanfänger}
           {Martin Beyer}
           {Mathematik}
-
-\thispagestyle{plain}
+ 
+\thispagestyle{plain}  
 \tableofcontents
-\newpage
-
-\include{01_Grundrechenarten}
+\newpage  
+ 
+\include{01_Grundrechenarten}  
 \include{02_Lineare_Gleichungssysteme}
+\include{03_Quadratische_Gleichungssysteme}
 
 \end{document}
+ 

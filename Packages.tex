@@ -42,6 +42,7 @@
 \usepackage{cite}
 \usepackage[version=4]{mhchem}                 % Chemistry Package
 \usepackage{multicol}
+\usepackage{setspace}% http://ctan.org/pkg/setspace
 % \usepackage{pdfpages}             % insert whole pdf files
 
 \definecolor{FSUblau}{cmyk}{1,0.7,0.1,0.5}
@@ -113,7 +114,9 @@ every axis post/.style={legend cell align={left}}}
     \vspace{2em}
     \textsc{\Large #2}\\[0.35cm]
     \HRule \\[0.4cm]
-    { \Huge \bfseries #3}\\[0.15cm]
+    \begin{doublespacing}
+      {\Huge\bfseries #3}\\[0.15cm]
+      \end{doublespacing}
     \HRule \\[0.5cm]
     \textsc{\Large #4}\\[0.35cm]
     \vfill
