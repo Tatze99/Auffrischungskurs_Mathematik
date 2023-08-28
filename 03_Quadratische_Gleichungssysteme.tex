@@ -1,8 +1,52 @@
 %% Potentielle Aufgabe: Goldener Schnitt
 
-\thispagestyle{empty}
+\thispagestyle{plain}
 \section{Quadratische Gleichungssystem}
 
 In diesem Abschnitt geht es um quadratische Gleichungen, also Bestimmungsgleichungen, deren Variablen höchsten in zweiter Potenz auftreten, sowie um quadratische Funktionen und Systeme aus quadratischen Gleichungen.
 
 \subsection{Die quadratische Gleichung}
+
+Wir schauen uns zunächst die allgemeine Form einer quadratischen Gleichung an 
+\begin{align}
+    \tikzmarknode{eq1}{A} x^2 + \tikzmarknode{eq2}{B} x + \tikzmarknode{eq3}{C} =0.
+\end{align}
+\tikz[overlay,remember picture]{
+\draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq1)+(-.4,-1)$)node[left]{quadratisches Glied} -- ($(eq1)+(0,-.2)$);
+\draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq2)+(0,-1)$)node{lineares Glied} -- ($(eq2)+(0,-.2)$);
+\draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq3)+(.4,-1)$)node[right]{Absolutglied} -- ($(eq3)+(0,-.2)$);
+}
+
+Wir nehmen im Folgenden o.\,B.\,d.\,A. an, es sei $A >0$. Zudem sind $A,B$ und $C$ reelle Konstanten. Wir betrachten zunächst zwei Spezialfälle
+\begin{align}
+    B &= 0 
+    \begin{split}
+        A x^2 + C &= 0 \\
+        \Rightarrow \qq{für} C &\le 0: \qq{Lösungen} x_1 = \sqrt{-\frac{C}{A}}, x_2 = -\sqrt{-\frac{C}{A}} \\
+        \Rightarrow \qq{für} C &>0: \qq{keine (reellen) Lösungen}
+    \end{split}\\
+    C &= 0 
+    \begin{split}
+        A x^2 + Bx &= 0 \\
+         x(Ax + B) &= 0 \\
+        \Rightarrow \qq{Lösungen} &x_1 = 0, x_2 = -\frac{B}{A}.\hspace{3.85cm}
+    \end{split}
+\end{align}
+
+Zur Bestimmung einer allgemeinen Lösung verwenden wir die \emph{Methode der quadratischen Ergänzung}:
+\begin{enumerate}
+    \item Überführung in die \emph{Normalform} mit Umbenennung $p \equiv \frac{B}{A}, q \equiv \frac{C}{A}$
+    \begin{align}
+        x^2 + \frac{B}{A} x + \frac{C}{A} = 0\qq{,} x^2 + px + q = 0;
+    \end{align}
+    \item quadratische Ergänzung: 
+    \begin{align}
+        x^2 + px = -q \hphantom{+\qty(\frac{p}{2})^2} | +\qty(\frac{p}{2})^2 
+        \Rightarrow x^2 + px +\qty(\frac{p}{2})^2 &= -q +\qty(\frac{p}{2})^2 \notag \\
+        \qty(x+\frac{p}{2})^2 = - q +\qty(\frac{p}{2})^2.
+    \end{align}
+    \item Auflösen nach $x$ 
+    \begin{align}
+        x + \frac{p}{2} = \pm \sqrt{\qty(\frac{p}{2})^2 - q}.
+    \end{align}
+\end{enumerate}
