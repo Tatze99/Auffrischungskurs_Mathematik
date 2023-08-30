@@ -30,7 +30,6 @@ Der Algorithmus für die schriftliche Polynomdivision besteht aus drei Schritten
     \item Multiplikation: Man multipliziert das Ergebnis von Schritt 1 mit dem Nennerpolynom und schreibt das Ergebnis unter das Zählerpolynom. 
     \item Subtraktion: Man subtrahiert das Ergebnis von Schritt 2 vom Zählerpolynom und beginnt wieder von vorne.
 \end{enumerate}
-
 \begin{align}
     \qq{Ergebnis: }\begin{array}{r@{} r@{} r@{} r r}
         x^3 &{}+5x^2\hphantom{)}&{}+8x\hphantom{)}&-4\hphantom{)} &:(x-2) = x^2 -3x +2 \\
@@ -52,5 +51,154 @@ Die Nullstellen des Restpolynoms $x^2 -3x +2$ erhalten wir mittels $p$-$q$-Frome
 \end{align}
 Damit lautet die Linearfaktorzelegung des Polynoms  
 \begin{align}
-    f_3(x) = (x-1) (x-2)^2 \textcolor{gray}{\underbrace{= (x-1)(x^2-4x+4) = x^3-5x^2 + 8x-4}_{\text{Probe}}}
+    f_3(x) = (x-1) (x-2)^2 \textcolor{gray}{\underbrace{= (x-1)(x^2-4x+4) = x^3-5x^2 + 8x-4}_{\text{Probe}}}.
 \end{align}
+
+\subsection{Partialbruchzerlegung}
+
+Oft möchte man in einem Nenner auftretende Polynome zugunsten von Linearfaktoren zerlegen. Dies ist insbesondere bei der Berechnung von Integralen hilfreich. Wir betrachten das Verfahren anhand des Quotienten einer linearen und einer quadratischen Funktion: 
+\begin{align}
+    f(x) = \frac{mx + n}{x^2 +px + q} = \frac{mx +n}{(x-x_1)(x-x_2)} \tikzmarknode{eq1}{\overset{!}{=}} \frac{\alpha}{x-1} + \frac{\beta}{x-x_2}.
+\end{align}
+\tikz[overlay,remember picture]{
+\draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq1)+(0,-.8)$)node[below]{Ansatz} -- ($(eq1)+(0,-.2)$);
+}
+
+Die Koeffizienten $\alpha$ und $\beta$ sind nun so zu bestimmen, dass die Forderung erfüllt ist. Wir multiplizieren das in Linearfaktoren zerlegte Polynom auf die rechte Seite 
+\begin{align}
+    mx + n &= \qty(\frac{\alpha}{x-1} + \frac{\beta}{x-x_2}) \cdot (x-x_1)(x-x_2) = \alpha (x-x_2) + \beta(x-x_1) \notag \\
+    &= (\alpha + \beta) x - (\alpha x_2 + \beta x_1).
+\end{align}
+Im zweiten Schritt führen wir einen Koeffizientenvergleich durch nach den Potenzen von $x$ um ein lineares Gleichungssystem für $\alpha$ und $\beta$ zu erhalten
+\begin{subequations}
+    \begin{align}
+        x^1: \quad m &= \alpha + \beta \\
+        x^0: \quad n &= -(\alpha x_2 + \beta x_1).
+    \end{align}
+\end{subequations}
+Dieses lösen wir nun mit der Additionsmethode durch Elimination von $\beta$ 
+\begin{align}
+    m x_1 + n = \alpha (x_1 - x_2) \quad \Rightarrow \quad \alpha &= \frac{m x_1 + n}{x_1 -x_2} \qq{,} x_1 \neq x_2. \\
+    \Rightarrow \quad \beta &= -\frac{m x_2 + n}{x_1 -x_2}.
+\end{align}
+Offenbar versagt dieser Ansatz für $x_1 = x_2$, wenn also der Nenner eine doppelte Nullstelle hat. In diesem Fall jedoch hat $f(x)$ bereits die gewünschte Form, 
+\begin{align}
+    f(x) = \frac{mx + n}{(x-x_0)^2} \qq{,} x_0 \equiv x_1 = x_2.
+\end{align}
+Im allgemeinen Fall haben wir den Quotienten aus einem Polynom $p$-ten Grades und einem Polynom $q$-ten Grades $(p < q)$\footnote{Für $p\ge q$ kann eine Polynomdivision durchgeführt werden.} zu zerlegen. Dann sind zunächst die Nullstellen des nenners $x_i$ zu bestimmen; der Ansatz enthält für jede einfache Nullstelle einen Summanden 
+\begin{align}
+    \frac{\alpha_i}{x-x_i} \qq{,} \alpha_i \qq{const.,}
+\end{align}
+und für jede $k$-fache Nullstelle $k$ Summanden, einen für jede mögliche Potenz zwischen $1$ und $k$, 
+\begin{align}
+    \frac{\alpha_i^{(1)}}{x-x_i} + \frac{\alpha_i^{(2)}}{(x-x_i)^2} + \hdots + \frac{\alpha_i^{(k)}}{(x-x_i)^k} \qq{,} \alpha_i^{(j)} \qq{const.}
+\end{align} 
+
+\paragraph{Beispiel} Betrachten wir nun folgenden Bruch mit Polynomen 
+\begin{align}
+    Q(x) = \frac{3x^2 + 5}{(x+1)(x-1)^2} \overset{!}&{=} \frac{\alpha}{x+1} + \frac{\beta}{x-1} + \frac{\gamma}{(x-1)^2} \\
+    \Rightarrow \quad 3x^2 +5 &= \alpha (x-1)^2 + \beta (x^2-1) + \gamma (x+1) \notag \\
+                              &= (\alpha + \beta) x^2 + (\gamma - 2\alpha) x + \alpha -\beta +\gamma.
+\end{align}
+Wir führen nun den Koeffizientenvergleich durch 
+\begin{align}
+    \begin{split}
+        x^2: \quad 3 &= \alpha + \beta  \hphantom{+\gamma}\;\,\quad(1)\\
+        x^1: \quad 0 &= \gamma - 2\alpha \hphantom{+}\;\;\quad(2)\\
+        x^0: \quad 5 &= \alpha -\beta + \gamma \quad (3)
+    \end{split}
+    \qquad\Rightarrow \quad (1)+(2)+(3): \quad 2 \gamma = 8 \quad \Rightarrow 
+    \begin{split}
+        \gamma &= 4 \\
+        \alpha &= 2 \\
+        \beta &= 1.
+    \end{split} 
+\end{align}
+Damit folge als Ergebnis 
+\begin{align}
+    Q(x) = \frac{2}{x+1} + \frac{1}{x-1} + \frac{4}{(x-1)^2}.
+\end{align}
+
+\paragraph{Bemerkung:} Jede rationale Funktion, d.\,h. eine Funktion, die als Quotient zweier Polynome geschrieben werden kann, lässt sich als Summe von Brüchen der Form $\frac{\alpha_i}{(x-x_i)^j}$ sowie gegebenenfalls einer ``reinen'' Polynomfunktion darstellen. 
+
+\paragraph{Bemerkung} Sind Zähler und Nenner vom gleichen Grade, ist dem Ansatz ein konstanter Summand hinzuzufügen. Alternativ kann zunächst auch eine Polynomdivision mit Rest durchgeführt werden; der Rest ist dann ein Bruch mit kleinerem Zähler- als Nennergrad, sodass ``normal'' weitergerechnet werden kann.
+
+
+\subsection{Potenzfunktionen}
+
+Potenzfunktionen sind funktionen der Form $f(x) = a x^n$, wobei hier nur die Fälle $a \in \mathbb{R}, a > 0, n \in \mathbb{Z}$ betrachtet werden sollen. 
+
+\paragraph{1.) Parabeln $n$-ter Ordnung: $n > 0$}$~$
+
+\begin{minipage}{0.5\textwidth}
+        \begin{tikzpicture}
+            \begin{axis}[disabledatascaling, axis lines=middle, xtick={-1,1}, ytick={1}, yticklabels={$a$}, xlabel={$x$}, ylabel={$y$}, height=7cm, width=\textwidth, ymin=-1, ymax = 3, samples=100, legend pos = north west]
+                \addplot[no marks, FSUblau, thick, domain=-1.5:1.5]{x^2};
+                \addplot[no marks, PAForange, thick, domain=-1.5:1.5]{x^4};
+                \draw[dashed, opacity=0.6] (1,0) -- (1,1) -- (-1,1) -- (-1,0);
+                \legend{$a x^2$, $a x^4$};
+            \end{axis}
+        \end{tikzpicture}
+        \begin{itemize}
+            \item Definitionsbereich: $x \in \mathbb{R}$ 
+            \item Wertebereich: $y \in [0, \infty)$
+            \item gerade Funktion: $f(-x) = f(x)$
+            \item Axialsymmetrie zur $y$-Achse
+        \end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={-1,1}, ytick={-1,1}, yticklabels={$-a$,$a$}, xlabel={$x$}, ylabel={$y$}, height=7cm, width=\textwidth, ymin=-2, ymax = 2, samples=100, legend pos = north west]
+            \addplot[no marks, FSUblau, thick, domain=-1.5:1.5]{x^3};
+            \addplot[no marks, PAForange, thick, domain=-1.5:1.5]{x^5};
+            \draw[dashed, opacity=0.6] (1,0) -- (1,1) -- (0,1);
+            \draw[dashed, opacity=0.6](-1,0) -- (-1,-1) -- (0,-1);
+            \legend{$a x^3$, $a x^5$};
+        \end{axis}
+    \end{tikzpicture}
+    \begin{itemize}
+        \item Definitionsbereich: $x \in \mathbb{R}$ 
+        \item Wertebereich: $y \in \mathbb{R}$
+        \item ungerade Funktion: $f(-x) = -f(x)$
+        \item Punktsymmetrie zum Ursprung
+    \end{itemize}
+\end{minipage}
+\paragraph{1.) Parabeln $n$-ter Ordnung: $n < 0$}$~$
+
+\begin{minipage}{0.5\textwidth}
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={-1,1}, ytick={1}, yticklabels={$a$}, xlabel={$x$}, ylabel={$y$}, height=7cm, width=\textwidth, ymin=-1, ymax = 3, samples=100, legend pos = north west]
+            \addplot[no marks, FSUblau, thick, domain=-3:-0.4]{1/x^2};
+            \addplot[no marks, PAForange, thick, domain=-3:-0.4]{1/x^4};
+            \addplot[no marks, FSUblau, thick, domain=0.4:3]{1/x^2};
+            \addplot[no marks, PAForange, thick, domain=0.4:3]{1/x^4};
+            \draw[dashed, opacity=0.6] (1,0) -- (1,1) -- (-1,1) -- (-1,0);
+            \legend{$a x^{-2}$, $a x^{-4}$};
+        \end{axis}
+    \end{tikzpicture}
+    \begin{itemize}
+        \item Definitionsbereich: $x \in \mathbb{R}\backslash \{0\}$ 
+        \item Wertebereich: $y \in (0, \infty)$
+        \item gerade Funktion: $f(-x) = f(x)$
+        \item Axialsymmetrie zur $y$-Achse
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{tikzpicture}
+    \begin{axis}[disabledatascaling, axis lines=middle, xtick={-1,1}, ytick={-1,1}, yticklabels={$-a$,$a$}, xlabel={$x$}, ylabel={$y$}, height=7cm, width=\textwidth, ymin=-2, ymax = 2, samples=100, legend pos = north west]
+        \addplot[no marks, FSUblau, thick, domain=-3:-0.4]{1/x};
+            \addplot[no marks, PAForange, thick, domain=-3:-0.4]{1/x^3};
+            \addplot[no marks, FSUblau, thick, domain=0.4:3]{1/x};
+            \addplot[no marks, PAForange, thick, domain=0.4:3]{1/x^3};
+        \draw[dashed, opacity=0.6] (1,0) -- (1,1) -- (0,1);
+        \draw[dashed, opacity=0.6](-1,0) -- (-1,-1) -- (0,-1);
+        \legend{$a x^{-1}$, $a x^{-3}$};
+    \end{axis}
+\end{tikzpicture}
+\begin{itemize}
+    \item Definitionsbereich: $x \in \mathbb{R}\backslash\{0\}$ 
+    \item Wertebereich: $y \in \mathbb{R}\backslash\{0\}$
+    \item ungerade Funktion: $f(-x) = -f(x)$
+    \item Punktsymmetrie zum Ursprung
+\end{itemize}
+\end{minipage}

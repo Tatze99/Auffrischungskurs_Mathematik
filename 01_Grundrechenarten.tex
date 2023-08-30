@@ -1,7 +1,7 @@
 \thispagestyle{plain}
 \section{Grundrechnungsarten}
 
-Wir beginnen bei den elementaren Regeln des Rechnes. 
+Wir beginnen bei den elementaren Regeln des Rechnes. Dazu gehören Addition, Subtraktion, sowie Multiplikation und Division reeller Zahlen. Wir führen die Bruchschreibweise, als auch Potenzen und Wurzeln ein. 
 
 \subsection{Addition und Subtraktion}
 algebraische Eigenschaften der Addition reeller Zahlen ($a,b,c \in \mathbb{R}$):
@@ -82,6 +82,7 @@ Dies führt dazu, dass nicht jede Multiplikation in eine Division überführt we
     \item $\dfrac{0}{0}$ unbestimmt, da \emph{jede} Zahl mit Null multipliziert Null ergibt.
 \end{itemize}
 
+\newpage
 \subsection{Bruchrechnung}
 
 Wir haben gerade schon von der Notation eines Bruches Gebrauch gemacht, um die Division zweier Zahlen zu beschreiben. Ein Bruch besteht aus \emph{Zähler} (oben) und \emph{Nenner} (unten).
@@ -163,12 +164,6 @@ Daraus können wir weitere Potenzgesetze ableiten
     \qty(\frac{a}{b})^{-n} &= (a \cdot b^{-1})^{-n} = a^{-n} \cdot b^n = (b \cdot a^{-1})^n = \qty(\frac{b}{a})^n.
 \end{align}
 
-\begin{mymathbox}[ams align, title={Potenzgesetze}, colframe={FSUblau}]
-    \begin{split}
-      a^m \cdot a^n = a^{m+n}, \quad a^n \cdot b^n &= (ab)^n, \quad (a^m)^n = (a^n)^m = a^{mn}\\
-      \frac{a^m}{a^n} = a^{m-n}, \quad &\frac{a^n}{b^n} = \qty(\frac{a}{b})^n.
-    \end{split}
-\end{mymathbox}
 \subsubsection{Wurzeln}
 Möchte man die Gleichung $b^n = a$, so hat man die $n$-te Wurzel zu ziehen
 \begin{align}
@@ -206,14 +201,7 @@ Wir können die Wurzelgesetze über die Potenzschreibweise der Wurzeln auf die P
     \sqrt[n]{a} = a^{\frac{1}{n}}, \qq{denn:} \qty(\sqrt[n]{a})^n = \qty(a^{\frac{1}{n}})^n = a.
 \end{align}
 
-Daraus folgen die Rechenregeln:
-\begin{mymathbox}[ams align, title={Wurzelgesetze}, colframe={FSUblau}]
-    \begin{split}
-      &\sqrt[n]{a}\sqrt[n]{b} = \sqrt[n]{ab}, \quad \sqrt[n]{a^n b} =  a \sqrt[n]{b} \\
-      &\frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}}, \quad \qty(\sqrt[n]{a})^m = \sqrt[n]{a^m}, \quad \sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a} \\
-      &\sqrt[p]{a^m} \sqrt[q]{a^n} = \sqrt[pq]{a^{mq+np}}, \quad \frac{\sqrt[p]{a^m}}{\sqrt[q]{a^n}} = \sqrt[pq]{a^{mq-np}}
-    \end{split}
-\end{mymathbox}
+% Daraus folgen die Rechenregeln:
 Es gilt weiterhin zu beachten, dass Summen von Wurzeln in der Regel nicht vereinfacht werden können 
 \begin{align}
     \sqrt{a} + \sqrt{b} \neq \sqrt{a+b}.
@@ -223,9 +211,22 @@ Abschließend wollen wir diskutieren, wie wir Brüche mit Wurzeltermen vereinfac
     \frac{6}{2+\sqrt{2}} = \frac{6}{2+\sqrt{2}}\cdot\frac{2-\sqrt{2}}{2-\sqrt{2}} = \frac{6(2-\sqrt{2})}{4-2} = 3(2-\sqrt{2}).
 \end{align}
 Wir haben hierbei den Bruch geschickt erweitert, sodass wir die dritte binomische Formel $(a+b)(a-b) = a^2-b^2$ nutzen konnten.
+\begin{mymathbox}[ams align, title={Potenzgesetze}, colframe={FSUblau}]
+    \begin{split}
+      a^m \cdot a^n = a^{m+n}, \quad a^n \cdot b^n &= (ab)^n, \quad (a^m)^n = (a^n)^m = a^{mn}\\
+      \frac{a^m}{a^n} = a^{m-n}, \quad &\frac{a^n}{b^n} = \qty(\frac{a}{b})^n.
+    \end{split}
+\end{mymathbox}
+
+\begin{mymathbox}[ams align, title={Wurzelgesetze}, colframe={FSUblau}]
+    \begin{split}
+      &\sqrt[n]{a}\sqrt[n]{b} = \sqrt[n]{ab}, \quad \sqrt[n]{a^n b} =  a \sqrt[n]{b}, \quad \qty(\sqrt[n]{a})^m = \sqrt[n]{a^m}, \quad \sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a} \\
+      &\sqrt[p]{a^m} \sqrt[q]{a^n} = \sqrt[pq]{a^{mq+np}}, \quad \frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}}, \quad \frac{\sqrt[p]{a^m}}{\sqrt[q]{a^n}} = \sqrt[pq]{a^{mq-np}}
+    \end{split}
+\end{mymathbox}
 
 \subsection{Gleichungen}
-Wir wollen nun noch allgemeine Eigenschaften von Gleichungen diskutieren, die wir für nachfolgende Kapitel als Grundlage benötigen. Das Gleichheitszeichen erfüllt folgende Bedingungen:
+Wir wollen nun noch allgemeine Eigenschaften von Gleichungen diskutieren, die wir für nachfolgende Kapitel als Grundlage benötigen. Eigenschaften des Gleichheitszeichens sind:
 \begin{itemize}
     \item Reflexivität, d.\,h. es gilt $a = a$;
     \item Symmetrie, d.\,h. gilt $a= b$, dann gilt auch $b=a$;
@@ -239,7 +240,7 @@ Gleichungen sind Darstellungen logischer Aussagen, deren Form mit Hilfe von \emp
 \tikz[overlay,remember picture]{
 \draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq1)+(-1.2,0.6)$)node[left]{Äquivalenzpfeil} -- ($(eq1)+(-0.1,0.2)$);
 }
-Bei Multiplikation/Division einer Zahl muss jedoch sichergestellt werden, dass diese nicht Null ist 
+Bei Multiplikation/Division einer Zahl muss jedoch sichergestellt werden, dass diese nicht Null ist \vspace{-3mm}
 \begin{align}
     \begin{split}
         \frac{x}{a-b} &= z\hphantom{, a\neq b} \,\cancel{\Longleftrightarrow}\;\; x = z(a-b)\\
@@ -253,7 +254,7 @@ Wir müssen ebenfalls beachten, dass die Information über das Vorzeichen einer 
         (x-1)^2 &= a^2 \qq{hat zwei Lösungen,} x_1=1+a, x_2 =1-a.
     \end{split}
 \end{align}
-Weiterhin ist das explizite Auflösen einer Gleichung nach einer Größe nicht immer möglich, beispielsweise 
+Weiterhin ist explizites Auflösen einer Gleichung nach einer Größe nicht immer möglich,
 \begin{align}
-    x + \sin(x) = 0.
+    \qq{beispielsweise} x + \sin(x) = 0.
 \end{align}

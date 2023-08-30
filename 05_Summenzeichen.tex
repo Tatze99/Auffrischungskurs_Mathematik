@@ -1,0 +1,64 @@
+\section{Das Summenzeichen}
+
+Für viele Anwendungen erweist es sich als praktisch, sehr lange (oder auch unendliche) Summen kompakt aufzuschreiben. Betrachten wir eine Summe $S$ aus $n$ Summanden, 
+\begin{align}
+    S = s_1 + s_2 + s_3 + \hdots + s_n,
+\end{align}
+wobei jeder Summand mit einem \emph{Index} gekennzeichnet ist, 
+\begin{align}
+    s_i \qq{,} i=1,2,\hdots,n.
+\end{align}
+Die Indizes dienen zunächst nur dazu, die Summanden zu unterscheiden und sind im Allgemeinen willkürlich gesetzt - schließlich hängt der Wert der Summe nicht von der Summationsreihenfolge ab. Als Kurzschreibweise für Summen verwendet man den großen griechischen Buchstaben Sigma:
+\begin{align}
+    S = \sum_{i=1}^n s_i \qq{, mit Startwert $i=1$ und Endwert $i=n$.} 
+\end{align}
+
+\paragraph{Beispiel: Polynome}$~$
+
+Hier sind die Summanden die jeweiligen Potenzen von $x$ mit ihren Vorfaktoren und es bietet sich an, die Potenzen als Indizes zu benutzen: 
+\begin{align}
+    P_n(x) &= a_0 + a_1 x^1 + a_2 x^2 + \hdots + a_{n-1} x^{n-1} + a_n x^n \notag \\
+           &= \sum_{i=0}^n a_i x^i.
+\end{align}
+
+\paragraph{Beispiel: Summe der ersten $n$ Zahlen}$~$
+
+Hier bietet sich an, die Zahlen selbst als Indizes zu benutzen: 
+\begin{align}
+    \sum_{k=1}^n k = 1 + 2 + 3 + \hdots + n-1 +n.
+\end{align}
+
+\paragraph{Eigenschaften:}$~$
+
+Die Benennung des Summationsindex ist irrelevant, 
+\begin{align}
+    \sum_{i=1}^n s_i = \sum_{k=1}^n s_k.
+\end{align}
+Summen von Summen/Differenzen sind Summen/Differenzen von Summen, 
+\begin{align}
+    \sum_{i=1}^n (a_i \pm b_i) = \sum_{i=1}^n a_i \pm \sum_{i=1}^n b_i.
+\end{align}
+Gleiche (vom Index unabhängige) Faktoren können ausgeklammert werden, 
+\begin{align}
+    \sum_{i=1}^n (a s_i) &= a \sum_{i=1}^n s_i. \notag \\
+    \Rightarrow \qq{speziell:} \sum_{i=1}^n a &= a \sum_{i=1}^n 1 = a\underbrace{(1+1+1+\hdots+1)}_{n\text{-mal}} = n \cdot a. \notag 
+\end{align}
+Summen können aufgeteilt werden,
+\begin{align}
+    \sum_{i=1}^n s_i = \sum_{i=1}^m s_i + \sum_{i=m+1}^n s_i.
+\end{align}
+Startwerte können verändert werden, 
+\begin{align}
+    \sum_{k=m}^n s_k &= \sum_{k=1}^n s_k - \sum_{k=1}^{m-1} s_k \\ 
+    \Rightarrow \qq{speziell:} \sum_{k=m}^n 1 &= \sum_{k=1}^n 1 - \sum_{k=1}^{m-1} 1 = n -(m-1) = 1 + n -m. \notag 
+\end{align}
+
+\paragraph{Bemerkung} Es gibt einige weitere Möglichkeiten, Summen zu schreiben, bspw. kann der Index Werte einer (abzählbaren) Menge $M$ annehmen, 
+\begin{align}
+    \sum_{i \in M} s_i \qq{,}
+\end{align}
+oder man lässt die Summationsgrenzen weg, wenn in irgendeiner Weise ``klar'' ist, wie summiert wird, 
+\begin{align}
+    \sum_i s_i. 
+\end{align}
+

@@ -15,7 +15,7 @@
 \usepackage{amsthm,amstext}         % Theoreme, \text im Mathe-Modus
 \usepackage{mathtools}              % \Aboxed für Boxen in Align Umgebungen
 \usepackage[arrowdel]{physics}      % Ableitungen \dv{B}{t} \pdv \dd{t}
-\usepackage[left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[left=2.5cm, right=2.5cm, top=2.8cm, bottom=2.8cm]{geometry}
 \usepackage{graphicx}               % \includegraphics
 \usepackage[extendedchars]{grffile} % extends file name processing of graphics
 \usepackage[section]{placeins}      % \Floatbarrier
@@ -78,7 +78,7 @@
             per-mode=fraction]{siunitx}
 \usepackage[position=below,
             format=hang,
-            figurename=Fig.,
+            figurename=Abb.,
             labelfont={bf},
             font=small]{caption}
 
@@ -129,11 +129,13 @@ every axis post/.style={legend cell align={left}}}
 
   \pagestyle{fancy}
   \fancyhead[R]{\textbf{#5}}
-  \fancyfoot[C]{\bfseries\thepage}
+  \fancyfoot[R]{\bfseries\thepage}
+  \fancyfoot[C]{}
   \fancyhead[L]{\rightmark}
 
   \fancypagestyle{plain}{
-    \fancyfoot[C]{\bfseries\thepage}
+    \fancyfoot[R]{\bfseries\thepage}
+    \fancyfoot[C]{}
     \fancyhead[R]{}
     \fancyhead[L]{}
     \renewcommand{\headrulewidth}{0pt}
@@ -141,4 +143,4 @@ every axis post/.style={legend cell align={left}}}
 }
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0pt}
