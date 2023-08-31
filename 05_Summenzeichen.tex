@@ -17,8 +17,7 @@ Die Indizes dienen zunächst nur dazu, die Summanden zu unterscheiden und sind i
 
 Hier sind die Summanden die jeweiligen Potenzen von $x$ mit ihren Vorfaktoren und es bietet sich an, die Potenzen als Indizes zu benutzen: 
 \begin{align}
-    P_n(x) &= a_0 + a_1 x^1 + a_2 x^2 + \hdots + a_{n-1} x^{n-1} + a_n x^n \notag \\
-           &= \sum_{i=0}^n a_i x^i.
+    P_n(x) &= a_0 + a_1 x^1 + a_2 x^2 + \hdots + a_{n-1} x^{n-1} + a_n x^n  = \sum_{i=0}^n a_i x^i.
 \end{align}
 
 \paragraph{Beispiel: Summe der ersten $n$ Zahlen}$~$
@@ -30,28 +29,30 @@ Hier bietet sich an, die Zahlen selbst als Indizes zu benutzen:
 
 \paragraph{Eigenschaften:}$~$
 
-Die Benennung des Summationsindex ist irrelevant, 
-\begin{align}
-    \sum_{i=1}^n s_i = \sum_{k=1}^n s_k.
-\end{align}
-Summen von Summen/Differenzen sind Summen/Differenzen von Summen, 
-\begin{align}
-    \sum_{i=1}^n (a_i \pm b_i) = \sum_{i=1}^n a_i \pm \sum_{i=1}^n b_i.
-\end{align}
-Gleiche (vom Index unabhängige) Faktoren können ausgeklammert werden, 
-\begin{align}
-    \sum_{i=1}^n (a s_i) &= a \sum_{i=1}^n s_i. \notag \\
-    \Rightarrow \qq{speziell:} \sum_{i=1}^n a &= a \sum_{i=1}^n 1 = a\underbrace{(1+1+1+\hdots+1)}_{n\text{-mal}} = n \cdot a. \notag 
-\end{align}
-Summen können aufgeteilt werden,
-\begin{align}
-    \sum_{i=1}^n s_i = \sum_{i=1}^m s_i + \sum_{i=m+1}^n s_i.
-\end{align}
-Startwerte können verändert werden, 
-\begin{align}
-    \sum_{k=m}^n s_k &= \sum_{k=1}^n s_k - \sum_{k=1}^{m-1} s_k \\ 
-    \Rightarrow \qq{speziell:} \sum_{k=m}^n 1 &= \sum_{k=1}^n 1 - \sum_{k=1}^{m-1} 1 = n -(m-1) = 1 + n -m. \notag 
-\end{align}
+\begin{itemize}
+    \item Die Benennung des Summationsindex ist irrelevant, 
+    \begin{align}
+        \sum_{i=1}^n s_i = \sum_{k=1}^n s_k.
+    \end{align}
+    \item Summen von Summen/Differenzen sind Summen/Differenzen von Summen, 
+    \begin{align}
+        \sum_{i=1}^n (a_i \pm b_i) = \sum_{i=1}^n a_i \pm \sum_{i=1}^n b_i.
+    \end{align}
+    \item Gleiche (vom Index unabhängige) Faktoren können ausgeklammert werden, 
+    \begin{align}
+        \sum_{i=1}^n (a s_i) &= a \sum_{i=1}^n s_i. \notag \\
+        \Rightarrow \qq{speziell:} \sum_{i=1}^n a &= a \sum_{i=1}^n 1 = a\underbrace{(1+1+1+\hdots+1)}_{n\text{-mal}} = n \cdot a. \notag 
+    \end{align}
+    \item Summen können aufgeteilt werden,
+    \begin{align}
+        \sum_{i=1}^n s_i = \sum_{i=1}^m s_i + \sum_{i=m+1}^n s_i.
+    \end{align}
+    \item Startwerte können verändert werden, 
+    \begin{align}
+        \sum_{k=m}^n s_k &= \sum_{k=1}^n s_k - \sum_{k=1}^{m-1} s_k \\ 
+        \Rightarrow \qq{speziell:} \sum_{k=m}^n 1 &= \sum_{k=1}^n 1 - \sum_{k=1}^{m-1} 1 = n -(m-1) = 1 + n -m. \notag 
+    \end{align}
+\end{itemize}
 
 \paragraph{Bemerkung} Es gibt einige weitere Möglichkeiten, Summen zu schreiben, bspw. kann der Index Werte einer (abzählbaren) Menge $M$ annehmen, 
 \begin{align}
@@ -61,4 +62,55 @@ oder man lässt die Summationsgrenzen weg, wenn in irgendeiner Weise ``klar'' is
 \begin{align}
     \sum_i s_i. 
 \end{align}
+Mehrfache Summen können mit einem Summenzeichen geschrieben werden, sofern sie unabhängig voneinander laufen:
+\begin{align}
+    \sum_{i=1}^n \qty(\sum_{j=1}^n s_{ij}) = \sum_{i,j=1}^n s_{ij} = s_{11} + s_{12} + \hdots + s_{21} + s_{22} + \hdots + s_{nn}.
+\end{align}
+Dabei ist es egal, welche Summe zuerst ausgeführt wird. Letzteres gilt nicht in Fällen wie beispielsweise 
+\begin{align}
+    \sum_{i=1}^n \sum_{j=1}^i s_{ij},
+\end{align}
+da hier der Endwert der zweiten Summe vom Index der ersten Summe abhängt.
 
+\clearpage
+\paragraph{Beispiel: Differenzen benachbarter Quadratzahlen}$~$
+
+Wenn wir untersuchen wollen, was die Summe aus den Differenzen benachbarter Quadratzahlen ist, so können wir das zunächst für die ersten paar Glieder aufschreiben: 
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \draw[thick, -{latex}] (0,0) -- (10,0)node[right]{$n$};
+        \foreach \x in {0,1,4,9}{
+            \draw (\x,.1) -- (\x,-.1)node[below]{\x};
+        }
+        \draw [decorate, decoration = {calligraphic brace}, thick] (1,-.7) --node[below]{1} (0,-.7);
+        \draw [decorate, decoration = {calligraphic brace}, thick] (4,-.7) --node[below]{3} (1,-.7);
+        \draw [decorate, decoration = {calligraphic brace}, thick] (9,-.7) --node[below]{5} (4,-.7);
+    \end{tikzpicture}
+\end{figure}
+Dies legt die Vermutung nahe, dass es sich um die Summe aller ungeraden Zahlen handelt. Rechnen wir dies nach, ergibt sich 
+\begin{align}
+    \sum_{k=0}^n \qty[(k+1)^2 - k^2] &= \sum_{k=0}^n (k+1)^2 - \sum_{k=0}^n k^2 \notag \\   
+    &= \sum_{k=0}^n (\cancel{k^2} +2k +1) - \cancel{\sum_{k=0}^n k^2} = \sum_{k=0}^n (2k+1).
+\end{align}
+Das ist in der Tat die Summe aller ungeraden Zahlen von 1 bis $2n+1$.
+
+\paragraph{Indexverschiebung}$~$
+
+Da die Indizierung einzelner Summanden willkürlich ist, ist es möglich, eine \emph{Indexverschiebung} vorzunehmen:
+\begin{align}
+    S &\tikzmarknode{eq1}{=} \sum_{i=1}^n s_i  \qq{, Substitution} i = j + a  \notag \\
+                        & \hspace{3cm} \Rightarrow \qq{Startwert: aus} i=1 \qq{folgt} j = 1-a \notag \\
+                        & \hspace{3cm} \Rightarrow \qq{Endwert: aus} i=n \qq{folgt} j = n-a \notag \\[-1em]
+      &\tikzmarknode{eq2}{=} \sum_{j=1-a}^{n-a} s_{j+a}.
+\end{align}
+\tikz[overlay,remember picture]{
+\draw[thick] ($(eq1)+(0,-.2)$)-- ($(eq2)+(0,.2)$);
+}
+Schauen wir uns dazu das vorherige Beispiel nochmal an:
+\begin{align}
+    \sum_{k=0}^n (k+1)^2 - \sum_{k=0}^n k^2 \overset{k = i+1}&{=} \sum_{k=0}^n (k+1)^2 - \sum_{i=-1}^{n-1} (i+1)^2 \overset{i\to k}{=} \underbrace{\sum_{k=0}^n (k+1)^2}_{(1)} - \underbrace{\sum_{k=-1}^{n-1} (k+1)^2}_{(2)} \notag\\
+     &= \underbrace{(n+1)^2}_{\text{letztes Glied (1)}} + \cancel{\sum_{k=0}^{n-1}(k+1)^2} + \underbrace{(-1+1)^2}_{\text{erstes Glied (2)}} - \cancel{\sum_{k=0}^{n-1}(k+1)} \notag \\
+     \Rightarrow \sum_{k=0}^n (2k+1) = (n+1)^2.
+\end{align}
+Die Summe der ersten $n$ ungeraden zahlen ist gleich der $(n+1)$-ten Quadratzahl.
