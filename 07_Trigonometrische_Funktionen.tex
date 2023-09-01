@@ -1,0 +1,141 @@
+\section{Trigonometrische Funktionen} 
+
+Dieser Abschnitt widmet sich der Definition von Sinus- und Kosinusfunktionen sowie deren Eigenschaften. 
+
+\paragraph{Bogenmaß und Gradmaß}$~$
+
+\begin{wrapfigure}{r}{7cm}
+    \centering
+    \vspace{-1cm}
+        \begin{tikzpicture}[scale=2.5]
+            \draw[thick, -{latex}] ( -1.1,0) -- (1.2,0)node[above]{$x$};
+            \draw[thick, -{latex}] (0,-1.1) -- (0,1.2)node[right]{$y$};
+            \draw (0,0) circle (1cm);
+            \fill (1,0) circle (1pt)node[below left]{$1$};
+            \fill (0,1) circle (1pt)node[below right]{$1$};
+            \fill (-1,0) circle (1pt)node[above right]{$\minus1$};
+            \fill (0,-1) circle (1pt)node[above left]{$\minus1$};
+            \draw[thick, -{latex}] (0,0) --node[above left, rotate=40, pos=0.8]{$r=1$} (40:1);
+            \draw[-{latex}] (0.4,0) arc (0:40:.4);
+            \node (A) at (20:.3){$\alpha$};
+            \draw[thick, PAForange] (1,0) arc (0:40:1); 
+        \end{tikzpicture}
+    \vspace{-3mm}
+\end{wrapfigure}
+
+Wir betrachten die (reelle) Zahlenebene, in der alle Abstände in einheit 1 gemessen werden, also \emph{dimensionslos} sind. Der Umfang des Einheitskreises beträgt definitionsgemäß 
+\begin{align}
+    u = 2\pi r = 2\pi.
+\end{align}
+Wir können nun zwischen den beiden Maßsystemen \emph{Gradmaß} und \emph{Bogenmaß} unterscheiden. Für das Gradmaß ist der Vollkreis in 360 Abschnitte eingeteilt, während im Bogenmaß der Winkel in Bruchteilen des Kreisumfangs gemessen wird:
+\begin{align}
+    \begin{split}
+        \text{Gradmaß: } [\alpha] &= \si{\degree} \quad(\text{deg}) \qq{,} \text{Vollkreis: } \SI{360}{\degree}\\
+        \text{Borgenmaß: } [\alpha] &= 1 \quad(\text{rad}) \qq{,} \text{Vollkreis: } 2\pi.
+    \end{split}
+\end{align}
+Wir können beide Maßsysteme mittels einer Verhältnisgleichung ineinander überführen: 
+\begin{align}
+    \frac{\alpha [\text{rad}]}{2\pi} = \frac{\alpha [\text{deg}]}{\SI{360}{\degree}}.
+\end{align}
+Einige Werte zur Umrechnung sind in folgender Tabelle aufgelistet:
+
+\begin{table}[htp]
+    \centering
+    \caption{Umrechnungstabelle für Bogen- und Gradmaß}
+    \begin{tabular}{c c c c c c c c c c c}
+        \toprule 
+        $\alpha$ [deg] & 30 & 45 & 60 & 90 & 120 & 150 & 180 & 270 & 360 \\
+        \midrule
+        $\alpha$ [rad] & $\frac{\pi}{6}$ & $\frac{\pi}{4}$ & $\frac{\pi}{3}$ & $\frac{\pi}{2}$ & $\frac{2\pi}{3}$ & $\frac{5\pi}{6}$ & $\pi$ & $\frac{3\pi}{2}$ & $2\pi$ 
+    \end{tabular}
+\end{table}
+
+\subsection{Winkelfunktionen}
+
+\begin{minipage}{0.5\textwidth}
+    Alle Winkelfunktionen sind dimensionslos definiert. Die $x$-Koordinate eines Punktes des Einheitskreises ist der Kosinus des Winkels zwischen seinem Ortsvektor und der Abszisse, während die $y$-Koordinate der Sinus dieses Winkels ist. Weitere trigonometrische Funktionen sind wie folgt defniert: 
+    \begin{itemize}
+        \item Tangens:\hphantom{Ko} $\displaystyle \tan(\alpha) := \frac{\sin(\alpha)}{\cos(\alpha)}$
+        \item Kotangens: \,$\displaystyle \cot(\alpha) := \frac{\cos(\alpha)}{\sin(\alpha)} = \frac{1}{\tan(\alpha)}$
+        \item Sekans:\;\;\hphantom{Ko} $\displaystyle \sec(\alpha) := \frac{1}{\cos(\alpha)}$
+        \item Kosekans: \;\;$\displaystyle \csc(\alpha) := \frac{1}{\sin(\alpha)}$
+    \end{itemize}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+    \centering
+    \begin{tikzpicture}[scale=5]
+        \draw[thick, -{latex}] ( -.3,0) -- (1.2,0)node[above]{$x$};
+        \draw[thick, -{latex}] (0,-.3) -- (0,1.2)node[right]{$y$};
+        \draw (-10:1) arc (-10:100:1);
+        \fill (1,0) circle (0.5pt)node[below left]{$1$};
+        \fill (0,1) circle (0.5pt)node[below right]{$1$};
+        % \fill (-1,0) circle (1pt)node[above right]{$\minus1$};
+        % \fill (0,-1) circle (1pt)node[above left]{$\minus1$};
+        \draw[thick, -{latex}] (0,0) --node[above left, rotate=40, pos=0.6]{$r=1$} (40:1);
+        \draw[-{latex}] (0.4,0) arc (0:40:.4);
+        \node (A) at (20:.3){$\alpha$};
+
+        \draw[ultra thick, FSUblau] ($(0,sin{40})$) --node[above]{$\cos(\alpha)$} ($({cos{40}},sin{40})$);
+        \draw[ultra thick, PAForange, pos=0.4] (40:1) --node[rotate=-90,yshift=0.3cm,, xshift=0.3cm]{$\sin(\alpha)$} ($({cos{40}},0)$);
+        \draw[ultra thick, Gruen] (1,0) --node[rotate=-90, yshift=0.3cm]{$\tan(\alpha)$} ($(1,tan{40})$);
+        \draw[ultra thick, red!70!black] (0,1) --node[above]{$\cot(\alpha)$} ($(cot{40},1)$);
+        \draw[ultra thick, PAForange!60!white] (0,0) --node[above, rotate=40]{$\csc(\alpha)$} ($(cot{40},1)$);
+        \draw[thick, FSUblau!60!white] (0,0) --node[below, rotate=40]{$\sec(\alpha)$} ($(1, tan{40})$);
+        % \draw[thick, PAForange] (1,0) arc (0:40:1); 
+    \end{tikzpicture}
+\end{minipage}
+
+Aus der Abbildung können wir mithilfe des Satzes des Pythagoras folgende Relation ablesen 
+\begin{mymathbox}[ams align, title={Trigonometrischer Pythagoras}, colframe={FSUblau}]
+    \sin^2(\alpha) + \cos^2(\alpha) = 1.
+\end{mymathbox}
+
+Durch weitere rechtwinklige Dreiecke können wir ebenfalls folgende Relationen ablesen: 
+\begin{align}
+    \begin{split}
+        \sec^2(\alpha) &= \frac{1}{\cos^2(\alpha)} = 1 + \tan^2(\alpha) \\
+        \csc^2(\alpha) &= \frac{1}{\sin^2(\alpha)} = 1 + \cot^2(\alpha).
+    \end{split}
+\end{align}
+Beide Relationen lassen sich auch direkt mithilfe der Definitioen und des trigonometrischen Pythagoras herleiten.
+Anhand der Konstruktion können wir auch folgende Eigenschaften der Funktionen ablesen, wie z.\,B. die Wertebereiche 
+\begin{align}
+    \begin{split}
+        &\sin(\alpha) \in [-1,1] \qquad \tan(\alpha) \in (-\infty,\infty) \\
+        &\cos(\alpha) \in [-1,1] \qquad \cot(\alpha) \in (-\infty,\infty).
+    \end{split}
+\end{align}
+Die Vorzeichen der Funktionen in den einzelnen Quadranten lauten:
+\begin{table}[htp]
+    \centering
+    \caption{Vorzeichen/Signum (sgn) der Funktionen}
+    \begin{tabular}{c c c c c c c c c c c}
+        \toprule 
+        Quadrant & sgn($\sin\alpha$) & sgn($\cos\alpha$) & sgn($\tan\alpha$) & sgn($\cot\alpha$)  \\
+        \midrule
+        I & + & + & + & + \\
+        II & + & - & - & - \\
+        III & - & - & + & + \\
+        IV & - & + & - & -
+    \end{tabular}
+    \vspace{-1cm}
+\end{table}
+
+Spezielle Werte der Funktionen sind in folgender Tabelle zusammengefasst: 
+\begin{table}[htp]
+    \centering
+    \caption{Vorzeichen/Signum (sgn) der Funktionen}
+    \begin{tabular}{c c c c c c c c c c c }
+        \toprule 
+         $\alpha$ [deg] & 0 & 30 & 45 & 60 & 90 & 120 & 150 & 180 & 270 & 360 \\
+         $\alpha$ [rad] & 0 & $\dfrac{\pi}{6}$ & $\dfrac{\pi}{4}$ & $\dfrac{\pi}{3}$ & $\dfrac{\pi}{2}$ & $\dfrac{2\pi}{3}$ & $\dfrac{5\pi}{6}$ & $\pi$ & $\dfrac{3\pi}{2}$ & $2\pi$\\[.4em]
+         \midrule 
+         $\sin\alpha$   & 0 & $\dfrac{1}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{\sqrt{3}}{2}$ & 1 & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{1}{2}$ & 0 & -1 & 0 \\[.7em]
+         $\cos\alpha$   & 1 & $\dfrac{\sqrt{3}}{2}$ & $\dfrac{\sqrt{2}}{2}$ & $\dfrac{1}{2}$ & 0 & -$\dfrac{1}{2}$ & -$\dfrac{\sqrt{3}}{2}$ & -1 & 0 & 1 \\[.7em]
+         $\tan\alpha$   & 0 & $\dfrac{1}{\sqrt{3}}$ & $1$ & $\sqrt{3}$ & $\pm \infty$ & -$\sqrt{3}$ & -$\dfrac{1}{\sqrt{3}}$ & 0 & $\pm \infty$ & 0 \\[.7em]
+         $\cot\alpha$   & $\pm\infty$ & $\sqrt{3}$ & $1$ & $\dfrac{1}{\sqrt{3}}$ & 0 & -$\dfrac{1}{\sqrt{3}}$ & -$\sqrt{3}$ & $\pm \infty$ & 0 & $\pm \infty$ \\
+
+    \end{tabular}
+    \vspace{-1cm}
+\end{table}
