@@ -1,0 +1,16 @@
+\section{Grundlagen der Differentialrechnung (Ableiten)}
+
+\begin{wrapfigure}{r}{8cm}
+    \centering
+    \vspace{-5mm}
+        \begin{tikzpicture}
+            \begin{axis}[disabledatascaling, axis lines=middle, xtick={1}, xticklabels={$x_0$}, ytick={0.83}, yticklabels={$f(x_0)$}, xlabel={$x$}, ylabel={$y$}, height=6cm, width=9cm, ymax= 5, ymin=-2]
+                \addplot[no marks, FSUblau, thick, domain=-2:3]{0.5*x^2 + 0.33*x^3 - x +1};
+                \addplot[no marks, PAForange, thick, domain=-1:3]{x+0.83-1};
+                \legend{Funktion $f(x)$, Tangente};
+            \end{axis}
+        \end{tikzpicture}
+    \vspace{-5mm}
+\end{wrapfigure}
+
+Wir möchten in diesem Kapitel die Frage stellen, wie man den Anstieg einer beliebigen Funktion $f(x)$ an einem Punkt $x=x_0$ bestimmen kann. Dabei meinen wir den Anstieg der Geraden, die am Punkt $x_0$ als Tangente angelegt wird. 
