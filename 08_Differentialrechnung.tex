@@ -4,7 +4,7 @@
     \centering
     \vspace{-5mm}
         \begin{tikzpicture}
-            \begin{axis}[disabledatascaling, axis lines=middle, xtick={1}, xticklabels={$x_0$}, ytick={0.83}, yticklabels={$f(x_0)$}, xlabel={$x$}, ylabel={$y$}, height=6cm, width=9cm, ymax= 5, ymin=-2]
+            \begin{axis}[disabledatascaling, axis lines=middle, xtick={1}, xticklabels={$x_0$}, ytick={0.83}, yticklabels={$f(x_0)$}, xlabel={$x$}, ylabel={$y$}, height=6cm, width=9cm, ymax= 5, ymin=-2, samples=100]
                 \addplot[no marks, FSUblau, thick, domain=-2:3]{0.5*x^2 + 0.33*x^3 - x +1};
                 \addplot[no marks, PAForange, thick, domain=-1:3]{x+0.83-1};
                 \legend{Funktion $f(x)$, Tangente};
@@ -13,4 +13,96 @@
     \vspace{-5mm}
 \end{wrapfigure}
 
-Wir möchten in diesem Kapitel die Frage stellen, wie man den Anstieg einer beliebigen Funktion $f(x)$ an einem Punkt $x=x_0$ bestimmen kann. Dabei meinen wir den Anstieg der Geraden, die am Punkt $x_0$ als Tangente angelegt wird. 
+Wir möchten in diesem Kapitel die Frage stellen, wie man den Anstieg einer beliebigen Funktion $f(x)$ an einem Punkt $x=x_0$ bestimmen kann. Dabei meinen wir den Anstieg der Geraden, die am Punkt $x_0$ als Tangente angelegt wird. Da das in jedem beliebigen Punkt $x=x_0$ möglich ist, ist der Anstieg selbst wieder eine Funktion von $x$ die wir Ableitung $f'(x)$ nennen wollen.
+
+\paragraph{Konstruktion der Ableitung}$~$
+
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={0.576, 1.951}, xticklabels={$x_0$,$x_0 + \varepsilon$}, ytick={0.652,3.402}, yticklabels={$f(x_0)$, $f(x_0 +\varepsilon)$}, xlabel={$x$}, ylabel={$y$}, height=6cm, width=0.8\textwidth, ymax= 5, ymin=-2, legend pos=outer north east, samples=100]
+            \addplot[no marks, FSUblau, thick, domain=-2:3]{0.5*x^2 + 0.33*x^3 - x +1};
+            \addplot[no marks, PAForange, thick, domain=-1:3]{2*x-0.5};
+            \legend{Funktion $f(x)$, Sekante};
+            \draw[dashed, gray] (0.576,0) -- (0.576,0.652) -- (0,0.652);
+            \draw[dashed, gray] (1.951,0) -- (1.951,3.402) -- (0,3.402);
+            \draw [decorate, decoration = {calligraphic brace}, thick] (0.2,3.402)--node[right]{\scriptsize$f(x_0+\varepsilon)-f(x_0)$}(0.2,0.652);
+            \draw [decorate, decoration = {calligraphic brace}, thick] (1.951,-1)--node[below]{$\varepsilon$}(0.576,-1);
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Für die Konstruktion der Ableitung am Punkt $x_0$ legen wir zunächst eine Sekante des Graphen durch den Punkt $(x_0, f(x_0))$ und einen Punkt $(x_0 + \varepsilon, f(x_0+\varepsilon))$ und bilden anschließend den Grenzwert $\varepsilon \to 0$.} 
+    \label{}
+\end{figure}
+
+Wir definieren die Ableitung als Grenzwert des Differenzenquotienten: 
+\begin{align}
+    f'(x) := \lim_{\varepsilon \to 0} \frac{f(x_0 + \varepsilon)-f(x_0)}{\varepsilon}.
+\end{align}
+Wir können die erhaltene Ableitungsfunktion erneut ableiten und erhalten damit die zweite Ableitung. Für Ableitungen $n$-ter Ordnung schreiben wir schließlich 
+\begin{align}
+    &\text{1. Ableitung:} \qquad f'(x) = \dv{f(x)}{x} \equiv \qty(\dv{f}{x})(x) \notag \\
+    &\text{2. Ableitung:} \qquad f''(x) = \dv[2]{f(x)}{x} \notag \\
+    &\text{n. Ableitung:} \qquad f^{(n)}(x) = \dv[n]{f(x)}{x}.
+\end{align}
+Ableitungen spezieller Funktionen sind zum Beispiel 
+\begin{align}
+    \begin{split}
+        f(x) &= a =\text{const.} \quad \Rightarrow \quad f'(x) = \dv{x}(a) = 0, \\
+        f(x) &= x \hphantom{= const.} \quad \Rightarrow \quad f'(x) = \dv{x}(x) = \lim_{\varepsilon \to 0} \frac{(x+\varepsilon) - x }{\varepsilon} = 1.
+    \end{split}
+\end{align}
+
+\subsection{Allgemeine Eigenschaften}
+
+Der Operator $\dv{x}$ weißt bestimmte Eigenschaften auf, die wir als Ableitungsregeln bezeichnen: 
+\begin{itemize}
+    \item Linearität: ($a,b \in \mathbb{R}$)
+    \begin{align}
+        \dv{x}(a f(x) + b g(x)) = a \dv{f}{x} + b \dv{g}{x}
+    \end{align}
+    \item Produktregel (Leibniz-Regel):
+    \begin{align}
+        \dv{x}(f(x)\cdot g(x)) = \dv{f}{x} \cdot g(x) + f(x) \cdot \dv{g}{x}.
+    \end{align}
+    \item Kettenregel: \vspace{-0.5cm}
+    \begin{align}
+        \dv{x} f(g(x)) = \underbrace{\qty(\dv{f}{g})(g(x))}_{\mathclap{\text{äußere Ableitung}}}\cdot \overbrace{\dv{g}{x}}^{\mathclap{\text{innere Ableitung}}}.
+    \end{align}
+    \item Quotientenregel: 
+    \begin{align}
+        \dv{x}\qty(\frac{f(x)}{g(x)}) = \frac{1}{g(x)^2} \qty(\dv{f}{x}\cdot g(x) - f(x) \cdot \dv{g}{x}).
+    \end{align}
+    \item Potenzregel: 
+    \begin{align}
+        \dv{x}\qty(x^n) = n \, x^{n-1} \quad \Rightarrow \quad \text{insbesondere: } \dv{x}\qty(\frac{1}{x^n}) = - \frac{n}{x^{n+1}.}
+    \end{align}
+\end{itemize}
+Wenden wir einige dieser Regeln mal an einem praktischen Beispiel an: 
+\begin{align}
+    f(x) &=x \cdot g(x) + 7 h(y(x)) + \frac{x^2}{j(x)} \qq{mit} y(x) = ax + b \notag \\
+    \dv{f}{x} &= \underbrace{\dv{x}{x} \cdot g(x) + x \cdot \dv{g}{x}}_{\text{Produktregel}} + \underbrace{7 \qty(\dv{h}{y})(y) \cdot \dv{y}{x}}_{\text{Kettenregel}} + \underbrace{\frac{2 x j(x) - x^2 \dv{j}{x}}{j(x)^2}}_{\text{Quotientenregel}}\notag \\
+    &= g(x) +  x \cdot \dv{g}{x} + 7a \qty(\dv{h}{y})(y)  + \frac{2x j(x) - x^2 \dv{j}{x}}{j(x)^2}.
+\end{align}
+Wichtig ist es, bei der Kettenregel nach der richtigen Variable abzuleiten, d.\,h. wir müssen $h(y)$ nach dem Argument $y = ax+ b$ ableiten und nicht nach $x$. 
+
+
+\subsection{Ableitungen spezieller Funktionen}
+
+Wir wollen im Folgenden eine Liste von häufig verwendeten Funktionen und deren Ableitungen angeben. 
+
+\begin{table}[htp]
+    \caption{}
+    \label{}
+    \begin{tabular}{l l}
+        \toprule
+        $f(x)$ & $f'(x)$ \\
+        \midrule 
+        $x^n$ & $n x^n$ \\
+        $\ln(x)$ & $\dfrac{1}{x}$ \\
+        $\sin(x)$ & $\cos(x)$ \\
+        $\cos(x)$ & $-\sin(x)$ \\ 
+        $\tan(x)$ & $1 + \tan^2(x)$ \\
+        $\arcsin(x)$ & $\dfrac{1}{\sqrt{1-}}$
+    \end{tabular}
+\end{table}
+
