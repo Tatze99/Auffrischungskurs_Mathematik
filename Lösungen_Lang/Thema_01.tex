@@ -1,0 +1,68 @@
+\Titelbanner{1}{Grundrechenarten\\
+                Brüche\\
+                Potenzen\\
+                Wurzeln}
+
+\paragraph{Vorbereitung der Übung:} Wichtige Formeln an die Tafel schreiben!$~$
+
+\begin{mymathbox}[ams align, title={Binomische Formeln}, colframe={FSUblau}]
+      (a\pm b)^2 &= a^2 + b^2 \pm 2ab \notag \\
+      (a+b)(a-b) &= a^2 - b^2.\notag 
+\end{mymathbox}
+\begin{mymathbox}[ams align, title={Potenzgesetze}, colframe={FSUblau}]
+      a^m \cdot a^n = a^{m+n}, \quad a^n \cdot b^n &= (ab)^n, \quad (a^m)^n = (a^n)^m = a^{mn}\notag \\
+      \frac{a^m}{a^n} = a^{m-n}, \quad &\frac{a^n}{b^n} = \qty(\frac{a}{b})^n.\notag 
+\end{mymathbox}
+
+\paragraph{Aufgabe 1: } \emph{Bruchrechnung} \hfill Ziel: (a) bis (f)\\[0.2cm]
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\frac{\frac{b}{a}-\frac{a}{b}}{\frac{1}{a}+\frac{1}{b}} = \frac{b^2 - a^2}{a+b} = \uuline{b-a}$
+    \item $\frac{\frac{1}{a-b}+\frac{1}{a+b}}{\frac{1}{a-b}-\frac{1}{a+b}} = \frac{a + \cancel{b} + a - \cancel{b}}{\bcancel{a} + b - \bcancel{a} + b} = \uuline{\frac{a}{b}}$
+    \item $\frac{x^2-y^2}{xy}-\frac{x^2}{xy+x^2}+\frac{y^2}{x^2+xy} = \frac{1}{x} \qty(\frac{(x+y)(x-y)}{y} - \frac{x^2 - y^2}{x+y}) = \frac{x-y}{\cancel{x}} \underbrace{\qty(\frac{x+y}{y}-1)}_{\frac{\cancel{x}}{y}} = \uuline{\frac{x}{y}-1}$ \vspace{-5mm}
+    \item $\frac{n+1}{2-\frac{1}{1-\frac{1}{n^2+1}}} = \frac{n+1}{2-\frac{n^2+1}{n^2}} = n^2 \frac{n+1}{n^2 -1} = \uuline{\frac{n^2}{n-1}}$
+    \item $\frac{\frac{1}{y^2}+\frac{2}{xy}+\frac{1}{x^2}}{\frac{1}{y^2}-\frac{1}{x^2}} = \frac{x^2 +2xy + y^2 }{x^2 -y^2} = \frac{(x+y)^{\cancel{2}}}{\cancel{(x+y)}(x-y)} = \uuline{\frac{x+y}{x-y}}$
+    \item $\frac{a^2-1}{a^2+a}-\cancel{a}\frac{a+1}{a^{\cancel{3}\textcolor{gray}{2}}-\cancel{a}}+\frac{1}{a}+\frac{(a+1)^2-(a-1)^2+4}{4(a^2-1)} $\\
+    $= \frac{1}{a} \frac{(\cancel{a+1}) (a-\bcancel{1})}{\cancel{a+1}} - \frac{\cancel{a+1}}{(\cancel{a+1})(a-1)} + \bcancel{\frac{1}{a}} + \frac{\cancel{4a+4}}{\cancel{4(a+1)}(a-1)} = 1- \frac{1}{a-1}+\frac{1}{a-1} = \uuline{1}$
+    \item $\frac{1+(a+x)^{-1}}{1-(a+x)^{-1}}\qty[\frac{\sqrt{2}}{ax}-\frac{1-(a^2+x^2)}{\sqrt{2}a^2x^2}] \text{ für } x=\frac{1}{a-1}$ \\
+    $= \frac{a+x+1}{a+x-1}\qty[\frac{2ax -1 +a^2 +x^2}{\sqrt{2} a^2 x^2}] = \frac{a+x+1}{\cancel{a+x-1}} \overbrace{\frac{(a+x)^2 -1}{\sqrt{2}a^2 x^2}}^{\mathclap{(a+x+1)(\cancel{a+x-1})}} = \underbrace{\frac{(a+x+1)^2}{\sqrt{2}a^2 x^2} = \frac{1}{\sqrt{2}} \frac{a^2 (a-1)^2}{(a-1)^2}}_{\displaystyle \mathclap{x+a+1 = \frac{1}{a-1} + a+ 1 = \frac{a^2}{a-1}}} = \uuline{\frac{a^2}{\sqrt{2}}}$ 
+\end{enumerate}
+
+\paragraph{Aufgabe 2: } \emph{Potenzgesetze} \hfill Ziel: (a) bis (c)\\[0.2cm]
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\qty(\frac{a^2-b^2}{x^2-y^2})^n\qty(\frac{x+y}{a-b})^n = \frac{(a+b)^n \cancel{(a-b)^n}}{\bcancel{(x+y)^n}(x-y)^n} \frac{\bcancel{(x+y)^n}}{\cancel{(a-b)^n}} = \uuline{\qty(\frac{a+b}{x-y})^n}$
+    \item $\frac{b^xc^y(ab)^{2z+y}(cb)^{-x}}{(ac)^{y-x}\qty[\qty(abc^{-0,5})^z]^2} = a^{2z + y -(y-x+2z)} b^{x+2z+y-x-2z} c^{y-x-(y-x-z)} = \uuline{a^x b^y c^z}$
+    \item $\frac{(a+b)^{3n-4}}{a^{n-1}b}\cdot\frac{a^{4n-3}(a+b)^{3-2n}}{b^{2n-5}}\cdot\frac{a^{4-3n}b^{3n-6}}{(a+b)^{n-2}} = a^{1-n+4n-3+4-3n} b^{-1-2n+5+3n-6} (a+b)^{3n-4+3-2n-n+2} $ \\
+    $= \uuline{a^2 b^{n-2}(a+b)}$
+    \item $\qty(a^{n+2}-a^n):(a^3+a^2) = \frac{a^n}{a^2}\frac{a^2-1}{a+1} = \uuline{(a-1) a^{n-2}}$
+    \item $\qty(\frac{a^{-4}b^{-5}}{x^{-1}y^3})^2\cdot\qty(\frac{a^{-2}x}{b^3y^2})^3 = a^{-8-6} b^{-10-9} x^{2+3} y^{-6-6} = \uuline{\frac{x^5}{a^{14} b^{19} y^{12}}}$
+\end{enumerate}
+%
+\paragraph{Aufgabe 3: } \emph{Umformungen mit Wurzelausdrücken}\\[0.2cm]
+
+\begin{mymathbox}[ams align, title={Wurzelgesetze}, colframe={FSUblau}]
+    \begin{split}
+      &\sqrt[n]{a}\sqrt[n]{b} = \sqrt[n]{ab}, \quad \sqrt[n]{a^n b} =  a \sqrt[n]{b}, \quad \qty(\sqrt[n]{a})^m = \sqrt[n]{a^m}, \quad \sqrt[m]{\sqrt[n]{a}} = \sqrt[mn]{a} \\
+      &\sqrt[p]{a^m} \sqrt[q]{a^n} = \sqrt[pq]{a^{mq+np}}, \quad \frac{\sqrt[n]{a}}{\sqrt[n]{b}} = \sqrt[n]{\frac{a}{b}}, \quad \frac{\sqrt[p]{a^m}}{\sqrt[q]{a^n}} = \sqrt[pq]{a^{mq-np}}
+    \end{split}
+\end{mymathbox}
+
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\sqrt[6]{a^3}\dfrac{\frac{1}{\sqrt{a}}-\sqrt{b}}{1+\sqrt{ab}}+\dfrac{1}{\sqrt{2}}\dfrac{\sqrt{a}\sqrt{8b}}{1-ab}$
+    \item $\dfrac{\sqrt{a+bx}+\sqrt{a-bx}}{\sqrt{a+bx}-\sqrt{a-bx}} \quad \textnormal{für}\,\, x=\dfrac{2am}{b(1+m^2)}\,\,\textnormal{ mit }\,\, |m|<1$
+    \item $\qty(\sqrt{ab}-\dfrac{ab}{a+\sqrt{ab}}):\dfrac{\sqrt[4]{ab}-\sqrt{b}}{a-b}$
+\end{enumerate}
+
+%
+\paragraph{Aufgabe 4: } \emph{Algebraische Umformungen}\\[0.2cm]
+Lösen Sie die folgenden Gleichungen jeweils nach $x$ auf.
+
+\begin{enumerate}[label=(\alph*)]
+    \item $(a+nx)(b-nx)-(a-mx)(b+mx)=x^2(m-n)(m+n)-1$
+    \item $\frac{ax+b}{ab-b^2}-\frac{a-bx}{ab+b^2}=\frac{2(ax+b)}{a^2-b^2}$
+    \item $\frac{x-1}{n-1}+\frac{2n^2(1-x)}{n^4-1}=\frac{2x-1}{1-n^4}-\frac{1-x}{1+n}$
+    \item $a\qty(\sqrt{x}-a)-b\qty(\sqrt{x}-b)+a+b=\sqrt{x}$
+    \item $\frac{\frac{1}{x-\sqrt{1-4y^2}}+\frac{1}{x+\sqrt{1-4y^2}}}{\frac{1}{x-\sqrt{1-4y^2}}-\frac{1}{x+\sqrt{1-4y^2}}}=\sqrt{1+\frac{y^2}{1+2y}}\sqrt{1+\frac{y^2}{1-2y}}$
+\end{enumerate}

@@ -44,6 +44,7 @@
 \usepackage{multicol}
 \usepackage{setspace}% http://ctan.org/pkg/setspace
 % \usepackage{pdfpages}             % insert whole pdf files
+\usepackage[normalem]{ulem}
 
 \definecolor{FSUblau}{cmyk}{1,0.7,0.1,0.5}
 \definecolor{PAForange}{cmyk}{0.1,0.7,1,0}
@@ -144,3 +145,9 @@ every axis post/.style={legend cell align={left}}}
 \renewcommand{\sectionmark}[1]{\markright{#1}}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
+
+\numberwithin{equation}{section}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\newtcolorbox{mymathbox}[1][]{colback=white, sharp corners, #1}
