@@ -1,0 +1,143 @@
+\Titelbanner{2}{Lineare Gleichungssysteme}
+
+\paragraph{Tafelbeispiel:} $\displaystyle \frac{10(x+y) + 3}{x-2y+4} = 1, \quad \frac{36x-3y}{7(x-y)+3} = 3$
+\begin{enumerate}
+    \item Sortieren nach $x$ und $y$ 
+    \begin{align*}
+        9x +12 y &= 1 \quad (1) \\
+        15x+18y &= 9 \quad (2)
+    \end{align*}
+    \item Prüfe auf lineare Unabhängigkeit, d.\,h. Berechne $a_1 b_2 - a_2 b_1$ (Determinante, vgl. Vorlesung): 
+    \begin{align*}       
+        9\cdot 18 - 15\cdot 12 = 162-180 \neq 0 \quad \Rightarrow \qq{genau ein Lösungspaar ($x,y$)}
+    \end{align*}      
+    \item Lösen, bspw. durch geschickte Linearkombination (Elimination von $y$)
+    \begin{align*}
+        2\cdot (2) - 3\cdot (1): \quad \hphantom{1}3x &= \hphantom{-}15 \quad \Rightarrow x=5 \\
+        \qq{in} (1): \quad 12y &= -44 \quad \Rightarrow y = -\frac{11}{3} \\
+        \Rightarrow \qq{Lösungsmenge} \mathbb{L} &= \uuline{\Bigg\{\qty(5;-\frac{11}{3})\Bigg\}}
+    \end{align*}
+\end{enumerate}
+
+\paragraph{Aufgabe 1: } \emph{Zwei lineare Gleichungen mit zwei Unbekannten} \hfill Ziel (a) bis (d)\\[0.2cm]
+\begin{enumerate}[label=(\alph*)]
+    \item $~$\\[-1.45 cm]\begin{align*}
+        &33x+12y=25 \quad (1) \\ 
+        &11x-\hphantom{1}3y=\hphantom{2}6 \quad (2) \\
+        &(1) - 3\cdot (2): \quad 21y = 7 \quad\Rightarrow \quad y = \frac{1}{3}, \qq{in (2):} x = \frac{7}{11} \qquad \Rightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(\frac{7}{11};\frac{1}{3})\Bigg\}}
+    \end{align*}
+    \item $~$\\[-1.45cm] 
+    \begin{align*}
+        &\begin{rcases}
+            \frac{2x + 3y}{3x-y} = \frac{17}{9} \\
+            \dfrac{3x+4y}{6x-1}=2
+        \end{rcases} \quad \Longrightarrow \quad 
+        \begin{array}{l}
+            3x-4y = 0 \quad (1) \\
+            9x -4y = 2 \quad (2)
+        \end{array} \\
+        &\hphantom{3\cdot}\;\,(1) -(2): \quad 6x = 2 \quad\Rightarrow\quad x = \frac{1}{3}\\
+        &3\cdot(1) -(2): \quad 8y = 2 \quad\Rightarrow\quad y = \frac{1}{4} \qquad \Rightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(\frac{1}{3};\frac{1}{4})\Bigg\}}
+    \end{align*}
+    \item $~$\\[-1.45cm] 
+    \begin{align*}
+        &\begin{rcases}
+            \frac{x+2}{y+3}=\frac{1}{3} \\
+            \frac{y+3}{2y-5x}=\frac{3}{5}
+        \end{rcases} \quad \Longrightarrow \quad 
+        \begin{array}{l}
+            \hphantom{1}3x-y = \hphantom{1}-3 \quad (1) \\
+            15x -y = -15 \quad (2)
+        \end{array} \\
+        &(1) - (2): \quad -12x = 12 \quad \Rightarrow \quad  x = -1\\
+        &\text{in } (1): \quad y = 0 \qquad \Rightarrow \qquad \uuline{\mathbb{L} = \big\{\qty(-1;0)\big\}}
+    \end{align*}
+    \item $ax+by=2a\,, $ \tab $ \frac{x}{b}-\frac{y}{a}=\frac{2}{a}$
+    \item $x+14y=\frac{1}{\sqrt{2}}-7\sqrt{2}\,, $ \tab $ 3\sqrt{2}x-\frac{y}{\sqrt{3}}=3+\frac{1}{\sqrt{6}}$
+    \item $\frac{x}{a+b}+\frac{y}{a-b}=a+b\,, $ \tab $ \frac{x}{a}-\frac{y}{b}=2b$
+    \item $39x-38y=1\,, $ \tab $ 91x-57y=4$
+\end{enumerate}
+
+\paragraph{Aufgabe 2: } \emph{Drei Gleichungen mit drei Unbekannten}\\[0.2cm]
+%
+\begin{center}
+\begin{minipage}[t]{0.3\linewidth}
+(a)\vspace{-2.7em}
+\begin{align*}
+    x-y+5z&=5\,,\\
+    3x+7y-5z&=5\,,\\
+    x+y-z&=1
+\end{align*}
+
+(c)\vspace{-2.7em}
+\begin{align*}
+    x+y&=b+a\,,\\
+    x+z&=a+c\,,\\
+    y+z&=c+b
+\end{align*}
+\end{minipage} \hspace{1.5cm}
+\begin{minipage}[t]{0.4\linewidth}
+%
+(b)\vspace{-2.7em}
+\begin{align*}
+    3x-4y+3z&=4\,,\\
+    -x+y-z&=-2\,,\\
+    7x+4y-5z&=0
+\end{align*}
+(d)\vspace{-2.7em}
+\begin{align*}
+    6x-4y+8z&=0\,, \\
+    -2x+y-z&=0\,,\\
+    12x-7y+11z&=0
+\end{align*}
+\end{minipage} \\[0.2cm]
+\end{center}
+\vspace{0.7cm}
+
+\newpage
+% 
+\textbf{Aufgabe 3: } \emph{Parametrisierung von Lösungsmengen}\\[0.2cm]
+Geben Sie die Lösungsmenge der Gleichung $13x-7y=1$ an für
+\begin{align*}
+&\text{(a) } \hspace{0.2cm} x,y\in\mathbb{R}\,;\\[0.2cm]
+&\text{(b) } \hspace{0.2cm} x,y\in\mathbb{N}\,.
+\end{align*}
+
+\paragraph{Aufgabe 4: } \emph{Gleichungssysteme}\\[0.2cm]
+Lösen Sie die folgenden Gleichungssysteme jeweils für $x$ und $y$.\\[0.5cm]
+\begin{minipage}[t]{0.45\linewidth}
+(a)\vspace{-2.7em}
+\begin{align*}
+    x^2+y^2&=2(xy+2)\,,\\ x+y&=6
+\end{align*}
+(c)\vspace{-2,7em}
+\begin{align*}
+    \frac{x^2-y^2}{2x+3}+y^2&=(x+y)x-xy\,,\\
+    y-2x&=3
+\end{align*}
+\end{minipage}\hfill
+\begin{minipage}[t]{0.4\linewidth}
+(b)\vspace{-2.7em}
+\begin{align*}
+    \frac{12}{\sqrt{x-1}}+\frac{5}{\sqrt{y+\frac{1}{4}}}&=5\,,\\ \frac{8}{\sqrt{x-1}}+\frac{10}{\sqrt{y+\frac{1}{4}}}&=6
+\end{align*}
+\end{minipage}
+%
+\paragraph{Aufgabe 5: } \emph{Ungleichungssysteme}
+\begin{enumerate}[label=(\alph*), labelindent=1em,labelsep=0.5cm]
+\item Es ist die Lösungsmenge des folgenden Systems an Ungleichungen zu skizzieren. Welche der Ungleichungen können weggelassen werden, ohne dass sich die Lösungsmenge ändert?
+\begin{align*}
+    2x-3y&\geq -6\,,\\
+    x-2y&< 11\,,\\
+    x&>-y-1\,,\\
+    x&<5\,,\\
+    x&\geq 0\,,\\
+    y&\geq 0
+\end{align*}
+\item \textbf{*} Welches Gebiet im ersten Oktanden ($x\ge 0$, $y\ge 0$, $z\ge 0$) wird durch die folgenden Ungleichungen definiert?
+\begin{align*}
+    x+y&\ge z\,,\\
+    x+z&\ge y\,,\\
+    y+z&\ge x
+\end{align*}
+\end{enumerate}
