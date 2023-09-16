@@ -1,89 +1,58 @@
-\Titelbanner{10}{Rechnen mit Vektoren und Matrizen}
+\Titelbanner{10}{Integralrechnung}
 
-\paragraph{Aufgabe 1: } \emph{Linear (un)abhängige Vektoren}
-\begin{enumerate}[label=(\alph*)]
-\item Sind die folgenden Vektoren linear unabhängig?
+\textbf{Aufgabe 1: } \emph{Stammfunktionen}\\[0.2cm]
+Bestimmen Sie jeweils die Stammfunktion $F(x)$ der folgenden Funktionen.
 \begin{align*}
-\mqty( 3\\1\\-5 ),\quad \mqty( 1\\2\\0 ),\quad \mqty(-2\\0\\1)
+&\text{(a)}\quad f(x)=\sin(2x+5)					&& \text{(b)}\quad f(x)=\frac{k}{kx+1}\\[1ex]
+&\text{(c)}\quad f(x)=\frac{\cos(x)}{\sin(x)}		&& \text{(d)}\quad f(x)=\frac{a\cos(x)+b\sin(x)}{c\sin(x)}\\[1ex]
+&\text{(e)}\quad f(x)=\frac{x^2+1}{x^2-1}			&& \text{(f)}\quad f(x)=\frac{kx}{\sqrt{x^2+y^2}^3}
 \end{align*}
-\item Für welche Werte von $t$ befinden sich die folgenden Vektoren in einer Ebene?
-\begin{align*}
-\mqty( 1\\4\\0 ),\quad \mqty( 3\\t\\1 ),\quad \mqty( 4\\4\\2 )
-\end{align*}
-\end{enumerate}
+\emph{Hinweis:} Partialbruchzerlegung in (e).\\[1cm]
 %
-\paragraph{Aufgabe 2: } \emph{Skalarprodukt und Vektorprodukt}
-\begin{enumerate}[label=(\alph*)]
-\item Berechnen Sie die folgenden Skalarprodukte.
+\textbf{Aufgabe 2: } \emph{Partielle Integration}\\[0.2cm]
+Bestimmen Sie die folgenden Integrale unter Verwendung partieller Integration.
 \begin{align*}
-\mqty(1\\5\\7)\cdot\mqty(-2\\8\\3), &&
-\mqty(1\\0\\ \sqrt{2})\cdot\mqty(0\\-1\\ \sqrt{2}), &&
-\mqty(a\\3\\-1)\cdot\mqty(5\\2\\5a+6)
-\end{align*}
-\item Berechnen Sie die folgenden Vektorprodukte.
-\begin{align*}
-\mqty(1\\0\\0 )\times\mqty(0\\1\\0),&&
-\mqty(\cos(\phi)\\ \sin(\phi) \\0)\times\mqty(-\sin(\phi)\\ \cos(\phi)\\0),&&
-\mqty(1\\3\\-2)\times\mqty(1\\1\\5)
-\end{align*}
-\item Nutzen Sie das Skalarprodukt, um den Kosinussatz im allgemeinen Dreieck herzuleiten.
-\item Nutzen Sie das Vektorprodukt, um den Sinussatz im allgemeinen Dreieck herzuleiten.
-\end{enumerate}
+&\text{(a)}\quad \int\limits_0^\pi x\sin(x)\d x			&& \text{(b)}\quad \int\limits_0^1 x^3\e^{x}\d x\\[1ex]
+&\text{(c)}\quad \int\limits_{r_0}^{2r_0} r\left(1+\ln\frac{r}{r_0}\right)\d r	&& \text{(d)}\quad \int\frac{\ln(x)}{x}\d x
+\end{align*}\\[0.8cm]
 %
-\paragraph{Aufgabe 3: } \emph{Matrizen}
-\begin{enumerate}[label=(\alph*)]
-\item Bilden Sie -- falls möglich -- die Inversen der folgenden Matrizen mit Hilfe des Gauß-Jordan-Algorithmus.
+\textbf{Aufgabe 3: } \emph{Substitutionen}\\[0.2cm]
+Berechnen Sie die folgenden Integrale jeweils unter Verwendung der angegebenen Substitution.
 \begin{align*}
- A =\mqty(1 & 2\\ 3 & 4),\quad B=\mqty(0 & 2\\ 3 & 0),\quad  C=\mqty(-2 & 4\\ 3 & -6)
-\end{align*}
-\end{enumerate}
-\newpage
-\begin{enumerate}[label=(\alph*),resume]
-\item Matrixmultiplikation ist im Allgemeinen nicht kommutativ. Berechnen Sie $ A \cdot B- B\cdot A$.
-\item Welche Bedingungen müssen die Einträge $m_i$ einer Matrix
-\begin{align*}
-M = \mqty(m_1 & m_2\\ m_3 & m_4)
-\end{align*}
-erfüllen, damit $| M\cdot \vec{v}|=|\vec{v}|$ für einen beliebigen zweikomponentigen Vektor $\vec{v}$ gilt? 
-\end{enumerate}
-%
-%\paragraph{Aufgabe 4: } \emph{Drehungen}\\[0.2cm]
-%Gegeben seien eine Matrix $\hat{R}(\phi)$ und ein Vektor $\vec{\alpha}$ als
-%\begin{align*}
-%\hat{R}=\begin{pmatrix*}[c]\cos(\phi)	& -\sin(\phi)	& 0\\ \sin(\phi) & \cos(\phi) & 0\\ 0 & 0 & 1\end{pmatrix*}, \quad \vec{\alpha}=\mqty(x\\y\\z).
-%\end{align*}
-%Berechnen Sie $\hat{R}(\phi)\cdot\vec{\alpha}$ und $\det\hat{R}(\phi)$. Welche geometrische Bedeutung hat der Fall $\phi=\frac{\pi}{2}$, $x=1$, $y=z=0$?\\[1cm]
-%
-\paragraph{Aufgabe 4: } \emph{Laplace'scher Entwicklungssatz}\\[0.2cm]
-Berechnen Sie die Determinante der folgenden Matrix. Für welche Werte von $a$ ist die Matrix nicht invertierbar?
-\begin{align*}
-A=\mqty(a &3 &1 &a\\ 0 &-2 &0 &1\\ 3 &2 &-4 &-1\\ -a& 0 &-2 &0)
+&\text{(a)}\quad \int\limits_0^1 \sqrt{1-x^2}\d x\,,		&&\text{mit}\quad x=\sin\phi\\[1ex]
+&\text{(b)}\quad \int\limits_0^1 \frac{\d x}{(1+x^2)\sqrt{\arctan(x)}}	\,,	&&\text{mit}\quad u=\arctan(x)
 \end{align*}
 %
-\paragraph{Aufgabe 5: } \emph{Vektorprodukt}\\[0.2cm]
-Das Vektorprodukt $\vec{\omega}\times \vec{u}$ zweier Vektoren
-$\quad \vec{\omega}=\mqty(\omega_1\\\omega_2\\\omega_3),\quad\vec{u}=\mqty(u_1\\u_2\\u_3)$
 
-lässt sich auch als Matrixmultiplikation $\Omega \cdot \vec{u}$ mit einer ($3\times 3$)-Matrix $\Omega$ mit den Einträgen $\pm \omega_i$, $i\in\{1,2,3\}$ schreiben. Wie sieht  $\Omega$ aus? Welche Eigenschaften hat es (Determinante, Spur, Symmetrie)?
-%
-%
-\paragraph{Aufgabe 6*: } \emph{Höhere Dimensionen}\\[0.2cm]
-Im dreidimensionalen euklidischen Raum $\mathbb{R}^3$ kann jede beliebige Drehung in Drehungen um die $x$-, die $y$- und die $z$-Achse zerlegt werden, d.h. man benötigt genau drei linear unabhängige Drehmatrizen für eine solche Zerlegung. Wie viele linear unabhängige Drehmatrizen benötigt man im $d$-dimensionalen euklidischen Raum $\mathbb{R}^d$\,?
-%
-%
-\paragraph{Aufgabe 7*: } \emph{Diskreter Laplace-Operator}\\[0.2cm]
-Gegeben sei die ($n\times n$)-Matrix $\Delta_n$, welche die Einträge -2 auf der Haupt- und 1 auf den beiden Nebendiagonalen hat,
+\newpage\noindent
+\textbf{Aufgabe 4: } \emph{Vollständige Induktion}\\[0.2cm]
+Zeigen Sie mithilfe vollständiger Induktion, dass für die Fakultät $n! = n\cdot (n-1) \cdot \hdots \cdot 1$
 \begin{align*}
-\Delta_n=\mqty(
--2 & 1 & 0 & 0 & 0 &\dots & 0\\
-1 & -2 & 1 & 0& 0 &\dots & 0\\
-0 & 1 & -2 & 1 & 0 &\dots & 0\\
-\vdots &\vdots &\vdots &\vdots &\vdots & &\vdots\\
-0 & 0 & 0 & 0 & 0 &\dots & -2
-)\,.
+        n! = \int\limits_{0}^{\infty} x^n \e^{-x} \dd{x},
 \end{align*}
-Bestimmen Sie die Determinante von $\Delta_n$\,, indem Sie wie folgt vorgehen:
-\begin{enumerate}
-\item Finden Sie eine Rekursionsrelation, die $\det(\Delta_n)$ auf $\det(\Delta_{n-1})$ und $\det(\Delta_{n-2})$ zurückführt.
-\item Raten Sie einen allgemeinen Ausdruck für $\det(\Delta_{n})$ und beweisen Sie ihn mittels vollständiger Induktion. Alternativ kann der Versuch unternommen werden, das Verfahren aus Thema 9, Aufgabe 5 anzuwenden.
-\end{enumerate}
+gilt. \emph{Hinweis}: Es gilt $0! = 1$.
+
+\textbf{Aufgabe 5: } \emph{Flächenintegral}\\[0.2cm]
+Leiten Sie die Formel für den Flächeninhalt eines Kreises vom Radius $R$ her.
+\begin{center}
+\begin{tikzpicture}[scale=0.6]
+\draw[-{latex}, line width=1pt] (0,-3.5)--(0,3.5);
+\draw[-{latex}, line width=1pt] (-3.5,0)--(3.5,0);
+\draw (0,0) circle (80pt);
+\node at (0,3.7) {$y$};
+\node at (3.7,0) {$x$};
+\draw[line width=0.5pt] (2.05,2.05)--(2.5,2.5);
+\draw[line width=0.5pt] (2.05,-2.05)--(2.5,-2.5);
+\node at (3.4,2.85) {$y=\sqrt{R^2-x^2}$};
+\node at (3.4,-2.8) {$y=-\sqrt{R^2-x^2}$};
+\draw[->,line width=0.5pt] (0,0)--(-2,1.98);
+\node at (-0.9,1.3) {$R$};
+\end{tikzpicture}
+\end{center}
+% \vspace{1cm}
+%
+\textbf{Aufgabe 6: } \emph{Volumenintegral}\\[0.2cm]
+Berechnen Sie das Volumen des in der Abbildung gezeigten Körpers.\\
+\begin{center}
+\includegraphics[width=8cm]{koerper.pdf}
+\end{center}

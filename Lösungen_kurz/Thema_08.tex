@@ -1,0 +1,104 @@
+\Titelbanner{8}{Die Methode der vollständigen Induktion}
+
+\textbf{Aufgabe 1: } \emph{Rekursive und explizite Zuordnungsvorschrift}\\
+\begin{minipage}{0.5\linewidth}
+\begin{align*}
+\text{Vermutung: }\hspace{0.2cm} a_n=2^n-1 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} a_{n+1}=2^{n+1}-1
+\end{align*}
+\end{minipage}\\
+\begin{align*}
+a_{k+1}=2a_k+1=2\left(2^k-1\right)=2^{k+1}-1
+\end{align*}\hfill $\Box$\\[0.7cm]
+%
+\textbf{Aufgabe 2: } \emph{Vollständige Induktion I}\\
+\begin{minipage}{0.6\linewidth}
+\begin{align*}
+\text{Vermutung: }\hspace{0.2cm} S_n=(-1)^{n-1}\frac{n(n+1)}{2} \hspace{0.5cm} \Rightarrow \hspace{0.5cm} S_{n+1}=(-1)^n\frac{(n+1)(n+2)}{2}
+\end{align*}
+\end{minipage}\\
+\begin{align*}
+S_1&=1 \hspace{0.2cm}\checkmark\\
+S_{k+1}&=S_k+(-1)^k(k+1)^2=(-1)^{k-1}\frac{k(k+1)}{2}+(-1)^k(k+1)^2=(-1)^k(k+1)\left[\frac{(-1)^{-1}k}{2}+(k+1)\right]\\
+&=\frac{(-1)^{k}(k+1)(k+2)}{2} 
+\end{align*}\hfill $\Box$\\[0.7cm]
+%
+\textbf{Aufgabe 3: } \emph{Vollständige Induktion II}
+\begin{align*}
+S_n=1^3+2^3+3^3+\dots+n^3
+\end{align*}
+\begin{minipage}{0.6\linewidth}
+\begin{align*}
+\text{Vermutung: }\hspace{0.2cm} S_n=\left[\frac{n(n+1)}{2}\right]^2 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} S_{n+1}=\left[\frac{(n+1)(n+2)}{2}\right]^2
+\end{align*}
+\end{minipage}\\
+\begin{align*}
+S_1&=1\hspace{0.2cm}\checkmark\\
+S_{k+1}&=S_k+(k+1)^3=\left(\frac{k+1}{2}\right)^2\left[k^2+4(k+1)\right]=\left[\frac{(k+1)(k+2)}{2}\right]^2
+\end{align*}\hfill $\Box$\\[0.7cm]
+%
+\newpage
+\ \\
+\textbf{Aufgabe 4: } \emph{Vollständige Induktion III}
+\begin{align*}
+S_n=(n-1)^3+n^3+(n+1)^3
+\end{align*}
+\begin{minipage}{0.6\linewidth}
+\begin{align*}
+\text{Vermutung: }\hspace{0.2cm} S_n=9m \text{ mit }m\in\mathbb{N} \hspace{0.5cm} \Rightarrow \hspace{0.5cm} S_{n+1}=9m' \text{ mit }m'\in\mathbb{N}
+\end{align*}
+\end{minipage}\\
+\begin{align*}
+S_2&=36=9m \text{ mit }m=4\hspace{0.2cm}\checkmark\\
+S_{k+1}&=k^3+(k+1)^3+(k+2)^3=\underbrace{(k-1)^3+k^3+(k+1)^3}_{S_n}+(k+2)^3-(k-1)^3\\
+&=9m+(k+2)^3-(k-1)^3=9m+9(k^2+k+1)=9m' \text{ mit } m'=m+k^2+k+1\in\mathbb{N}
+\end{align*}\hfill $\Box$\\[0.7cm]
+%
+\textbf{Aufgabe 5: } \emph{Die Suche nach der richtigen Summenformel}\\
+\begin{minipage}{0.6\linewidth}
+\begin{align*}
+\text{Vermutung: }\hspace{0.2cm} S_n=\frac{(1-x)(2-x)\dots(n-x)}{n!} \hspace{0.5cm} \Rightarrow \hspace{0.5cm} S_{n+1}=\frac{(1-x)(2-x)\dots(n-x)(n+1-x)}{(n+1)!}
+\end{align*}
+\end{minipage}\\
+\begin{align*}
+S_1&=1-x\hspace{0.2cm}\checkmark\\
+S_{k+1}&=S_k+(-1)^{k+1}\frac{x(x-1)(x-2)\dots(x-k+1)(x-k)}{(k+1)!}\\
+&=\frac{(1-x)(2-x)\dots(k-x)}{k!}+(-1)^{k+1}\frac{x(x-1)(x-2)\dots(x-k+1)(x-k)}{(k+1)!}\\
+&=\frac{1}{(k+1)!}\left[(1-x)(2-x)\dots(k-x)(k+1)+(-1)^{k+1}(-1)^kx(x-1)(x-2)\dots(x-k+1)(x-k)\right]\\
+&=\frac{(1-x)(2-x)\dots(k-x)(k-x+1)}{(k+1)!}\underbrace{\left[\frac{k+1}{k-x+1}+(-1)^{2k+1}\frac{x}{k-x+1}\right]}_1\\
+&=\frac{(1-x)(2-x)\dots(k-x)(k-x+1)}{(k+1)!}
+\end{align*}\hfill $\Box$\\[0.7cm]
+%
+\textbf{Aufgabe 6*: } \emph{Fibonacci-Zahlen I}\\
+\begin{minipage}{0.6\linewidth}
+\begin{align*}
+\text{Vermutung: }\hspace{0.2cm} a_n=\frac{1}{\sqrt{5}}\left(x_+^n-x_-^n\right) \hspace{0.5cm} \Rightarrow \hspace{0.5cm} a_{n+1}=\frac{1}{\sqrt{5}}\left(x_+^{n+1}-x_-^{n+1}\right)
+\end{align*}
+\end{minipage}\\
+\begin{align*}
+a_0&=0\,,\ \ a_1=1\hspace{0.4cm}\checkmark\\
+a_{n+1}&=a_n+a_{n-1}=\frac{1}{\sqrt{5}}\left(x_+^n-x_-^n+x_+^{n-1}-x_-^{n-1}\right)\\
+&=\frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n+\left(\frac{1+\sqrt{5}}{2}\right)^{n-1}-\left(\frac{1-\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\right]\\
+&=\frac{1}{\sqrt{5}}\Bigg[\underbrace{\left(\frac{1+\sqrt{5}}{2}+1\right)}_{\left(\frac{1+\sqrt{5}}{2}\right)^2}\left(\frac{1+\sqrt{5}}{2}\right)^{n-1}-\underbrace{\left(\frac{1-\sqrt{5}}{2}+1\right)}_{\left(\frac{1-\sqrt{5}}{2}\right)^2}\left(\frac{1-\sqrt{5}}{2}\right)^{n-1}\Bigg]
+=\frac{1}{\sqrt{5}}\left(x_+^{n+1}-x_-^{n+1}\right)
+\end{align*}\hfill $\Box$\\[0.7cm]
+%
+%
+%\begin{minipage}{0.6\linewidth}
+%\begin{align*}
+%\text{Vermutung: }\hspace{0.2cm} S_n=(-1)^n \hspace{0.5cm} \Rightarrow \hspace{0.5cm} S_{n+1}=(-1)^{n+1}
+%\end{align*}
+%\end{minipage}\\
+%\begin{align*}
+%S_{n+1}&=\sum_{k=0}^{n+1}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n+1}{k}\binom{n+1-k}{l}\\
+%&=\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n+1}{k}\binom{n+1-k}{l}+\underbrace{\sum_{l=0}^0(-1)^{n+1+l}\overbrace{\binom{n+1}{n+1}}^1\overbrace{\binom{0}{l}}^1}_{(-1)^{n+1}}\\
+%&=\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k}\binom{n-k}{l}+\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k}\binom{n-k}{l-1}\\
+%&\quad +\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}+\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l-1}+(-1)^{n+1}\\
+%\end{align*}
+%\newpage
+%\begin{align*}
+%&=\underbrace{\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k}\binom{n-k}{l}}_{(-1)^n}+\sum_{k=0}^{n}(-1)^{n+1}\binom{n}{k}\underbrace{\binom{n-k}{n+1-k}}_{0}\\
+%&\quad -\sum_{k=0}^{n}\sum_{l=-1}^{n-k}(-1)^{k+l}\binom{n}{k}\underbrace{\binom{n-k}{l}}_\text{Null für $l=-1$}+\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}\\
+%&\quad +\sum_{k=0}^{n}(-1)^{n+1}\binom{n}{k-1}\underbrace{\binom{n-k}{n+1-k}}_0-\sum_{k=0}^{n}\sum_{l=-1}^{n-k}(-1)^{k+l}\binom{n}{k-1}\underbrace{\binom{n-k}{l}}_\text{Null für $l=-1$}+(-1)^{n+1}\\
+%&=\cancel{(-1)^n}-\cancel{(-1)^n}+\bcancel{\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}}-\bcancel{\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}}+(-1)^{n+1}\\
+%&=(-1)^{n+1}
+%\end{align*}\hfill $\Box$

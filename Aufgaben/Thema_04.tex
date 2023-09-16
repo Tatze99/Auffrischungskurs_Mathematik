@@ -1,6 +1,7 @@
-\Titelbanner{4}{Umgang mit Polynomen höheren Grades}
+\Titelbanner{4}{Umgang mit Polynomen höheren Grades\\
+                Das Summenzeichen}
 
-\paragraph{Aufgabe 1: } \emph{Nullstellensuche}
+\paragraph{Aufgabe 1: } \emph{Nullstellensuche} \hfill Ziel: (a) bis (c)\\[-4mm]
 \begin{enumerate}[label=(\alph*), labelindent=1em,labelsep=0.5cm]
     \item Stellen Sie das Polynom dritten Grades auf, das Wurzeln $a$, $b$ und $c$ hat.
     \item Zerlegen Sie das Polynom $f_4(x)=x^3+2x^4+4x^2+2+x$ in Faktoren. Welche Aussage können Sie über dessen Nullstellen treffen?
@@ -9,7 +10,7 @@
 \end{enumerate}
 
 \paragraph{Aufgabe 2: } \emph{Polynomdivision}\\[0.2cm]
-Berechnen Sie die folgenden Ausdrücke. Für welche Werte von $n$ bleibt die Polynomdivision in (d) ohne Rest?
+Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt die Polynomdivision in (d) ohne Rest?
 \begin{multicols}{2}
     \begin{enumerate}[label=(\alph*), labelindent=1em,labelsep=0.5cm]
         \item $(21a^3-34a^2b+25b^3):(7a+5b)$
@@ -19,7 +20,7 @@ Berechnen Sie die folgenden Ausdrücke. Für welche Werte von $n$ bleibt die Pol
     \end{enumerate}
 \end{multicols}
 
-\paragraph{Aufgabe 3: } \emph{Kubische Gleichungen}
+\paragraph{Aufgabe 3: } \emph{Kubische Gleichungen} \hfill Ziel: (a)\\[-4mm]
 \begin{enumerate}[label=(\alph*)]
     \item Bestimmen Sie den Wert von $m$ in der Gleichung
     \begin{align*}
@@ -34,7 +35,7 @@ Berechnen Sie die folgenden Ausdrücke. Für welche Werte von $n$ bleibt die Pol
 \end{enumerate}
 
 \newpage
-\paragraph{Aufgabe 4: } \emph{Nullstellenraten}\\[0.2cm]
+\paragraph{Aufgabe 4: } \emph{Nullstellenraten} \hfill (Zusatzaufgabe)\\[0.2cm]
 Finden Sie jeweils mindestens eine Nullstelle der folgenden Ausdrücke und spalten Sie diese als Linearfaktor $(x-x_0)$ vom Polynom ab.
 \begin{multicols}{2}
     \begin{enumerate}[label=(\alph*), labelindent=1em,labelsep=0.5cm]
@@ -45,7 +46,7 @@ Finden Sie jeweils mindestens eine Nullstelle der folgenden Ausdrücke und spalt
     \end{enumerate}
 \end{multicols}
 %
-\paragraph{Aufgabe 5: } \emph{Partialbruchzerlegung}\\[0.2cm]
+\paragraph{Aufgabe 5: } \emph{Partialbruchzerlegung} \hfill Ziel: (a) bis (c)\\[0.2cm]
 Schreiben Sie, so weit möglich, als Summe von Partialbrüchen.
 \begin{multicols}{2}
     \begin{enumerate}[label=(\alph*)]
@@ -56,10 +57,26 @@ Schreiben Sie, so weit möglich, als Summe von Partialbrüchen.
     \end{enumerate}
 \end{multicols}
 %
-%
-\paragraph{Aufgabe 6: } \emph{Polynome in Ungleichungen}\\[0.2cm]
-Beweisen Sie die folgenden Ungleichungen.
-\begin{enumerate}[label=(\alph*)]
-    \item $(1+a+a^2)^2<3(1+a^2+a^4)\,,\qq{für} a\in\mathbb{R}\!\smallsetminus\!\{1\}$
-    \item $x^4-x^2-6x+10>0\,,\qq{für} x\in\mathbb{R}$
+
+% \paragraph{Aufgabe 6: } \emph{Polynome in Ungleichungen}\\[0.2cm]
+% Beweisen Sie die folgenden Ungleichungen.
+% \begin{enumerate}[label=(\alph*)]
+%     \item $(1+a+a^2)^2<3(1+a^2+a^4)\,,\qq{für} a\in\mathbb{R}\!\smallsetminus\!\{1\}$
+%     \item $x^4-x^2-6x+10>0\,,\qq{für} x\in\mathbb{R}$
+% \end{enumerate}
+
+\paragraph{Aufgabe 6: } \emph{Summen}\hfill Ziel: (a) bis (b)\\[0.2cm]
+Vereinfachen bzw. berechnen Sie die folgenden Summen. 
+
+\begin{enumerate}[label=(\alph*), labelindent=1em,labelsep=0.5cm]
+    \item $\sum_{k=1}^n \frac{1}{2k} + \sum_{l=0}^{n-1} \frac{1}{2l+1}$
+    \item $\sum_{k=1}^n \frac{1}{k(k+1)}$
+    \item $\sum_{k=0}^n x^k$ 
 \end{enumerate}
+
+\emph{Hinweis zu (b)}: Der Term in der Summe kann mithilfe von Partialbruchzerlegung vereinfacht und die entstehende Summe auseinandergezogen werden. 
+
+\emph{Hinweis zu (c)}: Hierfür kann ein expliziter Ausdruck gefunden werden, wenn man die Formel mit $(1-x)$ multipliziert und analog vorgeht wie in (b). Für $n\to \infty$ erhält man für $|x|<1$ den Ausdruck der geometrischen Reihe (siehe später): 
+\begin{align*}
+        \sum_{k=0}^\infty x^k = \frac{1}{1-x} \qq{für} |x| <1.
+\end{align*}

@@ -1,0 +1,61 @@
+\Titelbanner{6}{Trigonometrische Funktionen\\Ebene Trigonometrie}
+
+\textbf{Aufgabe 1: } \emph{Additionstheoreme}
+\begin{enumerate}[label=(\alph*)]
+\item \begin{align*}
+\\[-4em]\cos(x\pm y)&=\sin\left(x\pm y+\frac{\pi}{2}\right)=\sin(x\pm z^{\pm}), && z^{\pm}\equiv y\pm\frac{\pi}{2}\\
+&=\sin(x)\cos(z^\pm)\pm\cos(x)\sin(z^\pm)\\
+&=\sin(x)\underbrace{\cos\left(y\pm\frac{\pi}{2}\right)}_{\mp\sin(y)}\pm\cos(x)\underbrace{\sin\left(y\pm\frac{\pi}{2}\right)}_{\pm\cos(y)}\\
+&=\cos(x)\cos(y)\mp\sin(x)\sin(y)
+\end{align*}
+\item \begin{align*}
+\\[-5em]\tan(x\pm y)&=\frac{\sin(x\pm y)}{\cos(x\pm y)}=\frac{\sin(x)\cos(y)\pm\cos(x)\sin(y)}{\cos(x)\cos(y)\mp\sin(x)\sin(y)}=\frac{\bcancel{\cos(x)\cos(y)}\left(\frac{\sin(x)}{\cos(x)}\pm\frac{\sin(y)}{\cos(y)}\right)}{\bcancel{\cos(x)\cos(y)}\left(1\mp\frac{\sin(x)\sin(y)}{\cos(x)\cos(y)}\right)}\\
+&=\frac{\tan(x)\pm\tan(y)}{1\mp\tan(x)\tan(y)}
+\end{align*}
+\item \begin{itemize}
+\item $\sin(2x)=\sin(x+x)=\sin(x)\cos(x)+\cos(x)\sin(x)=2\sin(x)\cos(x)$
+\item $\cos(2x)=\cos(x+x)=\cos^2(x)-\underbrace{\sin^2(x)}_{1-\cos^2(x)}=2\cos^2(x)-1$
+\end{itemize}
+\end{enumerate}
+\vspace{0.7cm}
+%
+\textbf{Aufgabe 2: } \emph{Trigonometrische Umformungen I}
+\begin{enumerate}[label=(\alph*)]
+\item $\tan\left(\dfrac{\pi}{4}+\alpha\right)=\dfrac{\sin\left(\frac{\pi}{4}+\alpha\right)}{\cos\left(\frac{\pi}{4}+\alpha\right)}=\dfrac{\cos\frac{\pi}{4}\sin\alpha+\sin\frac{\pi}{4}\cos\alpha}{\cos\frac{\pi}{4}\cos\alpha-\sin\frac{\pi}{4}\sin\alpha}=\dfrac{\cancel{\sqrt{2}}}{\cancel{\sqrt{2}}}\dfrac{\cos\alpha+\sin\alpha}{\cos\alpha-\sin\alpha}$\hfill$\Box$
+\item $\dfrac{1+\sin 2\alpha}{\cos 2\alpha}=\dfrac{1+2\sin\alpha\cos\alpha}{\cos^2\alpha-\sin^2\alpha}=\dfrac{(\cos\alpha+\sin\alpha)^{\cancel{2}}}{\cancel{(\cos\alpha+\sin\alpha)}(\cos\alpha-\sin\alpha)}\hfill\Box$
+\item $2\cos\left(\frac{x+y}{2}\right)\cos\left(\frac{x-y}{2}\right)=2\left(\cos\frac{x}{2}\cos\frac{y}{2}-\sin\frac{x}{2}\sin\frac{y}{2}\right)\left(\cos\frac{x}{2}\cos\frac{y}{2}+\sin\frac{x}{2}\sin\frac{y}{2}\right)\\[0.2cm]
+=2\left(\cos^2\frac{x}{2}\cos^2\frac{y}{2}-\sin^2\frac{x}{2}\sin^2\frac{y}{2}\right)=2\left(\cos^2\frac{x}{2}+\cos^2\frac{y}{2}-1\right)=\cos(x)+\cos(y)\hfill\Box$
+\item $\cot\alpha\cot\beta+\cot\alpha\cot\gamma+\cot\beta\cot\gamma=\dfrac{\overbrace{\cos\alpha\cos\beta\sin\gamma+\cos\alpha\cos\gamma\sin\beta}^{\cos\alpha\sin(\beta+\gamma)}+\cos\beta\cos\gamma\sin\alpha}{\sin\alpha\sin\beta\sin\gamma}\\[0.2cm]
+=\dfrac{\cos\alpha\sin(\beta+\gamma)+\sin\alpha[\cos(\beta+\gamma)+\sin\beta\sin\gamma]}{\sin\alpha\sin\beta\sin\gamma}=\dfrac{\sin(\alpha+\beta+\gamma)}{\sin\alpha\sin\beta\sin\gamma}+1=1$\hfill$\Box$
+\end{enumerate}
+\vspace{1cm}
+%
+\newpage
+\noindent
+\textbf{Aufgabe 3: } \emph{Trigonometrische Umformungen II}
+\begin{enumerate}[label=(\alph*)]
+\item $1+\cos\alpha+\cos\dfrac{\alpha}{2}=4\cos\dfrac{\alpha}{2}\cos\left(\dfrac{\alpha}{4}+\dfrac{\pi}{6}\right)\cos\left(\dfrac{\alpha}{4}-\dfrac{\pi}{6}\right)$
+\item $\dfrac{2\sin\beta-\sin(2\beta)}{2\sin\beta+2\sin(2\beta)}=\dfrac{\sin^2(\beta/2)}{2\cos(\beta/2+\pi/6)\cos(\beta/2-\pi/6)}$
+\item $\sin\alpha+\sin\beta+\sin\gamma=4\cos\dfrac{\alpha}{2}\cos\dfrac{\beta}{2}\sin\left(\dfrac{\alpha}{2}+\dfrac{\beta}{2}\right)$
+\end{enumerate}
+\vspace{1cm}
+%
+\textbf{Aufgabe 4: } \emph{Goniometrische Gleichungen und Gleichungssysteme}
+\begin{enumerate}[label=(\alph*)]
+\item $x_1=2\pi k$, $x_2=\dfrac{\pi}{2}+2\pi k$\ \text{ mit }\ $k\in\mathbb{Z}$
+\item $\cos x=\cos y=\dfrac{1}{2}$
+\item $\sin(x_1)=1$ \hspace{0.3cm}und\hspace{0.3cm} $\sin(x_{2/3})=\dfrac{-1\pm\sqrt{5}}{4}$
+\item $a+b\ne 0$:\ \ \ $\tan (x_1)=1$  \hspace{0.2cm}und\hspace{0.2cm} $\tan(x_2)=-\frac{1}{2}$\\
+$a+b=0$:\ \ \ $x\in\mathbb{R}$
+\end{enumerate}
+\vspace{1cm}
+%
+\textbf{Aufgabe 5: } \emph{Dreiecksfläche}
+\begin{align*}
+A=\frac{w(a+b)}{4ab}\sqrt{4a^2b^2-w^2(a+b)^2}
+\end{align*}\\[0.7cm]
+%
+% \textbf{Aufgabe 6: } \emph{Sehnen im Kreis}
+% \begin{align*}
+% A=\frac{ab}{4r}\left(a\sqrt{1-\frac{b^2}{4r^2}}+b\sqrt{1-\frac{a^2}{4r^2}}\right)
+% \end{align*}

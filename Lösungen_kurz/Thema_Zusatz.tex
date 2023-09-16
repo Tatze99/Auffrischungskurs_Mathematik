@@ -1,0 +1,69 @@
+\Titelbanner{10}{Rechnen mit Vektoren und Matrizen}
+
+\textbf{Aufgabe 1: } \emph{Linear (un)abhängige Vektoren}
+\begin{enumerate}[label=(\alph*)]
+\item linear unabhängig
+\item $t=6$
+\end{enumerate}
+\vspace{0.4cm}
+%
+\textbf{Aufgabe 2: } \emph{Skalarprodukt und Kreuzprodukt}
+\begin{enumerate}[label=(\alph*)]
+\item $59$, $2$, $0$
+\item \begin{align*} \\[-3.5em]\begin{pmatrix}0\\0\\1\end{pmatrix},\quad\begin{pmatrix}0\\0\\1\end{pmatrix},\quad\begin{pmatrix}17\\-7\\-2\end{pmatrix}\end{align*}
+\item \begin{align*} \\[-3.5em]\left|\vec{c}\,\right|=\left|\vec{a}-\vec{b}\,\right|=\sqrt{\left(\vec{a}-\vec{b}\right)^2} \hspace{0.5cm}\Rightarrow\hspace{0.5cm}\underline{\underline{c^2=a^2+b^2-2ab\cos\sphericalangle(\vec{a},\vec{b}\,)}}\end{align*}
+\item Die drei Vektoren der Seiten eines Dreiecks spannen jeweils paarweise dasselbe Parallelogramm auf.
+\begin{align*}
+\left|\vec{a}\times\vec{b}\,\right|=\left|\vec{a}\times\vec{c}\,\right|=\left|\vec{b}\times\vec{c}\,\right| \hspace{0.5cm}\Rightarrow\hspace{0.5cm} ab\sin\gamma=ac\sin\beta=bc\sin\alpha \hspace{0.5cm}\Rightarrow\hspace{0.5cm}\underline{\underline{\frac{\sin\alpha}{a}=\frac{\sin\beta}{b}=\frac{\sin\gamma}{c}}}
+\end{align*}
+\end{enumerate}
+\vspace{0.4cm}
+%
+\textbf{Aufgabe 3: } \emph{Matrizen}
+\begin{enumerate}[label=(\alph*)]
+\item ${A}^{-1} =\begin{pmatrix}-2 & 1\\ 3/2 & -1/2\end{pmatrix},\quad {B}^{-1}=\begin{pmatrix}0 & 1/3\\ 1/2 & 0\end{pmatrix},\quad \mathrm{det}C=0\ \ \rightarrow\ \ \text{nicht invertierbar}$
+\item $3\begin{pmatrix}0 & -2\\ 3 & 0\end{pmatrix}$
+\item nette Parametrisierung: $m_{1/4}=\cos\phi$, $m_{2/3}=\mp\sin\phi$
+\begin{align*}
+m_1^2+m_3^2&=1\\
+m_1m_2+m_3m_4&=0\\
+m_2^2+m_4^2&=1
+\end{align*}
+\end{enumerate}\vspace{0.4cm}
+%
+%\textbf{Aufgabe 4: } \emph{Drehungen}
+%\begin{align*}
+%&\hat{R}\cdot\vec{\alpha}=\begin{pmatrix}x\cos\phi-y\sin\phi\\ x\sin\phi+y\cos\phi\\ z\end{pmatrix}, \quad \det R=1\\
+%&\text{für $\phi=\frac{\pi}{2}$ und $x=1$, $y=z=0$: }\ \  \hat{R}\cdot\begin{pmatrix}1\\0\\0\end{pmatrix}=\begin{pmatrix}0\\1\\0\end{pmatrix},\ \ \text{d.h. die $x$-Achse wird in die $y$-Achse %gedreht}
+%\end{align*}
+%\newpage\noindent
+%
+\textbf{Aufgabe 4: } \emph{Laplace'scher Entwicklungssatz}
+\begin{align*}
+\det A=8a^2+24a+18, \quad \text{nicht invertierbar für }a=-\frac{3}{2}
+\end{align*}\\[0.5cm]
+%
+
+\textbf{Aufgabe 5: } \emph{Kreuzprodukt}
+\begin{align*}
+\Omega=\begin{pmatrix}0 & -\omega_3 & \omega_2\\
+\omega_3 & 0 & -\omega_1 \\
+-\omega_2 & \omega_1 & 0
+\end{pmatrix}, \quad \det\Omega=0, \quad \tr(\Omega)=0, \quad \text{antisymmetrisch: }\Omega^\top=-\Omega
+\end{align*}\\[0.5cm]
+%
+\textbf{Aufgabe 6*: } \emph{Höhere Dimensionen}\\[0.2cm]
+In $d$ Dimensionen gibt es $d$ kartesische Achsen $x_1,x_2,\dots,x_d$. Um jede Achse kann in Richtung der verbleibenden $d-1$ Achsen gedreht werden, sodass $d(d-1)$ Möglichkeiten vorliegen. Allerdings wurde doppelt gezählt, da die Drehung um eine Achse $x_i$ in Richtung einer Achse $x_j$ dasselbe ist wie die Drehung um eine Achse $x_j$ in Richtung einer Achse $x_i$. Damit verbleiben $\frac{d(d-1)}{2}$ unabhängige Drehungen.\\[1cm]
+%
+\textbf{Aufgabe 7*: } \emph{Diskreter Laplace-Operator}
+\begin{enumerate}
+\item Rekursionsrelation: $\det(\Delta_n)=-2\det(\Delta_{n-1})-\det(\Delta_{n-2})$
+\item $\det(\Delta_1)=-2$, $\det(\Delta_2)=3$, $\det(\Delta_3)=-4$\ \ \ \ \  $\Rightarrow$\ \ \ \ \  Vermutung:\ \ $\det(\Delta_n)=(-1)^n(n+1)$\\[0.3cm]
+Induktion:
+\begin{align*}
+\det(\Delta_{n+1})&=-2\det(\Delta_{n})-\det(\Delta_{n-1})\\
+&=-2(-1)^n (n+1)-(-1)^{n-1}n\\
+&=(-1)^{n+1}\left(2(n+1)-n\right)\\
+&=(-1)^{n+1}(n+2)
+\end{align*}\hfill$\Box$
+\end{enumerate}
