@@ -1,6 +1,6 @@
 \section{Umgang mit beliebigen Potenzen}
 
-Bisher habne wir uns auf Gleichungen/Funktionen beschränkt, deren Variablen höchstens in erster oder zweiter Potenz aufgetreten sind. Nun sollen Methoden zum Umgang mit beliebigen (ganzzahligen) Potenzen behandelt werden. 
+Bisher haben wir uns auf Gleichungen/Funktionen beschränkt, deren Variablen höchstens in erster oder zweiter Potenz aufgetreten sind. Nun sollen Methoden zum Umgang mit beliebigen (ganzzahligen) Potenzen behandelt werden. 
 
 \subsection{Polynome und Polynomdivision}
 
@@ -14,7 +14,7 @@ Besitzt ein Polynom $f_n(x)$ genau $n$ reelle Wurzeln, dann kann es als Produkt 
 \begin{align}
     f_n(x) = a_n (x-x_1)(x-x_2)\hdots (x-x_{n-1})(x-x_n),
 \end{align}
-mit Wurzeln $x_i, \; i=1,2,\hdots,n$. Demnach kann eine Wurzel gemäß $f_n(x) = (x-x_n)f_{n-1}(x)$ aus einem Polynom abgespalten werden, wobie $f_{n-1}(x)$, bei bekanntem $x_n$, mit Hilfe der \emph{Methode der Polynomdivision} zu bestimmten ist,
+mit Wurzeln $x_i, \; i=1,2,\hdots,n$. Demnach kann eine Wurzel gemäß $f_n(x) = (x-x_n)f_{n-1}(x)$ aus einem Polynom abgespalten werden, wobei $f_{n-1}(x)$, bei bekanntem $x_n$, mit Hilfe der \emph{Methode der Polynomdivision} zu bestimmen ist,
 \begin{align}
     f_{n-1}(x) = f_n(x) : (x-x_n).
 \end{align}
@@ -32,14 +32,14 @@ Der Algorithmus für die schriftliche Polynomdivision besteht aus drei Schritten
 \end{enumerate}
 \begin{align}
     \qq{Ergebnis: }\begin{array}{r@{} r@{} r@{} r r}
-        x^3 &{}+5x^2\hphantom{)}&{}+8x\hphantom{)}&-4\hphantom{)} &:(x-2) = x^2 -3x +2 \\
-      -(x^2 &{}-2x^2) &\\
+        x^3 &{}-5x^2\hphantom{)}&{}+8x&-4\hphantom{)} &:(x-2) = x^2 -3x +2 \\
+      -(x^3 &{}-2x^2) &\\
       \cmidrule{1-2}
-            & -3x^2\hphantom{)} &{}+8x\hphantom{)}&-4\hphantom{)}\\
-            &-(-3x^2\hphantom{)} &{}+6x\hphantom{)}&\hphantom{-4}) \\
+            & -3x^2\hphantom{)} &{}+8x&-4\hphantom{)}\\
+            -&(-3x^2\hphantom{)} &{}+6x&\hphantom{-4}) \\
       \cmidrule{2-4}
-            & &{}2x&-4\hphantom{)}\\
-            & &-(2x&-4)\\
+            & &{}2x&{}-4\hphantom{)}\\
+            & &-(2x&{}-4)\\
       \cmidrule{3-4} 
             & & & 0
     \end{array}
@@ -51,14 +51,14 @@ Die Nullstellen des Restpolynoms $x^2 -3x +2$ erhalten wir mittels $p$-$q$-Frome
 \end{align}
 Damit lautet die Linearfaktorzelegung des Polynoms  
 \begin{align}
-    f_3(x) = (x-1) (x-2)^2 \textcolor{gray}{\underbrace{= (x-1)(x^2-4x+4) = x^3-5x^2 + 8x-4}_{\text{Probe}}}.
+    \uuline{f_3(x) = (x-1) (x-2)^2} \textcolor{gray}{=\underbrace{ (x-1)(x^2-4x+4) = x^3-5x^2 + 8x-4}_{\text{Probe}}}.
 \end{align}
 
 \subsection{Partialbruchzerlegung}
 
 Oft möchte man in einem Nenner auftretende Polynome zugunsten von Linearfaktoren zerlegen. Dies ist insbesondere bei der Berechnung von Integralen hilfreich. Wir betrachten das Verfahren anhand des Quotienten einer linearen und einer quadratischen Funktion: 
 \begin{align}
-    f(x) = \frac{mx + n}{x^2 +px + q} = \frac{mx +n}{(x-x_1)(x-x_2)} \tikzmarknode{eq1}{\overset{!}{=}} \frac{\alpha}{x-1} + \frac{\beta}{x-x_2}.
+    f(x) = \frac{mx + n}{x^2 +px + q} = \frac{mx +n}{(x-x_1)(x-x_2)} \tikzmarknode{eq1}{\overset{!}{=}} \frac{\alpha}{x-x_1} + \frac{\beta}{x-x_2}.
 \end{align}
 \tikz[overlay,remember picture]{
 \draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq1)+(0,-.8)$)node[below]{Ansatz} -- ($(eq1)+(0,-.2)$);
@@ -66,14 +66,14 @@ Oft möchte man in einem Nenner auftretende Polynome zugunsten von Linearfaktore
 
 Die Koeffizienten $\alpha$ und $\beta$ sind nun so zu bestimmen, dass die Forderung erfüllt ist. Wir multiplizieren das in Linearfaktoren zerlegte Polynom auf die rechte Seite 
 \begin{align}
-    mx + n &= \qty(\frac{\alpha}{x-1} + \frac{\beta}{x-x_2}) \cdot (x-x_1)(x-x_2) = \alpha (x-x_2) + \beta(x-x_1) \notag \\
+    mx + n &= \qty(\frac{\alpha}{x-x_1} + \frac{\beta}{x-x_2}) \cdot (x-x_1)(x-x_2) = \alpha (x-x_2) + \beta(x-x_1) \notag \\
     &= (\alpha + \beta) x - (\alpha x_2 + \beta x_1).
 \end{align}
 Im zweiten Schritt führen wir einen Koeffizientenvergleich durch nach den Potenzen von $x$ um ein lineares Gleichungssystem für $\alpha$ und $\beta$ zu erhalten
 \begin{subequations}
     \begin{align}
         x^1: \quad m &= \alpha + \beta \\
-        x^0: \quad n &= -(\alpha x_2 + \beta x_1).
+        x^0: \quad \;\,n &= -(\alpha x_2 + \beta x_1).
     \end{align}
 \end{subequations}
 Dieses lösen wir nun mit der Additionsmethode durch Elimination von $\beta$ 
@@ -85,7 +85,7 @@ Offenbar versagt dieser Ansatz für $x_1 = x_2$, wenn also der Nenner eine doppe
 \begin{align}
     f(x) = \frac{mx + n}{(x-x_0)^2} \qq{,} x_0 \equiv x_1 = x_2.
 \end{align}
-Im allgemeinen Fall haben wir den Quotienten aus einem Polynom $p$-ten Grades und einem Polynom $q$-ten Grades $(p < q)$\footnote{Für $p\ge q$ kann eine Polynomdivision durchgeführt werden.} zu zerlegen. Dann sind zunächst die Nullstellen des nenners $x_i$ zu bestimmen; der Ansatz enthält für jede einfache Nullstelle einen Summanden 
+Im allgemeinen Fall haben wir den Quotienten aus einem Polynom $p$-ten Grades und einem Polynom $q$-ten Grades $(p < q)$ zu zerlegen\footnote{Für $p\ge q$ kann eine Polynomdivision durchgeführt werden.}. Dann sind zunächst die Nullstellen des Nenners $x_i$ zu bestimmen; der Ansatz enthält für jede einfache Nullstelle einen Summanden 
 \begin{align}
     \frac{\alpha_i}{x-x_i} \qq{,} \alpha_i \qq{const.,}
 \end{align}
@@ -114,9 +114,9 @@ Wir führen nun den Koeffizientenvergleich durch
         \beta &= 1.
     \end{split} 
 \end{align}
-Damit folge als Ergebnis 
+Damit folgt als Ergebnis 
 \begin{align}
-    Q(x) = \frac{2}{x+1} + \frac{1}{x-1} + \frac{4}{(x-1)^2}.
+    \uuline{Q(x) = \frac{2}{x+1} + \frac{1}{x-1} + \frac{4}{(x-1)^2}}.
 \end{align}
 
 \paragraph{Bemerkung:} Jede rationale Funktion, d.\,h. eine Funktion, die als Quotient zweier Polynome geschrieben werden kann, lässt sich als Summe von Brüchen der Form $\frac{\alpha_i}{(x-x_i)^j}$ sowie gegebenenfalls einer ``reinen'' Polynomfunktion darstellen. 
@@ -163,7 +163,7 @@ Potenzfunktionen sind funktionen der Form $f(x) = a x^n$, wobei hier nur die Fä
         \item Punktsymmetrie zum Ursprung
     \end{itemize}
 \end{minipage}
-\paragraph{1.) Parabeln $n$-ter Ordnung: $n < 0$}$~$
+\paragraph{2.) Hyperbeln $n$-ter Ordnung: $n < 0$}$~$
 
 \begin{minipage}{0.5\textwidth}
     \begin{tikzpicture}

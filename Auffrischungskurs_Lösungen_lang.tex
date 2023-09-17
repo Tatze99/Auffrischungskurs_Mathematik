@@ -3,6 +3,13 @@
 \usepackage[ngerman]{babel}
 \usepackage{tabto} % alignment in enumerate
 \input{Packages.tex}
+
+\makeatletter
+\renewcommand\tagform@[1]{}
+\makeatother
+
+\setlength{\mathindent}{0cm}
+
 \newgeometry{left=2cm, right=2cm, top=2cm, bottom=2.5cm}
 \setenumerate{labelindent=1em,labelsep=0.5cm,leftmargin=*}
 \usetikzlibrary{tikzmark}
@@ -25,7 +32,7 @@
 }
 
 %%%% 
-% \includeonly{Lösungen_Lang/Thema_01} 
+% \includeonly{Lösungen_Lang/Thema_05} 
 %%%%
 
 \begin{document}
@@ -45,9 +52,9 @@
 
 \include{Lösungen_Lang/Thema_01}
 \include{Lösungen_Lang/Thema_02} 
-% \include{Lösungen_Lang/Thema_03}
+\include{Lösungen_Lang/Thema_03}
 \include{Lösungen_Lang/Thema_04}
-% \include{Lösungen_Lang/Thema_05}
+\include{Lösungen_Lang/Thema_05}
 % \include{Lösungen_Lang/Thema_06}
 % \include{Lösungen_Lang/Thema_07}
 % \include{Lösungen_Lang/Thema_08}

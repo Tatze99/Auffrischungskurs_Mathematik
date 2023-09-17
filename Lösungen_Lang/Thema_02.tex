@@ -3,31 +3,31 @@
 \paragraph{Tafelbeispiel:} $\displaystyle \frac{10(x+y) + 3}{x-2y+4} = 1, \quad \frac{36x-3y}{7(x-y)+3} = 3$
 \begin{enumerate}
     \item Sortieren nach $x$ und $y$ 
-    \begin{align*}
+    \begin{align}
         9x +12 y &= 1 \quad (1) \\
         15x+18y &= 9 \quad (2)
-    \end{align*}
+    \end{align}
     \item Prüfe auf lineare Unabhängigkeit, d.\,h. Berechne $a_1 b_2 - a_2 b_1$ (Determinante, vgl. Vorlesung): 
-    \begin{align*}       
+    \begin{align}       
         9\cdot 18 - 15\cdot 12 = 162-180 \neq 0 \quad \Rightarrow \qq{genau ein Lösungspaar ($x,y$)}
-    \end{align*}      
+    \end{align}      
     \item Lösen, bspw. durch geschickte Linearkombination (Elimination von $y$)
-    \begin{align*}
+    \begin{align}
         2\cdot (2) - 3\cdot (1): \quad \hp{1}3x &= \hp{-}15 \quad \Rightarrow x=5 \\
         \qq{in} (1): \quad 12y &= -44 \quad \Rightarrow y = -\frac{11}{3} \\
         \Rightarrow \qq{Lösungsmenge} \mathbb{L} &= \uuline{\Bigg\{\qty(5;-\frac{11}{3})\Bigg\}}
-    \end{align*}
+    \end{align}
 \end{enumerate}
 
 \paragraph{Aufgabe 1: } \emph{Zwei lineare Gleichungen mit zwei Unbekannten} \hfill Ziel (a) bis (d)\\[0.2cm]
 \begin{enumerate}[label=(\alph*)]
-    \item $~$\\[-1.45 cm]\begin{align*}
+    \item $~$\\[-1.45 cm]\begin{align}
         &33x+12y=25 \quad (1) \\ 
         &11x-\hp{1}3y=\hp{2}6 \quad (2) \\
         &(1) - 3\cdot (2): \quad 21y = 7 \quad\Rightarrow \quad y = \frac{1}{3}, \qq{in (2):} x = \frac{7}{11} \qquad \Rightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(\frac{7}{11};\frac{1}{3})\Bigg\}}
-    \end{align*}
+    \end{align}
     \item $~$\\[-1.45cm] 
-    \begin{align*}
+    \begin{align}
         &\begin{rcases}
             \frac{2x + 3y}{3x-y} = \frac{17}{9} \\
             \dfrac{3x+4y}{6x-1}=2
@@ -38,9 +38,9 @@
         \end{array} \\
         &\hp{3\cdot}\;\,(1) -(2): \quad 6x = 2 \quad\Rightarrow\quad x = \frac{1}{3}\\
         &3\cdot(1) -(2): \quad 8y = 2 \quad\Rightarrow\quad y = \frac{1}{4} \qquad \Rightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(\frac{1}{3};\frac{1}{4})\Bigg\}}
-    \end{align*}
+    \end{align}
     \item $~$\\[-1.45cm] 
-    \begin{align*}
+    \begin{align}
         &\begin{rcases}
             \frac{x+2}{y+3}=\frac{1}{3} \\
             \frac{y+3}{2y-5x}=\frac{3}{5}
@@ -51,14 +51,14 @@
         \end{array} \\
         &(1) - (2): \quad -12x = 12 \quad \Rightarrow \quad  x = -1\\
         &\quad\,\text{in } (1): \quad \hp{-12x = 12\quad \Rightarrow \quad} \,y = 0 \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \big\{\qty(-1;0)\big\}}
-    \end{align*}
+    \end{align}
     \item $~$\\[-1.45cm] 
-    \begin{align*}
+    \begin{align}
         &ax+by=2a \quad (1)\\
         &\frac{x}{b}-\frac{y}{a}=\frac{2}{a} \quad (2)\\
         &(1) - ab \cdot (2): \;\;\,\cancel{2}by = \cancel{2}(a-b) \quad \Rightarrow \quad y = \frac{a}{b}-1 \\
         &\hp{(1)-}\text{in } (1): \quad ax + \cancel{a} -b = \cancel{2}a \quad \Rightarrow \quad x=\frac{b}{a}+ 1 \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(\frac{b}{a}+1;\frac{a}{b}-1)\Bigg\}}
-    \end{align*}
+    \end{align}
     \item $~$\\[-1.45cm] 
     \begin{alignat*}{2}
         &x+14y=\frac{1}{\sqrt{2}}-7\sqrt{2} \;\;\;\quad (1)\\
@@ -95,11 +95,11 @@
     x+3x+9z&=23 &&\quad (3)
 \end{alignat*}
 Vorgehen: Wir wollen eine Linearkombination der drei Gleichungen finden, sodass (bspw.) $x$ und $y$ verschwinden; d.\,h. in $a\cdot(1)+b\cdot(2)+c\cdot(3)$ soll $a+b+c =0$ sein und $a+2b+3c=0$. Wir haben offenbar die Freiheit, $a=1$ zu wählen, also $b=-2$ und $c=1$.
-\begin{align*}
+\begin{align}
     &(1)-2\cdot(2)+(3): \quad 2z=2 \quad \Rightarrow \quad z=1 \\
     &\text{in }(1): \quad x+\hp{2}y = 8\;\;\; \quad(4)\\
     &\text{in }(2): \quad x+2y = 11 \quad (5)
-\end{align*}
+\end{align}
 Die Gleichungen (4),(5) können nun mit den früheren Methoden gelöst werden. \\
 Optionale Kreativlösung: Angenommen $x,y \in \mathbb{N}$. Nach (5) muss $x$ ungerade sein, damit nach (4) auch $y$. Die einzigen positiven Zerlegungen der Zahl 8 in zwei ungerade Zahlen sind (1,7) und (3,5). Nur letztere löst (4) und (5). Wir erhalten $\uuline{\mathbb{L} = \{(5;3;1)\}}$.
 
@@ -107,7 +107,7 @@ Optionale Kreativlösung: Angenommen $x,y \in \mathbb{N}$. Nach (5) muss $x$ ung
 
 \begin{enumerate}[label=(\alph*)]
     \item $~$\\[-1.45 cm]
-    \begin{align*}
+    \begin{align}
         &\hp{3}x-\hp{5}y+5z=5 \quad (1)\\
         &3x+7y-5z=5\quad (2)\\
         &\hp{3}x+\hp{5}y-\hp{5}z=1 \quad (3) \\
@@ -116,9 +116,9 @@ Optionale Kreativlösung: Angenommen $x,y \in \mathbb{N}$. Nach (5) muss $x$ ung
         \text{in }(1): \quad x-y = 0\\
         \text{in }(3): \quad x+y = 2
         \end{rcases} \quad x=y=1 \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \big\{\qty(1;1;1)\big\}}
-    \end{align*}
+    \end{align}
     \item $~$\\[-1.45cm] 
-    \begin{align*}
+    \begin{align}
         &3x-4y+3z=\hp{-}4\quad (1)\\
         &\minus x+\hp{4}y-\hp{5}z=-2\quad (2)\\
         &7x+4y-5z=\hp{-}0 \quad (3) \\
@@ -127,39 +127,39 @@ Optionale Kreativlösung: Angenommen $x,y \in \mathbb{N}$. Nach (5) muss $x$ ung
             \text{in }(1): \quad -4y+3z = \hp{-}1\\
             \text{in }(2): \quad \hp{-4}y-z = -1
             \end{rcases} \quad y=2, z=3 \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \big\{\qty(1;2;3)\big\}}
-    \end{align*}
+    \end{align}
     \item $~$\\[-1.45cm] 
-    \begin{align*}
+    \begin{align}
         &x+y=b+a\quad (1)\\
         &x+z=a+c\quad (2) \qquad \text{Lösung durch Draufschauen.}\\
         &y+z=c+b\quad (3)\\
         &(1)+(2)-(3): \quad 2x=2a \\
         &(1)-(2)+(3): \quad 2y=2b \\
         &(2)+(3)-(1): \quad 2z=2c \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \big\{\qty(a;b;c)\big\}}
-    \end{align*}
+    \end{align}
     \newpage
     \item $~$\\[-1.45cm] 
-    \begin{align*}
+    \begin{align}
         &\hp{\minus}6x-4y+\;\;\;\;8z=0\quad (1) \\
         &\minus2x+\hp{4}y-\,\hp{11}z=0\quad (2) \qquad \text{Da $(1)-3\cdot(2)=(3)$, ist das System unterbestimmt.}\\
         &12x-7y+11z=0\quad(3)\\
         &(1)+3\cdot(2): \quad -\hp{2}y+5z = 0 \quad \Rightarrow y=5z \\
         &(1)+4\cdot(2): \quad -2x+4z=0 \quad \Rightarrow x=2z \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \big\{\qty(2z;5z;z)\mid z\in\mathbb{R}\big\}
         }
-    \end{align*}
+    \end{align}
 \end{enumerate}
 
 % 
 \textbf{Aufgabe 3: } \emph{Parametrisierung von Lösungsmengen}\\[0.2cm]
 Geben Sie die Lösungsmenge der Gleichung $13x-7y=1$ an für
-\begin{align*}
+\begin{align}
 &\text{(a) } \hspace{0.2cm} x,y\in\mathbb{R}\,;\\[0.2cm]
 &\text{(b) } \hspace{0.2cm} x,y\in\mathbb{N}\,.
-\end{align*}
+\end{align}
 (a) Für $x,y \in \mathbb{R}$ ist nichts zu beachten. Wir Lösen die Gleichung nach $x$ auf und erhalten 
-\begin{align*}
+\begin{align}
     x = \frac{1+7y}{13} \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(\frac{1+7\lambda}{13};\lambda)\mid \lambda \in\mathbb{R}\Bigg\}}.
-\end{align*}
+\end{align}
 (b) Für $x,y \in \mathbb{N}$ muss $1+7n, n\in\mathbb{N}$, ein Vielfaches von 13 sein. Die kleinste natürliche Zahl, für die das gilt, ist $n=11$ (ausprobieren), d.\,h. alle übrigen Teiler liegen in 13er-Schritten darüber.
 \begin{table}[htp]
     \centering
@@ -193,7 +193,7 @@ Sortieren wir das Gleichungssystem um, ergibt sich
 
 \begin{enumerate}[label=(\alph*)]
     \item $~$\\[-1.45 cm]
-    \begin{align*}
+    \begin{align}
         &x^2+y^2=2(xy+2) \quad(1) \quad \Rightarrow \quad (x-y)^2 = 4 \Rightarrow x-y = \pm 2 \quad (1a)\\
         &x\hp{^2}+y\hp{^2} =6 \hp{(xy+2)} \quad(2)\\
         &(1a)+(2): \quad 2x = \begin{cases}
@@ -204,14 +204,14 @@ Sortieren wir das Gleichungssystem um, ergibt sich
             2, & \text{oberes VZ} \\
             4, & \text{unteres VZ}
         \end{cases} \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(4;2),(2;4)\Bigg\}}
-    \end{align*}
+    \end{align}
     \item $~$\\[-1.45cm]
-    \begin{align*}
+    \begin{align}
         &\frac{12}{\sqrt{x-1}}+\frac{5}{\sqrt{y+\frac{1}{4}}}=5\quad (1)\\ 
         &\frac{8}{\sqrt{x-1}}+\frac{10}{\sqrt{y+\frac{1}{4}}}=6\quad(2)\\
         &2\cdot(1)-(2):\hp{3\cdot}\; \quad 16 = 4\sqrt{x-1}\;\;\; \quad \Rightarrow \quad x=17 \\
         &2\cdot(1)-3\cdot(2): \quad 20 = 8\sqrt{y+\frac{1}{4}} \quad \Rightarrow \quad y=6 \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(17;6)\Bigg\}}
-    \end{align*} 
+    \end{align} 
     Optionaler Hinweis: nicht immer muss alles mühsam quadriert und aufgelöst werden, sondern man kann auch versuchen draufzuschauen. 
     \begin{itemize}
         \item Was ergibt 8 multipliziert mit 20? Antwort: $\textstyle\frac{10}{4}=\frac{5}{2}$
@@ -220,24 +220,24 @@ Sortieren wir das Gleichungssystem um, ergibt sich
     \end{itemize}
     \vspace{3mm}
     \item $~$\\[-1.45cm]
-    \begin{align*}
+    \begin{align}
         &\frac{x^2-y^2}{2x+3}+y^2=(x+y)x-xy \quad \Rightarrow \quad \frac{x^2 -y^2}{2x+3} = x^2 - y^2\quad(1) \\
         &y-2x=3 \quad (2)
-    \end{align*}
-    \begin{align*}
+    \end{align}
+    \begin{align}
         \text{Fall } x^2 \neq y^2 \quad
         \begin{rcases}
             (1): 1=2x+3 \quad \Rightarrow x=-1 \\
             \text{in }(2): \quad y=1
         \end{rcases} \text{ Widerspruch}
-    \end{align*}
-    \begin{align*}
+    \end{align}
+    \begin{align}
         \text{Fall } x = \pm y \quad (2): \quad y=
         \begin{cases}
             -3, &\text{oberes VZ}\\
             1, &\text{unteres VZ}
         \end{cases} \qquad \Longrightarrow \qquad \uuline{\mathbb{L} = \Bigg\{\qty(-3;-3),(-1;1)\Bigg\}}
-    \end{align*}
+    \end{align}
 \end{enumerate}
 
 \newpage
@@ -271,11 +271,11 @@ Sortieren wir das Gleichungssystem um, ergibt sich
 Offenbar können die zweite und dritte Gleichung weggelassen werden, ohne dass sich etwas am schraffierten Gebiet ändert. 
 
 \item \textbf{*} Welches Gebiet im ersten Oktanden ($x\ge 0$, $y\ge 0$, $z\ge 0$) wird durch die folgenden Ungleichungen definiert?
-\begin{align*}
+\begin{align}
     x+y&\ge z\,,\\
     x+z&\ge y\,,\\
     y+z&\ge x
-\end{align*}
+\end{align}
 
 \begin{minipage}{0.4\textwidth}
     Die Ungleichungen beschreiben eine dreiseitige (unendlich große) Pyramide, deren Spitze auf dem Koordinatenursprung liegt und deren Kanten jeweils die $x-y-$, $x-z-$ und $x-z$-Ebene halbieren.

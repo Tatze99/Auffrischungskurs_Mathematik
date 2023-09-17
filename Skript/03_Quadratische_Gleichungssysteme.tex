@@ -13,25 +13,20 @@ Wir schauen uns zunächst die allgemeine Form einer quadratischen Gleichung an
 \end{align}
 \tikz[overlay,remember picture]{
 \draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq1)+(-.4,-1)$)node[left]{quadratisches Glied} -- ($(eq1)+(0,-.2)$);
-\draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq2)+(0,-1)$)node{lineares Glied} -- ($(eq2)+(0,-.2)$);
+\draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq2)+(0,-1)$)node[below]{lineares Glied} -- ($(eq2)+(0,-.2)$);
 \draw[shorten >=2pt,shorten <=2pt, thick, -{latex}] ($(eq3)+(.4,-1)$)node[right]{Absolutglied} -- ($(eq3)+(0,-.2)$);
 }
 
+\vspace{3mm}
 Wir nehmen im Folgenden o.\,B.\,d.\,A. an, es sei $A >0$. Zudem sind $A,B$ und $C$ reelle Konstanten. Wir betrachten zunächst zwei Spezialfälle
-\begin{align}
-    B &= 0 
-    \begin{split}
-        A x^2 + C &= 0 \\
-        \Rightarrow \qq{für} C &\le 0: \qq{Lösungen} x_1 = \sqrt{-\frac{C}{A}}, x_2 = -\sqrt{-\frac{C}{A}} \\
-        \Rightarrow \qq{für} C &>0: \qq{keine (reellen) Lösungen}
-    \end{split}\\
-    C &= 0 
-    \begin{split}
-        A x^2 + Bx &= 0 \\
-         x(Ax + B) &= 0 \\
-        \Rightarrow \qq{Lösungen} &x_1 = 0, x_2 = -\frac{B}{A}.\hspace{3.85cm}
-    \end{split}
-\end{align}
+\begin{alignat}{2}
+    B &= 0 \qquad &&\qquad\; A x^2 + C = 0 \\[-3mm]
+      &  &&\Rightarrow \qq{für} C \le 0: \qq{Lösungen} x_1 = \sqrt{-\frac{C}{A}}, x_2 = -\sqrt{-\frac{C}{A}} \notag \\
+      & &&\Rightarrow \qq{für} C >0: \qq{keine (reellen) Lösungen} \notag\\
+    C &= 0 \qquad &&\qquad\; A x^2 + Bx = 0 \\
+      & && \qquad\; x(Ax + B) = 0 \notag \\
+      & &&\Rightarrow \qq{Lösungen} x_1 = 0, x_2 = -\frac{B}{A}. \notag %\hspace{3.85cm}
+\end{alignat}
 
 Zur Bestimmung einer allgemeinen Lösung verwenden wir die \emph{Methode der quadratischen Ergänzung}:
 \begin{enumerate}
@@ -156,7 +151,7 @@ Die allgemeine ist jedoch nur umständlich zu diskutieren und es existieren viel
 \end{subequations}
 Wir addieren nun $\eqref{eqn:3_QGS_Bsp1a} \pm \eqref{eqn:3_QGS_Bsp1b}$ und erhalten 
 \begin{align}
-    \underbrace{x^2 + y^2 \pm 2xy}_{(x\pm y)^2} - 4(x\pm y) = 11 \pm 5.
+    2\underbrace{(x^2 + y^2 \pm 2xy)}_{(x\pm y)^2} - 4(x\pm y) = 11 \pm 5.
 \end{align}
 Wir substituieren nun $u \equiv x+y$ und $v \equiv x-y$, damit haben wir zwei voneinander unabhängige quadratische Gleichungen 
 \begin{align}
@@ -179,11 +174,11 @@ Resubstituieren wir jetzt nun $x = \frac{1}{2}(u+v), y = \frac{1}{2}(u-v)$, dann
     \end{split}
 \end{align}
 \begin{align}
-    \Rightarrow \mathbb{L} = \bigg\{\qty(\frac{7}{2};\frac{1}{2}),\qty(\frac{3}{2};\frac{5}{2}),\qty(\frac{1}{2};\minus\frac{5}{2}),\qty(\minus\frac{3}{2};\minus\frac{1}{2})\bigg\}.
+    \Rightarrow \mathbb{L} = \qty{\qty(\frac{7}{2};\frac{1}{2}),\qty(\frac{3}{2};\frac{5}{2}),\qty(\frac{1}{2};\minus\frac{5}{2}),\qty(\minus\frac{3}{2};\minus\frac{1}{2})}.
 \end{align}
 Im Zweifelsfall (``Sind wirklich alle Kombinationen erlaubt?'') sollte die Probe durchgeführt werden. 
 
-\emph{Bemerkung:} Eine geometrische Interpretation ist auch hier möglich: Gleichung~\eqref{eqn:3_QGS_Bsp1a} beschreibt einen Kreis des Radius $\sqrt{\frac{13}{2}}$, dessen Mittelpunkt um 1 nach rechts verschoben ist, wohingegen \eqref{eqn:3_QGS_Bsp1b} als Funktion $y = \frac{5}{4}\frac{1}{x-1}$ geschrieben werden kann. Die Schnittpunktkoordinaten der Hyperbeln mit dem Kreis sind die Lösungspaare. 
+\emph{Bemerkung:} Eine geometrische Interpretation ist auch hier möglich: Gleichung~\eqref{eqn:3_QGS_Bsp1a} beschreibt einen Kreis des Radius $\sqrt{\frac{13}{2}}$, dessen Mittelpunkt um 1 nach rechts verschoben ist, da die Gleichung in der Form $\textstyle (x-1)^2 + y^2 = \frac{13}{2}$. Dahingegen lässt sich \eqref{eqn:3_QGS_Bsp1b} als Funktion $y = \frac{5}{4}\frac{1}{x-1}$ schreiben. Die Schnittpunktkoordinaten der Hyperbeln mit dem Kreis sind die Lösungspaare. 
 \begin{figure}[htp]
     \centering
     \begin{tikzpicture}
@@ -213,7 +208,7 @@ Im Zweifelsfall (``Sind wirklich alle Kombinationen erlaubt?'') sollte die Probe
         xz &= -8
     \end{split}\label{eqn:3_QGS_Bsp2}
 \end{align}
-Der Satz von Vieta angewandt auf das Gleichungssystem~\eqref{eqn:3_QGS_Bsp2}, dass $x$ und $z$ Lösungen einer qudratischen Gleichung mit $p = -2$ und $q = -8$ sind, also der Gleichung 
+Der Satz von Vieta angewandt auf das Gleichungssystem~\eqref{eqn:3_QGS_Bsp2} zeigt, dass $x$ und $z$ Lösungen einer qudratischen Gleichung mit $p = -2$ und $q = -8$ sind, also der Gleichung 
 \begin{align}
     u^2 + pu +q = u^2 -2u - 8 = 0 \quad \Rightarrow \quad u_{1/2} = 1 \pm \sqrt{9} = \begin{cases}
         4 \\ -2.
@@ -221,5 +216,5 @@ Der Satz von Vieta angewandt auf das Gleichungssystem~\eqref{eqn:3_QGS_Bsp2}, da
 \end{align}
 Wir könnten nun $u_1 = x, u_2 =z$ oder $u_1 = z, u_2 = x$ identifizieren, allerdings muss $z = y^2$ positiv sein. wir erhalten somit die Lösungen 
 \begin{align}
-    x= -2, y = \pm 2 \quad \Rightarrow \quad \mathbb{L} = \{(-2;2),(-2,-2)\}.
+    x= -2, y = \pm 2 \quad \Rightarrow \quad \uuline{\mathbb{L} = \{(-2;2),(-2,-2)\}}.
 \end{align}

@@ -35,6 +35,7 @@ Wichtige Mengen sind die Zahlenbereiche, insbesondere
         die reellen Zahlen & $\mathbb{R}$.
     \end{tabular}
 \end{table}
+
 Diese speziellen Mengen haben die besondere Eigenschaft, einer Ordnungsrelation zu unterliegen, d.\,h. man kann angeben, ob ein bestimmtes Element kleiner, größer oder gleich einem anderen Element ist. Dadurch ist es möglich, \emph{Intervalle} zu definieren.
 
 \begin{figure}[htp]
@@ -54,7 +55,7 @@ Diese speziellen Mengen haben die besondere Eigenschaft, einer Ordnungsrelation 
     \end{tikzpicture}
 \end{figure}
 
-Im Folgenden wollen wir uns speziell auf die reellen Zahlen. Ein Intervall ist eine Teilmenge von $\mathbb{R}$, die durch die Angabe begrenzender Elemente gebildet wird. Es gibt zwei Möglichkeiten, eine Intervallgrenze $a\in \mathbb{R}$ aufzufassen:
+Im Folgenden wollen wir uns speziell auf die reellen Zahlen konzentrieren. Ein Intervall ist eine Teilmenge von $\mathbb{R}$, die durch die Angabe begrenzender Elemente gebildet wird. Es gibt zwei Möglichkeiten, eine Intervallgrenze $a\in \mathbb{R}$ aufzufassen:
 
 \begin{itemize}
     \item Die Grenze $a$ ist Teil des Intervalls, $x \ge a$ oder $x \le a.$
@@ -359,7 +360,9 @@ Wir addieren nun $b\cdot \eqref{eqn:2_LGS_Bsp_a} + \eqref{eqn:2_LGS_Bsp_b}$
 \begin{align}
         abx + \cancel{b^2 y} + a^2 x -\cancel{b^2 y} &= 2ab + a^2 + b^2  \notag \\
         a \cancel{(a+b)} x \overset{\eqref{eqn:1_binomische_Formeln}}&{=} (a+b)^{\cancel{2}}\qq{,} a+b \neq 0 \notag \\
-        \Rightarrow x = \frac{a+b}{a} \qq{,} a\neq 0. 
+        \Rightarrow \uuline{x = \frac{a+b}{a}} \qq{,} a\neq 0.& \\
+        \text{Einsetzen in (1)}: \quad \cancel{a} \frac{a+b}{\cancel{a}} + by &= 2a \quad \Rightarrow \quad by = a-b \notag \\
+        \Rightarrow \uuline{y = \frac{a-b}{b}} \qq{,} b\neq 0.
 \end{align}
 
 Betrachten wir abschließend noch zwei Spezialfälle: 
@@ -421,12 +424,12 @@ Nun eliminieren wir $z$ aus dem Gleichungssystem
 \begin{subequations}
     \begin{align}
         \eqref{eqn:2_LGS_Bsp_3a} + 2 \cdot \eqref{eqn:2_LGS_Bsp_3b}:  \quad\;\quad-x-y&= 5 \label{eqn:2_LGS_Bsp_3d}\\
-        4\cdot\eqref{eqn:2_LGS_Bsp_3a} + 2\cdot \eqref{eqn:2_LGS_Bsp_3c}:  \quad14 x-10y&= 26. \label{eqn:2_LGS_Bsp_3e}
+        2\cdot\eqref{eqn:2_LGS_Bsp_3a} + \eqref{eqn:2_LGS_Bsp_3c}:  \quad 7x-5y&= 13. \label{eqn:2_LGS_Bsp_3e}
     \end{align}
 \end{subequations}
 Dieses System mit zwei Unbekannten Lösen wir durch Elimination von $x$
 \begin{align}
-    7 \cdot \eqref{eqn:2_LGS_Bsp_3d} + 0.5\cdot\eqref{eqn:2_LGS_Bsp_3e}:& \quad -12 y = 48 \quad \Rightarrow \quad y = -4 \notag \\
+    7 \cdot \eqref{eqn:2_LGS_Bsp_3d} + \eqref{eqn:2_LGS_Bsp_3e}:& \quad -12 y = 48 \quad \Rightarrow \quad y = -4 \notag \\
     \text{in } \eqref{eqn:2_LGS_Bsp_3d}:& \quad x=-1 \\
     \text{in } \eqref{eqn:2_LGS_Bsp_3b}:& \quad z=3.
 \end{align}
@@ -435,7 +438,7 @@ Als letzten Schritt überprüfen wir unsere Rechnung durch Einsetzen in \eqref{e
     \mathbb{L} = \{(x;y;z)\} = \{(\minus1;\minus4;3)\}.
 \end{align}
 
-Von einem \emph{unterbestimmten} Gleichungssystem spricht man, wenn es mehr Unbekannt als Gleichungen gibt, bzw. Gleichungen linear abhängig sind. Schauen wir uns hierzu ein Beispiel an: 
+Von einem \emph{unterbestimmten} Gleichungssystem spricht man, wenn es mehr Unbekannte als Gleichungen gibt, bzw. Gleichungen linear abhängig sind. Schauen wir uns hierzu ein Beispiel an: 
 \begin{subequations}
     \begin{align}
         2x -y +z +2 &= 0,  \label{eqn:2_LGS_unterbest_3a}\\

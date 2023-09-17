@@ -1,0 +1,369 @@
+\Titelbanner{3}{Quadratische Gleichungen und Gleichungssysteme}
+
+\paragraph{Aufgabe 1: } \emph{Quadratische Gleichungen} \hfill Ziel: (a) und (b)\\[0.2cm]
+\emph{Lösen Sie die folgenden Gleichungen jeweils für $x$ durch quadratische Ergänzung und kontrollieren Sie das Ergebnis mit der $pq$-Formel.}
+
+\emph{Tafelbeispiel: } Ziel ist es, die Ausdrücke in die Form $(x+a)^2$ oder $(ax+b)^2$ zu bekommen.
+\begin{enumerate}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        &3x^2 + 18x +15 = 0, \quad \Rightarrow\quad x^2 + 6x + 5 = 0,\\
+        &\text{vgl. mit } (x+a)^2 = x^2 + 2ax + a^2 \quad \Rightarrow 2a \overset{!}{=} 6 \Rightarrow a=3, \Rightarrow a^2 = 9. \\
+        &\Rightarrow \underbrace{x^2 + 6x + 9}_{(x+3)^2} -4 = 0 \quad \overset{\text{Wurzel}}{\Longrightarrow} \pm (x+3) = 2 \quad \Rightarrow \uuline{x_1 = -1, x_2 = -5} 
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        &16x^2-56x-15 = 0,\\
+        &\text{vgl. mit } (ax+b)^2 = a^2x^2 + 2abx + b^2 \quad \Rightarrow a^2 =16 \Rightarrow a=4, \Rightarrow a^2 = 9. \\
+        &2ab = -56 \quad \Rightarrow \quad b=-7 \Rightarrow b^2 = 49\\
+        &\underbrace{16x^2-56x+49}_{(4x-7)^2}-64 = 0 \quad \Rightarrow \quad \pm (4x-7) = 8 \quad \Rightarrow \uuline{x_1 = \frac{15}{4}, x_2 = -\frac{1}{4}}
+    \end{align}
+\end{enumerate}
+
+\emph{Lösung}:
+\begin{enumerate}[label=(\alph*)]
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        x^2 -10x+ 9 &= 0 \quad |+16 \\
+        (x-5) &= 16 \quad \Longrightarrow \quad \uuline{x_1 = 9, x_2 = 1},\quad\text{Probe: } x_{1/2} = 5 \pm \sqrt{25-9} = \begin{cases}
+            9 \\ 1
+        \end{cases}
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        x^2 + x - 12 &=0 \quad | + \frac{49}{4} \\
+        \qty(x+\frac{1}{2})^2 &= \frac{49}{4} \quad \Longrightarrow \quad \uuline{x_1 = 3, x_2 = -4},\quad\text{Probe: } x_{1/2} = -\frac{1}{2}\pm \sqrt{\frac{1}{4}+12} = \begin{cases}
+            3 \\ -4
+        \end{cases}
+    \end{align}
+    Es ist immer am Vorfaktor von $x$ abzulesen, welches $a$ in $(x\pm a)^2$ steckt; hier offenbar $n = 1/2$, wir erzeugen also $1/4$ auf der linken Seite.
+    \item$~$\\[-1.4cm] 
+    \begin{align}
+        x^2-\sqrt{8}x+1 &=0 \quad |+1 \quad (\sqrt{8} = 2\sqrt{2}) \\
+        (x-\sqrt{2})^2 &= 1 \quad \Longrightarrow \quad \uuline{x_{1/2} = \pm 1 + \sqrt{2}},\quad\text{Probe: } x_{1/2} = \sqrt{2} \pm \sqrt{2-1} = \sqrt{2}\pm 1.
+    \end{align}
+\end{enumerate}
+
+\paragraph{Aufgabe 2: } \emph{Wurzeln quadratischer Gleichungen}
+
+\emph{Tafelbeispiel: }
+\begin{enumerate}
+    \item Wiederholung Vieta'scher Wurzelsatz: \\
+    Habe die Gleichung $x^2+px+q=0$ die Wurzeln $x_1$ und $x_2$, dann lautet die Linearfaktorzerlegung 
+    \begin{align}
+        (x-x_1)(x-x_2) = x^2 \underbrace{- (x_1+x_2)}_{p} + \underbrace{x_1x_2}_{q}
+    \end{align}
+    \item Wann sind die Wurzeln einer quadratischen Gleichung identisch? 
+    \begin{align}
+        x_1 = x_2 = a \quad \overset{\text{Vieta}}{\Longrightarrow} \quad p = -(a+a) = 2a, \quad q = a^2
+    \end{align}
+    Die Gleichung muss von der Form $0= x^2 -2ax + a^2$ sein (vgl. 2. binomische Formel).
+    \item Von welcher Form ist eine quadratische Gleichung, deren Wurzeln den Quotienten $a$ und die Differenz $b$ haben? 
+    \begin{align}
+        &\frac{x_1}{x_2} = a, \quad x_1 - x_2 = b \quad \Rightarrow \quad x_1 = \frac{ab}{a-1}, \quad x_2 = \frac{b}{a-1}\\
+        &\overset{\text{Vieta}}{\Longrightarrow} \quad p = -\frac{(a+1)b}{a-1} \qq{,} q = \frac{ab^2}{(a-1)^2} \\
+        & \Longrightarrow 0 = x^2 - \frac{(a+1)b}{a-1}x + \frac{ab^2}{(a-1)^2} 
+    \end{align}
+\end{enumerate}
+
+\emph{Lösung}:
+
+\begin{enumerate}[label=(\alph*)]
+    \item \emph{Stellen Sie $\textstyle\frac{a}{b}-\frac{b}{a}$ als Produkt zweier Faktoren dar, deren Summe gleich $\textstyle\frac{a}{b}+\frac{b}{a}$ ist.}
+    \begin{align}
+        \text{Vieta: }\frac{a}{b} - \frac{b}{a} = x_1 x_2 \quad (1), \qquad \frac{a}{b}+\frac{b}{a} = x_1 + x_2 \quad (2)
+    \end{align}
+    \begin{enumerate}[label=\arabic*)]
+        \item Variante 1: raten und konstruieren\\
+        Gleichung (2) legt nahe, dass $x_1 = a/b$, $x_2 = b/a$, jedoch gilt dann $x_1 x_2 = 1$. Welche ist die einfachste Modifikation dieser Idee, die immer noch (2) erfüllt? 
+        \begin{align}
+            x_1 = \frac{a}{b} + n, \quad x_2 = \frac{b}{a} -n \\
+            \Rightarrow x_1 x_2 = 1 + n\qty(\frac{b}{a}-\frac{a}{b}) - n^2 \overset{!}{=} \frac{a}{b} - \frac{b}{a} \quad \Rightarrow \quad n=-1 \\
+            \Rightarrow \uuline{x_1 = \frac{a}{b}-1, \quad x_2 = \frac{b}{a}+1}
+        \end{align}
+        Da es sich bei $x_{1/2}$ um die Wurzeln einer qudratischen Gleichung handelt, ist die Lösung - bis auf Numerierung - eindeutig.
+        \item Variante 2: Lösen der qudratischen Gleichung. Nach Vieta folgt  
+        \begin{align}
+            0 &= x^2 - \qty(\frac{a}{b}-\frac{b}{a})x + \frac{a}{b} - \frac{b}{a} \\
+            \Rightarrow x_{1/2} &= \frac{a^2 + b^2}{2ab}\pm \sqrt{\frac{(a^2+b^2)^2}{4a^2b^2} - \frac{a^2-b^2}{ab}} \\
+            &= \frac{a^2 +b^2 \pm \sqrt{a^4+b^4 +2a^2b^2 -4a^3b + 4ab^3}}{2ab} 
+        \end{align}
+        Versuche den Wurzelterm zu faktorisieren:
+        \begin{align}
+            (a^2 \pm b^2 \pm 2ab)^2 &= (a^2 \pm b^2)^2 + 4a^2 b^2 \pm 4ab(a^2 +b^2)\\
+            &= a^4 + b^4 + 4a^2b^2 \pm 2a^2b^2  \pm 4a^3b +(\pm1 \cdot \pm1) 4ab^3.
+        \end{align}
+        Wir sollten also zweimal das untere Vorzeichen wählen, dann folgt: 
+        \begin{align}
+            &x_{1/2} = \frac{a^2 + b^2 \pm (a^2-b^2 -2ab)}{2ab} = \begin{cases}
+                \frac{a}{b}-1 \\ \frac{b}{a}+1
+            \end{cases}\\
+            \Rightarrow &\uuline{x_1 = \frac{a}{b}-1, \quad x_2 = \frac{b}{a}+1}
+        \end{align}
+    \end{enumerate}
+    \item \emph{Bestimmen Sie in der Gleichung $5x^2-kx+1=0$ den Koeffizienten $k$ so, dass die Differenz der Wurzeln 1 ergibt.}\\
+    Wir berechnen die Wurzeln mit der $pq$-Formel 
+    \begin{align}
+        &x^2 - \frac{k}{5}x +\frac{1}{5} = 0 \quad \Rightarrow \quad x_{1/2} = \frac{k}{10} \pm \sqrt{\frac{k^2}{100}-\frac{1}{5}} \\
+        \Rightarrow &x_1 - x_2 = 2 \sqrt{\frac{k^2-20}{100}} \overset{!}{=}1 \quad \Rightarrow \quad \frac{k^2 - 20}{100}=\frac{1}{4} \quad \Rightarrow k^2 = 45 \Rightarrow \uuline{k = \pm 3 \sqrt{5}}.
+    \end{align}
+    
+    \item \emph{Wählen Sie die Koeffizienten der quadratischen Gleichung $x^2+px+q=0$ so, dass die Wurzeln der Gleichung gleich $p$ und $q$ sind.}\\
+    Mit Satz von Vieta folgt
+    \begin{align}
+        p &= - (x_1+x_2)\overset{!}{=} -(p+q) \quad \Rightarrow \quad 2p+q = 0 (*) \\
+        q &= x_1 x_2 \overset{!}{=} pq, \qq{Fallunterscheidung}\\
+        &\begin{rcases}
+            \text{Fall } q=0: \quad p=0 \qq{aus (*)} \\
+            \text{Fall } q\neq 0: \quad p=1 \overset{(*)}{\Rightarrow} q=-2
+        \end{rcases} \quad \Rightarrow \uuline{\{(p;q)\} = \{(0;0),(1;-2)\}}
+    \end{align}
+    \item \emph{Gegeben ist die quadratische Gleichung $ax^2+bx+c=0$. Gesucht ist diejenige neue quadratische Gleichung, deren Wurzeln gleich}
+    \begin{itemize}[labelindent=1em,labelsep=0.5cm]
+        \item \emph{dem Doppelten der Wurzeln der gegebenen Gleichung sind.}
+        \begin{align}
+            &p = \frac{b}{a} = -(x_1+x_2), \qq{mit $x_1'=2x_1, x_2'=2x_2$ folgt} \frac{2b}{a} = -(x_1' + x_2') = p'\\
+            &q = \frac{c}{a} = x_1 x_2, \qq{mit $x_1'=2x_1, x_2'=2x_2$ folgt} \frac{4c}{a} = x_1'x_2' = q' \\
+            &\Rightarrow \uuline{ax^2+2bx+4c = 0}
+        \end{align}
+        \item \emph{den reziproken Werten der Wurzeln der gegebenen Gleichung sind.}
+        \begin{align}
+            &p = \frac{b}{a} = -(x_1+x_2), \qq{mit $x_1'=\frac{1}{x_1}, x_2'=\frac{1}{x_2}$ folgt} \frac{b}{a} = -\qty(\frac{1}{x_1'} + \frac{1}{x_2}') = - \frac{x_1'+x_2'}{x_1'x_2'} = \frac{p'}{q'} \\
+            &q = \frac{c}{a} = x_1 x_2, \qq{mit $x_1'=\frac{1}{x_1}, x_2'=\frac{1}{x_2}$ folgt} \frac{c}{a} = \frac{1}{x_1'x_2'} = \frac{1}{q'} \\
+            &\Rightarrow \uuline{cx^2+bx+a = 0}
+        \end{align}
+    \end{itemize}
+    
+\end{enumerate}
+
+\paragraph{Aufgabe 3: } \emph{Gleichungssysteme}\\[0.2cm]
+\emph{Lösen Sie die folgenden Gleichungssysteme jeweils für $x$ und $y$.}
+
+\emph{Tafelbeispiel: } 
+\begin{enumerate}
+    \item Lösung mit $p-q$-Formel: 
+    \begin{alignat*}{2}
+        & x^2 + y^2 = 2 \hp{(y-1)} \quad (1)\\
+        & x^2- y^2 = 5(y-1) \quad (2) \\
+        &(1)-(2): \quad y^2 = \frac{1}{2}(7-5y) \quad &&\Rightarrow \quad 0 = y^2 + \frac{5}{2}y - \frac{7}{2}\\
+        & && \Rightarrow \quad y_{1/2} = -\frac{5}{4} \pm \sqrt{\frac{25}{16}+\frac{7}{2}} = \begin{cases} 
+            1 \\ -7/2
+        \end{cases}\\
+        & \text{Fall } y=1: \quad x^2 = 1 \Rightarrow x=\pm 1\\
+        & \text{Fall } y=-\frac{7}{2}: \quad x^2 = -\frac{41}{4} \qq{keine (reelle) Lösung}\Rightarrow \uuline{\mathbb{L} = \{(1;1),(-1;1)\}}\hspace{-9cm}
+    \end{alignat*}
+    \item Lösung mit Satz von Vieta: 
+    \begin{align}
+        &\begin{array}{l}
+            x+y+y^2 = 3 \\ y^2(x+y) = -54
+        \end{array} \qq{mit $u\equiv x+y, v\equiv y^2$ folgt} 
+        \begin{array}{l}
+            u+v = 3 \\ uv = -54
+        \end{array} \\
+        &\text{Vieta: $u,v$ sind Wurzeln der Gleichung } 0 = z^2 -3z -54 \\
+        &\Rightarrow z_{1/2} = \frac{3}{2}\pm \sqrt{\frac{9}{4}+54} = \frac{3}{2} \pm \frac{15}{2} = \begin{cases}
+            9\\-6
+        \end{cases} \\
+        &\text{Fall: } v=9,u=-6: \quad y = \pm 3, \quad x = -6-y = \begin{cases}
+            -9, & y=3 \\ -3, & y=-3
+        \end{cases}\\
+        &\text{Fall:} u=9, v=-6: \quad y^2 = -6 \quad \Rightarrow \qq{keine (reelle) Lösung.} \\
+        &\Rightarrow \uuline{\mathbb{L} = \{(-9;3),(-3,3)\}}.
+    \end{align}
+\end{enumerate}
+
+\emph{Lösung:}
+\begin{enumerate}[label={(\alph*)}]
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        &\begin{array}{r}
+            x+y^2 = \hp{1}7\\ xy^2 = 12 
+        \end{array} \qq{mit $u \equiv x, v \equiv y^2$ folgt} \begin{rcases}
+            u + v = 7 \\
+            \hp{+}u v = 12
+        \end{rcases} \\
+        &\overset{\text{Vieta:}}{\Longrightarrow}\quad z^2 - 7z +12 = 0 \qq{,} z_{1/2} = \frac{7}{2} \pm \sqrt{\frac{49}{4}-12} = \begin{cases}
+            4\\3
+        \end{cases} \\
+        &\begin{rcases}
+            \text{Fall 1: } x=4, y= \pm \sqrt{3}  \\
+            \text{Fall 2: } x=3, y=\pm 2
+        \end{rcases} \quad \Rightarrow \quad \uuline{\{(x;y)\} =\{(4;\pm\sqrt{3}),(3;\pm2)\}}
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        &\begin{array}{r}
+            x+xy+y =11 \quad (1) \\
+            x^2y+xy^2 = 30 \quad (2)
+        \end{array} \qq{mit $u\equiv xy, v \equiv x+y$} \begin{array}{r}
+            u + v =11 \\
+            u\cdot v = 30
+        \end{array}\\
+        & \overset{\text{Vieta}}{\Longrightarrow} \quad z^2 -11z +30 = 0 \qq{,} z_{1/2} = \frac{11}{2} \pm \sqrt{\frac{121}{4}-30} = \begin{cases}
+            6 \\ 5
+        \end{cases}\\
+        &\text{Fall 1: } \begin{rcases}
+            xy = 6 \\ x+y = 5   
+        \end{rcases} \qq{Vieta} q^2 -5q + 6 = 0 \quad \Rightarrow \quad q_{1/2} = \frac{5}{2}\pm \sqrt{\frac{25}{4}-6} = \begin{cases}
+            3\\2
+        \end{cases}\\
+        &\Rightarrow \uline{x=3, y=2} \qq{oder} \uline{x=2, y=3} \\
+        &\text{Fall 2: } \begin{rcases}
+            xy = 5 \\ x+y = 6   
+        \end{rcases} \qq{Vieta} q^2 -6q + 5 = 0 \quad \Rightarrow \quad q_{1/2} = 3\pm \sqrt{4} = \begin{cases}
+            5\\1
+        \end{cases}\\
+        &\Rightarrow \uline{x=5, y=1} \qq{oder} \uline{x=1, y=5} \\
+        &\Rightarrow \uuline{\{(x;y)\} = \{(3;2),(2;3),(5;1),(1;5)\}}
+    \end{align}
+    Man beachte, wie die Symmetrie der Gleichungen unter Vertauschung $x\leftrightarrow y$ und $xy \leftrightarrow x+y$ in der Lösungsmenge wiederzufinden ist.
+    \item$~$\\[-1.4cm] 
+    \begin{align}
+        &\begin{array}{r}
+            x^2 +y^2 = \frac{5}{2}xy \quad (1)\\
+            x-y = \frac{1}{4}xy \quad (2)
+        \end{array} \quad \Rightarrow \quad \begin{rcases}
+            (x-y)^2 = \frac{xy}{2} \\
+            (x-y)^2 = \frac{x^2y^2}{16}
+        \end{rcases} \quad 8xy = (xy)^2\\
+        &\text{Fall 1: }\quad \begin{rcases}
+            \hp{oder }x=0 \overset{(1)}{\Rightarrow} y = 0 \\
+            \text{oder }y=0 \overset{(2)}{\Rightarrow} x = 0
+        \end{rcases} \quad \uline{x=0, y=0}\\
+        &\text{Fall 2: } \quad x\neq 0 \qq{und} y\neq 0: \quad 8 = xy \\
+        &\qquad\quad\begin{rcases}
+            \text{in (1): }\quad x^2 + y^2 = 20 \\
+            \text{in (2): }\quad x-y = 2
+        \end{rcases} \quad 2x^2 - 4x = 16 \\
+        &\qquad \quad\Rightarrow x_{1/2} = 1 \pm \sqrt{1+8} = \begin{cases}
+            4 \\ -2
+        \end{cases} \qq{,} y= x-2 = \begin{cases}
+            2\\-4
+        \end{cases}\\
+        &\Rightarrow \uuline{\{(x;y)\} = \{(0;0), (4;2),(-2;4)\}}
+    \end{align}
+    Da das Quadrieren von Gleichung (2) keine Äquivalenzumformung darstellte, müssen alle Lösungspaare noch durch Probe bestätigt werden.\\
+    Beachte außerdem die Aussagenlogik bei der Fallunterscheidung: Das Komplement zu ``$x\neq 0$ und $y \neq 0$'' ist ``$x=0$ oder $y=0$''; dass dennoch beide gleichzeitig Null sind, folgt erst einen Schritt später.
+\end{enumerate}
+
+\paragraph{Aufgabe 4: } \emph{Wurzelgleichungen} \hfill Ziel: (a) bis (c)\\[0.2cm]
+\emph{Lösen Sie die folgenden Gleichungen jeweils für $x$.}
+
+\emph{Tafelbeispiel:}
+\begin{align}
+    \sqrt{3x-5} + \sqrt{2x-4} &= 1 \\
+    \sqrt{3x-5} &= 1 - \sqrt{2x-4} \quad |^2 \\
+    3x-5 &= 1 + 2x-4 - 2 \sqrt{2x-4} \qq{, Wurzel isolieren }\\
+    \Rightarrow 2 \sqrt{2x-4} &= 2-x \quad |^2 \\[-3mm]
+    4(2x-4) &= x^2 -4x +4 \quad \Longrightarrow \quad 0 = x^2 - 12x +20 \qq{,} x_{1/2} = 6\pm \sqrt{36-20} = \begin{cases}
+        10 \\ 2
+    \end{cases} 
+\end{align}
+Da Quadrieren \emph{keine Äquivalenzumformung} ist, können zusätzliche Lösungen entstehen und es muss die Probe gemacht werden! 
+\begin{align}
+    \text{Probe: }& x=10: \quad \sqrt{25} + \sqrt{16} = 9 \neq 1  \quad\emph{keine Lösung} \\
+    & x=2: \quad \sqrt{1} +\sqrt{0} = 1 \qquad \Rightarrow \quad \uuline{x=2}
+\end{align}
+Beachte außerdem, dass Einschränkungen an die in den Gleichungen auftetenden Konstanten vorliegen können.
+\emph{Lösung:}
+\begin{enumerate}[label=(\alph*)]
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        \sqrt{3x+1}-\sqrt{x-1}&=2 \qquad \text{(offenbar $x\ge 1$)} \\
+        \sqrt{3x+1} &= 2 + \sqrt{x-1} \quad |^2 \\
+        3x+1 &= 3 + 4\sqrt{x-1} + x \\ 
+        \Rightarrow x-1 &= 2\sqrt{x-1} \quad |^2 \\
+        (x-1)^2 &= 4(x-1) \qquad \Longrightarrow x=1 \qq{,} \overset{x\neq 1}{\Longrightarrow} x=5 \\
+        &\text{Probe: } \begin{cases}
+            x= 2: \; \sqrt{4}-\sqrt{0} = 2\\
+            x=5: \;\sqrt{16} -\sqrt{4} = 2
+        \end{cases} \quad \Rightarrow \uuline{x_1 = 1, x_2 = 5}. 
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        \sqrt{x+a} &=a-\sqrt{x} \quad |^2  \qquad (a= 0 \Rightarrow x=0) \\
+        \cancel{x} + \bcancel{a} &= a^{\bcancel{2}} + \cancel{x} -2\bcancel{a}\sqrt{x} \\
+        2\sqrt{x} &= a-1 \quad \Rightarrow \quad \uuline{x = \frac{(a-1)^2}{4}} \\
+        \text{Probe: } &\sqrt{x+1} = \sqrt{\frac{(a-1)^2}{4}+a} = \frac{1}{2}\sqrt{a^2 + 1 +2a} = \frac{1}{2} \sqrt{(a+1)^2} = \frac{|a+1|}{2} \\
+        a - \sqrt{x}&= a-\frac{|a-1|}{2} = \begin{cases}
+            \frac{a+1}{2}, & a \ge 1 \\
+            \frac{3a-1}{2}, & a < 1 
+        \end{cases} \quad \Rightarrow \qq{Bedingung} a \ge 1
+    \end{align}
+\end{enumerate}
+\newpage
+\begin{enumerate}[label=(\alph*), resume]
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        &\sqrt{a^2-x}+\sqrt{b^2-x}=a+b \overset{\text{draufschauen}}{\Longrightarrow} \uuline{x=0} \qq{für} a \ge 0, b \ge 0 \\
+        & \bcancel{a^2} - \cancel{x} = \underbrace{\bcancel{a^2}+b^2 + 2ab}_{(a+b)^2} + b^2 - \cancel{x} - 2(a+b)\sqrt{b^2-x} \\
+        &\cancel{(a+b)} \sqrt{b^2 -x} = b\cancel{(a+b)} \quad \Rightarrow x=0.
+    \end{align}
+    Schon in der Zeile zuvor zeigt sich: Die Gleichung ist linear in $x$, d.\,h. die Lösung durch Draufschauen ist tatsächlich die Einzige.
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        \sqrt{x+1+\sqrt{3x+4}} &=3 \quad |^2\\
+        \sqrt{3x+4} &= 8-x \quad |^2 \\
+        \Rightarrow 0 &= x^2 - 19x+60 \\
+        \Rightarrow x_{1/2} &= \frac{19}{2} \pm \sqrt{\frac{361}{4}-60} = \begin{cases}
+            15 & \Rightarrow \text{Probe: falsch} \\
+            4 &\Rightarrow \text{Probe: wahr}
+        \end{cases} \quad \uuline{x=4}
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        \sqrt{2x-1}+\sqrt{x-3/2} &=\frac{6}{\sqrt{2x-1}} \quad \qq{(offenbar $x\ge \frac{3}{2}$)}\\
+        \sqrt{2x^2 -4x + 3/2} &= 7-2x \\
+        0 &= 2x^2 -24x + \frac{95}{2} \\
+        \Rightarrow x_{1/2} &= 6 \pm \sqrt{36-\frac{95}{4}} = \begin{cases}
+            \frac{19}{2} & \Rightarrow \text{Probe: falsch} \\
+            \frac{5}{2} & \Rightarrow \text{Probe: wahr}
+        \end{cases} \quad \Rightarrow \uuline{x = \frac{5}{2}}.
+    \end{align} 
+\end{enumerate}
+%
+\newpage
+\paragraph{Aufgabe 5: } \emph{Nullstellensuche} \hfill Ziel: (a) bis (c)\\[0.2cm]
+\emph{Die folgenden Terme sind als Produkte von Linearfaktoren darzustellen.}
+
+\emph{Tafelbeispiel:} Beachte zunächst, dass nicht jedes Polynom als Produkt (reeller) Linearfaktoren geschrieben werden kann, bspw. 
+\begin{align}
+    x^2 -3x +6 \qq{, da}  0=x^2 - 3x +6 \quad \Rightarrow \quad x_{1/2} = \frac{3}{2} \pm \sqrt{-\frac{15}{4}}.
+\end{align}
+Oft lässt sich die Zerlegung durch Vergleich mit 
+\begin{align}
+    (x+m)(x+n) = x^2 + (m+n)x + mn
+\end{align}
+erkennen, bspw. $x^2 +13 x + 12 \Rightarrow m+n = 13, mn = 12$. Dort erkennen wir schnell $m=1, n=12$ und somit 
+\begin{align}
+    x^2 +13x+12 = (x+1)(x+12)
+\end{align} 
+\begin{enumerate}[label=(\alph*)]
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        &x^2+2x-15 \quad \Rightarrow m+n = 2 \qq{und} m\cdot n = -15 \\
+        &\Rightarrow \qq{klappt für} m=5, n=-3 \quad \Rightarrow \quad \uuline{x^2 + 2x -15 = (x+5)(x-3)}.
+    \end{align}
+    \item $4x^2+8x-5$
+    \begin{align}
+        &\text{Konstruktion: } (ax+m)(bx+n) = ab x^2 +(an+bm)x + mn 
+    \end{align}
+    Wir können nun zwei Zahlen $x_1 =an, x_2 = bm$ suchen, deren Summe gleich dem linearen Faktor $x_1 + x_2 = (an+bm) = 8$ und deren Produkt gleich $x_1 \cdot x_2 = (ab)\cdot(mn) = 4\cdot(-5) = -20$ entspricht. Wir finden durch ausprobieren $x_1 = -2, x_2 = 10$ und können nun den linearen Term in $x$ aufteilen 
+    \begin{align}
+        4x^2 -2x + 10x -5 &= 2x(2x-1) + 5(2x-1)= \uuline{(2x-1)(2x+5)}.
+    \end{align} 
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        ax^3+bx^2+adx^2+bdx &= x(ax^2 + (b+ad)x + bd) = x(\underbrace{ax^2 + bx}_{x(ax+b)} + (ax+b)d) \notag \\[-3mm]
+        &=\uuline{x(ax+b)(x+d)}.
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        (a-x)^2+(x-b)^2-a^2-b^2 = 2x^2 -2ax -2bx =\uuline{2x(x-a-b)}.
+    \end{align}
+    \item$~$\\[-1.4cm] 
+    \begin{align}
+        a\sqrt{8}x^2-2kax-3ak+ax\sqrt{18} &= a(\sqrt{x} x^2 + \sqrt{18}x -k(2x+3)) \notag \\
+        &= a(\sqrt{2}x(2x+3) - k(2x+3)) = \uuline{a(2x+3)(\sqrt{2}x-k)}.
+    \end{align}
+\end{enumerate}

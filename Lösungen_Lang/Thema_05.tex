@@ -1,0 +1,100 @@
+\Titelbanner{5}{Exponentialfunktionen\\
+                Logarithmen\\
+                Natürliche Exponentialfunktion}
+
+\begin{mymathbox}[ams align, title={Logarithmengesetze, Basiswechsel}, colframe={FSUblau}]
+    \begin{split}
+        \log_b(uv) = \log_b(u) + \log_b(v), \quad \log_b\qty(\frac{u}{v}) = \log_b(u)-\log_b(v) \\
+        \log_b(u^m) = m \log_b(u), \quad \log_a(x) = \frac{1}{\log_b(a)} \log_b(x).       
+    \end{split}
+\end{mymathbox}
+
+\paragraph{Aufgabe 1: } \emph{Logarithmische und Exponentialgleichungen}\\[0.2cm]
+\emph{Lösen Sie jeweils für $x$ bzw. $y$. Beachten Sie mögliche Fallunterscheidungen bezüglich der auftretenden Konstanten.}
+
+\emph{Tafelbeispiele:}
+\begin{enumerate}
+    \item$~$\\[-1.7cm]
+    \begin{align}
+        3 \ln[\frac{\sqrt[3]{\e^x}}{\exp(3\log_2(\sqrt{2}))}] + 2x &= 0 \\
+        3 \ln(\frac{\e^{x/3}}{\e^{3/2}}) +2x &= 0\\
+        3\qty(\frac{x}{3}-\frac{3}{2}) + 2x &= 0 \quad \Rightarrow \quad \uuline{x = \frac{3}{2}}.
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        2 \log_{\sqrt[5]{9}}(3x) - 5\ln(x) &= \log_3(\e^{5}) \\
+        \text{Basiswechsel: } \log_a(\xi) &= \frac{\ln(\xi)}{\ln(a)} \\
+        2\cdot \frac{\ln(3x)}{\ln(3^{2/5})} - 5\ln(x) &= \frac{5}{\ln(3)} \\
+        \cancel{5} \frac{\ln(3)+\ln(x)}{\ln(3)} - \cancel{5} \ln(x) &= \frac{\cancel{5}}{\ln(3)} \\
+        \Rightarrow \ln(x) = \frac{1-\ln(3)}{1-\ln(3)} &= 1 \quad \Rightarrow \quad \uuline{x=\e}.
+    \end{align}
+\end{enumerate}
+\emph{Lösung:}
+\begin{enumerate}[label=(\alph*)]
+    \item $a\,2^x=\e^{bx} \quad \Rightarrow \quad \ln(a)+x\ln(2) = bx \quad \Rightarrow \quad \uuline{x = \frac{\ln(a)}{b-\ln(2)}},\quad$ offenbar $a>0$
+    \item $x=49^{1-\log_7(2\sqrt{x})}+5^{-\log_5(4x)} = \frac{49}{(7\cdot 7)^{\log_7(2\sqrt{x})}} + \frac{1}{4x} = \frac{25}{2x} \quad \Rightarrow \quad \uuline{x = \frac{5}{\sqrt{2}}},\quad$ (nur positive Lsg.)
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        \e^{3ax}-2^{a+1}\e^{2ax}+4^a\e^{ax} &=\log_b(1) \quad |\cdot \e^{-ax} \\
+        \e^{2ax} - 2\cdot 2^a \e^{ax} + (2^a)^2 &= 0 \\
+        (\e^{ax}+2^a)^2 &= 0  \quad \Rightarrow \quad \e^x = 2 \quad \Rightarrow \quad \uuline{x = \ln(2)}.
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        \sqrt[x^2-1]{a^3}\cdot\sqrt[2x-2]{a}\cdot\sqrt[4]{a^{-1}} &=1 \quad \qq{offenbar $a>0$} \\
+        a^{\frac{3}{x^2-1} + \frac{1}{2x-2} - \frac{1}{4}} &= 1. \\
+        \text{Fall } a=1: \qquad & \uuline{x \in \mathbb{R}\backslash \{\pm 1\}} \\
+        \text{Fall } a\neq 1: \qquad & 0=\frac{3}{x^2-1} + \frac{1}{2x-2} - \frac{1}{4} = \frac{1}{4} \frac{15+ 2x-x^2}{x^2-1} \\
+        &0 = x^2 -2x-15 \quad \Rightarrow \quad \uuline{x_1 =5, x_2 = -3}
+    \end{align}
+    \item$~$\\[-1.4cm]
+    \begin{align}
+        &\log_a(x) + \log_a(y) = 2 \quad\Rightarrow\quad \log_a(xy) = 2 \quad\Rightarrow\quad xy = a^2 \\
+        &\log_b(x) - \log_b(y) =4 \quad\Rightarrow\quad \log_b\qty(\frac{x}{y}) = 4 \quad \Rightarrow \quad \frac{x}{y} = b^4\\
+        &\Rightarrow x^2 = a^2 b^4 \quad \Rightarrow \quad x = \pm ab^2, y = \pm \frac{a}{b^2}\\
+        &\text{Die Argumente der Logarithmen müssen positiv sein:}\\
+        & \qquad \uuline{x = \begin{cases}
+            a b^2, & a > 0 \\ -ab^2, & a< 0
+        \end{cases}} \qq{und} \uuline{y = \begin{cases}
+            \frac{a}{b^2}, & a> 0 \\ -\frac{a}{b^2}, & a < 0
+        \end{cases}}, \qq{($a=0$ nicht zulässig)}
+    \end{align}
+    \item $3\log_{xa^2}x+\frac{1}{2}\log_\frac{x}{\sqrt{a}}x=2 \overset{\text{Basiswechsel}}{\Longrightarrow} \frac{3\ln(x)}{\ln(xa^2)} + \frac{\ln(x)}{2\ln(\frac{x}{\sqrt{a}})} = 2$\\
+    Substitution: $z \equiv \ln(x), b\equiv \ln(a)$
+    \begin{align}
+        \Rightarrow \quad \frac{3z}{z+2b} + \frac{z}{2z-b} &= 2 \quad |\cdot (z+2b)(2z-b) \\
+        7z^2 - z &= 4z^2+6bz -4b^2  \\
+        \Rightarrow 0&= z^2 -\frac{7b}{3}z + \frac{4b^2}{3} \quad \Rightarrow \quad z_{1/2} = \frac{7b}{6}\pm \sqrt{\frac{49b^2}{36}-\frac{4b^2}{3}} = \begin{cases}
+            \frac{4b}{3} \\ b
+        \end{cases} \\
+        \Rightarrow \quad\uuline{x_1 = a^{4/3}, x_2 = a}&
+    \end{align}
+\end{enumerate}
+
+\paragraph{Aufgabe 2: } \emph{Verdopplungszeit}\\[0.2cm]
+\emph{Der Wissenszuwachs eines Physik-Studenten mit Anfangswissen $A$ sei beschrieben durch
+\begin{align*}
+    W(t)=A\e^{c t}\,, \hspace{1.5cm} c>0\,,
+\end{align*}
+sodass $W(t)$ die "`Menge"' an Wissen zur Zeit $t$ gibt.}
+\begin{enumerate}[label=(\alph*)]
+    \item Nach welcher Zeit $\tau_2$ hat das Wissen eines Studenten auf das Doppelte zugenommen?
+    \item Nach welcher Zeit $\tau_n$ hat das Wissen eines Studenten auf das $n$-Fache zugenommen?
+    \item Drücken Sie $\tau_n$ als Vielfaches von $\tau_2$ aus. Welcher Zusammenhang besteht in den Fällen $n=3$ und $n=4$? Welche Aussage können Sie für $n=2^m$, $m\in\mathbb{N}$, treffen?
+\end{enumerate}
+
+\newpage
+\paragraph{Aufgabe 3: } \emph{Hyperbelfunktionen}\hfill (Zusatzaufgabe)\\[0.2cm]
+Es seien die Funktionen
+\begin{align*}
+    f(x)&:=\e^{x}+\e^{-x}\,,\\
+    g(x)&:=\e^{x}-\e^{-x}
+\end{align*}
+definiert.
+\begin{enumerate}[label=(\alph*)]
+    \item Finden Sie jeweils einen Ausdruck für $f(2x)$ und $g(2x)$ in Abhängigkeit der Funktionen einfacher Argumente, $f(x)$ und $g(x)$.
+    \item Finden Sie jeweils einen Ausdruck für $f(x+y)$ und $g(x+y)$ in Abhängigkeit von $f(x)$ und $f(y)$ sowie $g(x)$ und $g(y)$. Vergleichen Sie mit dem Ergebnis aus (a), indem Sie $x=y$ setzen.
+    \item Schreiben Sie die Funktionen $f(x)$ und $g(x)$ in Reihendarstellung.
+    \item Bestimmen Sie die Umkehrfunktion $g^{-1}$ von $g(x)$.
+    % \item* Es sei eine dritte Funktion definiert als $h(x):=f(x)/g(x)$. Überzeugen Sie sich davon, dass diese Funktion mindestens einen \emph{Fixpunkt} besitzt, d.h. dass mindestens eine Zahl $u\in\mathbb{R}$ existiert, für die $h(u)=u$.
+\end{enumerate}

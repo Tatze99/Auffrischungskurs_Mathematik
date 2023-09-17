@@ -4,31 +4,31 @@
 \paragraph{Aufgabe 1: } \emph{Nullstellensuche} \hfill Ziel: (a) bis (c)\\[-4mm]
 \begin{enumerate}[label=(\alph*), labelindent=1em,labelsep=0.5cm]
     \item \emph{Stellen Sie das Polynom dritten Grades auf, das Wurzeln $a$, $b$ und $c$ hat.}
-    \begin{align*}
+    \begin{align}
         f_3(x) = (x-a)(x-b)(x-c) = \uuline{x^3-(a+b+c) x^2 + (ab+ac+bc) x - abc}
-    \end{align*}
+    \end{align}
     \emph{Bemerkung}: Hier kann man versuchen, sich klarzumachen, wie der verallgemeinerte Satz von Vieta aussieht.
     \item \emph{Zerlegen Sie das Polynom $f_4(x)=x^3+2x^4+4x^2+2+x$ in Faktoren. Welche Aussage können Sie über dessen Nullstellen treffen?}
-    \begin{align*}
+    \begin{align}
         f_4(x) = x^3 + \underbrace{2x^4 +4x^2 +2}_{\mathclap{2x^4+2x^2+2x^2 +2 = 2x^2(x^2+1) + 2(x^2+1)}} +x = (x^2+1)(2x^2+2) + \underbrace{x^3+x}_{x(x^2+1)} = \uuline{(x^2+1)(2x^2+x+2)}
-    \end{align*}
+    \end{align}
     Da weder $x^2 +1 = 0$ noch $\textstyle x^2 +\frac{1}{x}x+1=0$ eine (reelle) Lösung hat, besitzt das Polynom keine (reellen) Nullstellen.
     \item \emph{Bestimmen Sie alle Nullstellen des Polynoms $f_5(x)=x^5-3x^3+2x$.}
     Offensichtlicherweise gilt $x_1 = 0$ und wir können das Polynom mit Division durch $x$ vereinfachen. Mit der Substitution $z \equiv x^2$ erhalten wir 
-    \begin{align*}
+    \begin{align}
         0 = z^2 -3z +2 \quad \Rightarrow \quad z_{1/2} = \frac{3}{2}\pm \sqrt{\frac{9}{4}-2} = \begin{cases}
             2 \\ 1
         \end{cases} \quad \Rightarrow \quad \uuline{x_{2/3} = \pm \sqrt{2}}, \quad \uuline{x_{4/5} = \pm 1}.
-    \end{align*}
+    \end{align}
     \item \emph{Bestimmen Sie die kleinste positive Nullstelle des Polynoms $\textstyle f_4(x)=1-\frac{x^2}{2}+\frac{x^4}{24}$. Setzen Sie näherungsweise $\textstyle \sqrt{3}\approx 3-\frac{\pi^2}{8}$.}
     Wir führen wieder die Substitution $z \equiv x^2$ aus und erhalten 
-    \begin{align*}
+    \begin{align}
         0 = z^2 - 12 z + 24 \quad \Rightarrow \quad z_{1/2}= 6\pm2\sqrt{3} \qq{bzw.} x_{1/2/3/4} = \pm \sqrt{6\pm 2\sqrt{3}}.
-    \end{align*}
+    \end{align}
     Wir suchen nun das kleinste positive $x$, also 1.VZ: ``$+$'' und 2.VZ: ``$-$'' 
-    \begin{align*}
+    \begin{align}
             x_0 = \sqrt{6-2\sqrt{3}} \overset{\sqrt{3}\approx 3-\frac{\pi^2}{8}}{\approx} \sqrt{6-\qty(3-\frac{\pi^2}{8})} = \uuline{\frac{\pi}{2}}.
-    \end{align*}
+    \end{align}
     \emph{Bemerkung}: Die Funktion $f_4(x)$ ist das dritte Taylorpolynom der Kosinusfunktion. Es gilt $\cos(x) = f_4(x) +\order{x^6}$.
 \end{enumerate}
 
@@ -36,7 +36,7 @@
 Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt die Polynomdivision in (d) ohne Rest?
 \begin{enumerate}[label=(\alph*), labelindent=1em,labelsep=0.5cm]
     \item$~$\\[-1.3cm]
-    \begin{align*}
+    \begin{align}
         \begin{array}{r@{} r@{} r@{} r@{} r}
             (21a^3 &{}+34a^2b\hp{)}&{}&{}+25b^3) &\;:(7a+5b) = \uuline{3a^2-7ab+5b^2} \\
           -(21a^3 &{}+15a^2b) \\ 
@@ -49,9 +49,9 @@ Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt
           \cmidrule{3-4} 
                 & & & 0
         \end{array}
-    \end{align*}
+    \end{align}
     \item$~$\\[-1.3cm]
-    \begin{align*}
+    \begin{align}
         \begin{array}{r@{} r@{} r@{} r@{} r}
             (9x^3 &{}&{}-7xy^2\hp{)}&{}+2y^3) &\;:(3x-2y) = \uuline{3x^2+2xy-y^2} \\
           -(9x^3 &{}-6x^2y&{}) \\ 
@@ -64,9 +64,9 @@ Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt
           \cmidrule{3-4} 
                 & & & 0
         \end{array}
-    \end{align*}
+    \end{align}
     \item$~$\\[-1.3cm]
-    \begin{align*}
+    \begin{align}
         \begin{array}{r@{} r@{} r@{} r@{} r@{} r}
             (25x^4 &{}&{}-a^2x^2\hp{)}&{}&{}+25a^4) &\;:(5x^2 
             + 7ax +5a^2) = \uuline{5x^2 -7ax +5a^2} \\
@@ -80,9 +80,9 @@ Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt
           \cmidrule{3-5} 
                 & & & 0
         \end{array}
-    \end{align*}
+    \end{align}
     \item$~$\\[-1.3cm]
-    \begin{align*}
+    \begin{align}
         \begin{array}{r@{} r@{} r@{} r}
             (x^2 &{} +2x \hp{)}&{}-15) &\;:(x+n) = \uuline{x+2-n + \frac{n(n-2)-15}{x+n}} \\[-3mm]
           -(x^2 &{}+nx) \\ 
@@ -92,22 +92,22 @@ Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt
           \cmidrule{2-3}
                 & -15\hp{)}&{}+n(n-2) & \Rightarrow 0 \overset{!}{=} n^2 - 2n -15 \quad \Rightarrow \quad n_{1/2} = 1 \pm \sqrt{16}
         \end{array}
-    \end{align*}
+    \end{align}
     Wir erhalten damit die beiden Werte $n_{1/2}$ die den Wurzeln des quadratischen Gleichungssystems entsprechen 
-    \begin{align*}
+    \begin{align}
         x^2 + 2x -15 = (x+5)(x-3).
-    \end{align*}
+    \end{align}
 \end{enumerate}
 
 \newpage
 \paragraph{Aufgabe 3: } \emph{Kubische Gleichungen} \hfill Ziel: (a)\\[-4mm]
 \begin{enumerate}[label=(\alph*)]
     \item \emph{Bestimmen Sie den Wert von $m$ in der Gleichung}
-    \begin{align*}
+    \begin{align}
     6x^3-7x^2-16x+m=0\,, \quad \overset{x=2}{\Rightarrow} \quad -12 + m \overset{!}{=} 0 \quad \Rightarrow \quad \uuline{m=12}.
-    \end{align*}
+    \end{align}
     \emph{wenn eine Wurzel der Gleichung den Wert 2 hat. Berechnen Sie auch die beiden anderen Wurzeln.} Wir bestimmen die restlichen Wurzeln per Polynomdivision und $pq$-Formel: 
-    \begin{align*}
+    \begin{align}
         &\begin{array}{r@{} r@{} r@{} r@{} r}
             (6x^3 &{}-7x^2\hp{)}&{}-16x\hp{)}&{}+12) &\;:(x-2) = \uline{6x^2+5x-6} \\
           -(6x^3 &{}-12x^2&{}) \\ 
@@ -121,20 +121,20 @@ Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt
                 & & & 0
         \end{array}\\
         & \Rightarrow \quad 0 \overset{!}{=} x^2 +\frac{5}{6}x -1 \quad \Rightarrow x_{1/2} = -\frac{5}{12} \pm \sqrt{\frac{25}{144}+1} \quad \Rightarrow \quad \uuline{x_1 = \frac{2}{3}, x_2 = -\frac{3}{2}}.
-    \end{align*}
+    \end{align}
     \item \emph{Die Zahlen 2 und 3 seien Wurzeln der Gleichung}
-    \begin{align*}
+    \begin{align}
     2x^3+mx^2-13x+n=0\,.
-    \end{align*}
+    \end{align}
     \emph{Bestimmen Sie die Zahlenwerte von $m$ und $n$, und geben Sie die dritte Wurzel an.}
     Zu Bestimmung der Lösung setzen wir die beiden Wurzeln in die Gleichung ein: 
-    \begin{align*}
+    \begin{align}
         &x_1 = 2: \quad 4m + n = \hp{-}10 \quad (1)\\
         &x_2 = 3: \quad 9m + n = -15 \quad (2)\\
         & \Rightarrow \quad (1)-(2): \quad -5m = 25 \quad \Rightarrow \quad \uuline{m= -5}, \quad \uuline{n=30}.
-    \end{align*}
+    \end{align}
     Die dritte Wurzel ermitteln wir durch Polynomdivision mit $(x-2)(x-3) = x^2 - 5x+6$
-    \begin{align*}
+    \begin{align}
         \begin{array}{r@{} r@{} r@{} r@{} r}
             (2x^3 &{}-5x^2\hp{)}&{}-13x\hp{)}&{}+30) &\;:(x^2-5x+6) = 2x+5 \quad \Rightarrow  \quad \uuline{x_3 = -\frac{5}{2}}\\
           -(2x^3 &{}-10x^2&{}+12x) \\ 
@@ -144,7 +144,7 @@ Berechnen Sie die folgenden Ausdrücke. Zusatz: Für welche Werte von $n$ bleibt
           \cmidrule{2-4} 
                 & & & 0
         \end{array}\\
-    \end{align*}
+    \end{align}
 \end{enumerate}
 
 \newpage
@@ -187,7 +187,7 @@ Schreiben Sie, so weit möglich, als Summe von Partialbrüchen.
     Die Faktorisierung des Nenners haben wir in Aufgabe 4a bereits gesehen. Wir müssen die Vielfachheit der Nullstelle in unserem Ansatz berücksichtigen. Durch $\alpha = 0$ sehen wir, dass die rechte Seite bei $x=1$ keine Pollstelle hat. Die Partialbruchzerlegung hat uns also den Limes $x\to 1$ der linken Seite verschafft.
     \item $\frac{2x^4-4x^3-5x^2+(\sqrt{2}-7)x+\sqrt{2}+12}{x^2-2x-3}$\\
     Da der Zähler von höherem Grade ist als das Nennerpolynom, wird zunächst eine Polynomdivision durchgeführt: 
-    \begin{align*}
+    \begin{align}
         \begin{array}{r@{} r@{} r@{} r@{} r@{} r}
             (2x^4 &{} -4x^3 &{}-5x^2\hp{)}&{}+(\sqrt{2}-7)x&{}+\sqrt{2}+12) &\;:(x^2 - 2x-3) = \uline{2x^2+1+ \frac{(\sqrt{2}-5)x + \sqrt{2}+15}{x^2-2x-3}} \\[-3mm]
           -(-2x^4 &{}-4x^3&{}-6x^2) \\ 
@@ -197,16 +197,16 @@ Schreiben Sie, so weit möglich, als Summe von Partialbrüchen.
           \cmidrule{3-5}
                 &{} &{} &{} (\sqrt{2}-5)x &{}+\sqrt{2} + 15
         \end{array}
-    \end{align*}
+    \end{align}
     Die Nullstellen des Nenners lauten: $x_1 = 3, x_2 = -1$. Damit folgt 
-    \begin{align*}
+    \begin{align}
         &\frac{(\sqrt{2}-5)x + \sqrt{2}+15}{x^2-2x-3} \overset{!}{=} \frac{\alpha}{x-3} + \frac{\beta}{x+1} = \frac{(x+1)\alpha + (x-3)\beta}{x^2-2x-3}\\
         &\text{Koeffizientenvergleich:} \quad\begin{rcases}
             x^1: \alpha + \beta = \sqrt{2} -5 \\
             x^0: \alpha - 3\beta = \sqrt{2} + 15
         \end{rcases} \quad \text{Differenz:} \quad \uline{\beta = -5}, \quad\Rightarrow \uline{\alpha = \sqrt{2}}\\
         &\Rightarrow \uuline{\frac{2x^4-4x^3-5x^2+(\sqrt{2}-7)x+\sqrt{2}+12}{x^2-2x-3} = 2x^2 + 1 + \frac{\sqrt{2}}{x-3} - \frac{5}{x+1}}
-    \end{align*}
+    \end{align}
 \end{enumerate}
 %
 
@@ -227,18 +227,18 @@ Vereinfachen bzw. berechnen Sie die folgenden Summen.
 \end{enumerate}
 
 \emph{Hinweis zu (b)}: Der Term in der Summe kann mithilfe von Partialbruchzerlegung vereinfacht und die entstehende Summe auseinandergezogen werden. 
-\begin{align*}
+\begin{align}
     \frac{1}{k(k+1)} = \frac{A}{k} + \frac{B}{k+1} \quad \Rightarrow \quad 1 = A(k+1) + Bk = (A+B) k + A.
-\end{align*}
+\end{align}
 Der Koeffizientenvergleich liefert $A=1, B=-1$ und wir können weiter vereinfachen 
-\begin{align*}
+\begin{align}
     \sum_{k=1}^n \frac{1}{k(k+1)} &= \sum_{k=1}^n \frac{1}{k} - \sum_{k=1}^n \frac{1}{k+1} \qq{Indexverschiebung} k+1 = l \\
     & =\sum_{k=1}^n \frac{1}{k} - \sum_{l=2}^{n+1} \frac{1}{l} = \qty(1 + \cancel{\sum_{k=2}^n}) - \qty(\cancel{\sum_{l=2}^n} + \frac{1}{n+1}) = \uuline{\frac{n}{n+1}}.
-\end{align*}
+\end{align}
 
 \emph{Hinweis zu (c)}: Hierfür kann ein expliziter Ausdruck gefunden werden, wenn man die Formel mit $(1-x)$ multipliziert und analog vorgeht wie in (b) 
-\begin{align*}
+\begin{align}
         (1-x) \sum_{k=0}^n x^k &= \sum_{k=0}^n x^k - x \sum_{k=0}^n x^k = \sum_{k=0}^n x^k - \sum_{k=0}^n x^{k+1} \qq{Indexverschiebung} l = k+1 \\
         &= \sum_{k=0}^n x^k - \sum_{l=1}^{n+1} x^l = 1 + \cancel{\sum_{k=1}^n x^k} - \qty(\cancel{\sum_{l=1}^n x^l} + x^{n+1}) = 1 - x^{n+1} \\
         \Rightarrow \quad \sum_{k=0}^n x^k &= \uuline{\frac{1 - x^{n+1}}{1-x}}.
-\end{align*}
+\end{align}
