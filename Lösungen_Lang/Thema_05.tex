@@ -31,6 +31,7 @@
 \end{enumerate}
 \emph{Lösung:}
 \begin{enumerate}[label=(\alph*)]
+    \setlength{\mathindent}{0cm}
     \item $a\,2^x=\e^{bx} \quad \Rightarrow \quad \ln(a)+x\ln(2) = bx \quad \Rightarrow \quad \uuline{x = \frac{\ln(a)}{b-\ln(2)}},\quad$ offenbar $a>0$
     \item $x=49^{1-\log_7(2\sqrt{x})}+5^{-\log_5(4x)} = \frac{49}{(7\cdot 7)^{\log_7(2\sqrt{x})}} + \frac{1}{4x} = \frac{25}{2x} \quad \Rightarrow \quad \uuline{x = \frac{5}{\sqrt{2}}},\quad$ (nur positive Lsg.)
     \item$~$\\[-1.4cm]
@@ -78,23 +79,72 @@
 \end{align*}
 sodass $W(t)$ die "`Menge"' an Wissen zur Zeit $t$ gibt.}
 \begin{enumerate}[label=(\alph*)]
-    \item Nach welcher Zeit $\tau_2$ hat das Wissen eines Studenten auf das Doppelte zugenommen?
-    \item Nach welcher Zeit $\tau_n$ hat das Wissen eines Studenten auf das $n$-Fache zugenommen?
-    \item Drücken Sie $\tau_n$ als Vielfaches von $\tau_2$ aus. Welcher Zusammenhang besteht in den Fällen $n=3$ und $n=4$? Welche Aussage können Sie für $n=2^m$, $m\in\mathbb{N}$, treffen?
+    \item \emph{Nach welcher Zeit $\tau_2$ hat das Wissen eines Studenten auf das Doppelte zugenommen?}\\
+    \begin{align}
+        W(t_0 + \tau_2) \overset{!}&{=} 2 W(t_0) \quad \Rightarrow \quad \cancel{A} \e^{c(\bcancel{t_0} + \tau_2)} = 2 \cancel{A} \bcancel{e^{c t_0}} \\
+        \Rightarrow \quad \tau_2 &= \uuline{\frac{\ln(2)}{c}}.
+    \end{align}
+    \item \emph{Nach welcher Zeit $\tau_n$ hat das Wissen eines Studenten auf das $n$-Fache zugenommen?}
+    \begin{align}
+        W(t_0 + \tau_n) \overset{!}&{=} n W(t_0) \quad \Rightarrow \quad \e^{c \tau_n} = n  \\
+        \Rightarrow \quad \tau_n &= \uuline{\frac{\ln(n)}{c}}.
+    \end{align}
+    \item \emph{Drücken Sie $\tau_n$ als Vielfaches von $\tau_2$ aus. Welcher Zusammenhang besteht in den Fällen $n=3$ und $n=4$? Welche Aussage können Sie für $n=2^m$, $m\in\mathbb{N}$, treffen?}
+    \begin{align}
+        &\tau_n \overset{!}{=} x \tau_2 \quad \Rightarrow \quad \frac{\ln(n)}{\cancel{c}} = x \frac{\ln(2)}{\cancel{c}} \\
+        &\Rightarrow \quad x = \frac{\ln(n)}{\ln(2)} = \log_2(n)  \quad \Rightarrow \quad \uuline{\tau_n = \log_2(n) \tau_2} \\
+        & n=3: \quad \tau_3 = \log_2(3) \tau_2 \approx 1.6 \tau_2 \\
+        & n=4: \quad \tau_4 = \log_2(4) \tau_2 = 2 \tau_2 \\
+        & n= 2^m  \quad \tau_{2^m} = \log_2(2^m) \tau_2 = m \tau_2.
+    \end{align}
 \end{enumerate}
 
 \newpage
 \paragraph{Aufgabe 3: } \emph{Hyperbelfunktionen}\hfill (Zusatzaufgabe)\\[0.2cm]
-Es seien die Funktionen
+\emph{Es seien die Funktionen
 \begin{align*}
-    f(x)&:=\e^{x}+\e^{-x}\,,\\
-    g(x)&:=\e^{x}-\e^{-x}
+    f(x)&:=\frac{1}{2}(\e^{x}+\e^{-x})\,,\\
+    g(x)&:=\frac{1}{2}(\e^{x}-\e^{-x})
 \end{align*}
-definiert.
+definiert.}
 \begin{enumerate}[label=(\alph*)]
-    \item Finden Sie jeweils einen Ausdruck für $f(2x)$ und $g(2x)$ in Abhängigkeit der Funktionen einfacher Argumente, $f(x)$ und $g(x)$.
-    \item Finden Sie jeweils einen Ausdruck für $f(x+y)$ und $g(x+y)$ in Abhängigkeit von $f(x)$ und $f(y)$ sowie $g(x)$ und $g(y)$. Vergleichen Sie mit dem Ergebnis aus (a), indem Sie $x=y$ setzen.
-    \item Schreiben Sie die Funktionen $f(x)$ und $g(x)$ in Reihendarstellung.
-    \item Bestimmen Sie die Umkehrfunktion $g^{-1}$ von $g(x)$.
-    % \item* Es sei eine dritte Funktion definiert als $h(x):=f(x)/g(x)$. Überzeugen Sie sich davon, dass diese Funktion mindestens einen \emph{Fixpunkt} besitzt, d.h. dass mindestens eine Zahl $u\in\mathbb{R}$ existiert, für die $h(u)=u$.
+    \item \emph{Finden Sie jeweils einen Ausdruck für $f(2x)$ und $g(2x)$ in Abhängigkeit der Funktionen einfacher Argumente, $f(x)$ und $g(x)$.}
+    \begin{align}
+        f(2x) &= \frac{\e^{2x}+ \e^{-2x}}{2} = \frac{\qty(\e^x)^2 + \qty(\e^{-x})^2}{2} = \frac{(\e^x + \e^{-x})^2 - 2 \cancel{\e^x} \cancel{\e^{-x}}}{2} \\
+        &= 2\qty(\frac{\e^x + \e^{-x}}{2})^2 - 1 = \uuline{2 f(x)^2 - 1}.\\
+        g(2x) &= \frac{\e^{2x}-\e^{-2x}}{2} = \frac{(\e^x +\e^{-x})(\e^x - \e^{-x})}{2} = 2\qty(\frac{\e^{x}+\e^{-x}}{2})\qty(\frac{\e^{x}-\e^{-x}}{2}) = \uuline{2 f(x) g(x)}.
+    \end{align}
+    \item \emph{Finden Sie jeweils einen Ausdruck für $f(x+y)$ und $g(x+y)$ in Abhängigkeit von $f(x)$ und $f(y)$ sowie $g(x)$ und $g(y)$. Vergleichen Sie mit dem Ergebnis aus (a), indem Sie $x=y$ setzen.}\\
+    Wir stellen zunächst fest: $\e^{x} = f(x) + g(x)$ und $\e^{-x} = f(x) - g(x)$ 
+    \begin{align}
+        f(x+y) &= \frac{1}{2}(\e^x \e^y + \e^{-x} \e^{-y}) = \frac{1}{2}\qty[(f(x)+g(x))\cdot(f(y)+g(x))+(f(x)-g(x))\cdot(f(y)-g(y))] \\
+        &= \uuline{f(x)f(y) + g(x)g(y)} \\
+        g(x+y) &= \frac{1}{2}(\e^x \e^y -\e^{-x} \e^{-y}) = \frac{1}{2}\qty[(f(x)-g(x))\cdot(f(y)+g(x))+(f(x)-g(x))\cdot(f(y)-g(y))] \\
+        &= \uuline{f(x)g(y)+g(y)f(x)}
+    \end{align}
+    Ein Vergleich mit (a) zeigt 
+    \begin{align}
+        &f(2x) = f(x+x) = f(x)^2 + g(x)^2 \overset{!}{=} f(x)^2 - 1 \notag \\
+        &\Rightarrow \qq{Es gilt} f(x)^2 - g(x)^2 = 1\\
+        &g(2x) = g(x+x) = f(x)g(x) + g(x)f(x) = 2 f(x) g(x).
+    \end{align}
+    Bemerkung: DAs sind die Additionstheoreme für Hyperbelfunktionen sowie die hyperbolische Variante des trigonometrischen Pythagoras, $\cosh(x)^2 - \sinh(x)^2 = 1.$
+    \item \emph{Schreiben Sie die Funktionen $f(x)$ und $g(x)$ in Reihendarstellung.}
+    \begin{align}
+        &\text{Vorlesung:} \quad \e^x = \sum_{n=0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \hdots  \\
+        &f(x) = \frac{\e^{x}+ \e^{-x}}{2} = \frac{1}{2}\sum_{n=0}^\infty \frac{x^n + (-x)^n }{n!} = \frac{1}{2} \sum_{n=0, \text{gerade}}^\infty \frac{2 x^n}{n!} = \uuline{\sum_{n=0}^\infty \frac{x^{2n}}{(2n)!}} \\
+        &g(x) = \frac{\e^{x}- \e^{-x}}{2} = \frac{1}{2}\sum_{n=0}^\infty \frac{x^n - (-x)^n }{n!} = \frac{1}{2} \sum_{n=0, \text{ungerade}}^\infty \frac{2 x^n}{n!} = \uuline{\sum_{n=0}^\infty \frac{x^{2n+1}}{(2n+1)!}}.
+    \end{align}
+    \item \emph{Bestimmen Sie die Umkehrfunktion $g^{-1}$ von $g(x)$.}\\
+    Wir schreiben $y = \frac{1}{2}(\e^x - \e^{-x})$ und versuchen nach $x$ aufzulösen. Dafür wenden wir zunächst die Substitution $z \equiv \e^x$ an: 
+    \begin{align}
+        y = \frac{1}{2}\qty(z - \frac{1}{z}) \quad \Rightarrow &\quad 0 = z^2 - 2y z -1  \\
+        &\quad z_{1/2} = y \pm \sqrt{y^2 +1} \\
+        \Rightarrow & \quad x = \ln(z) = \ln(y \pm \sqrt{y^2+1}).
+    \end{align}
+    Da $\sqrt{y^2 +1} > y$, muss das ``+'' gewählt werden, um ein positives Argument im Logarithmus zu erhalten. Es folgt 
+    \begin{align}
+        \uuline{g^{-1}(x) = \ln(x+\sqrt{x^2+1})}.
+    \end{align}
+    Bemerkung: Wir erhalten hiermit die Umkehrfunktion des $g(x) = \sinh(x)$, den $\text{arsinh}(x)$.
 \end{enumerate}

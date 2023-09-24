@@ -1,22 +1,16 @@
 \documentclass[parskip=half, fontsize=12pt, fleqn]{scrartcl}
 
-\usepackage[ngerman]{babel}
-\usepackage{tabto} % alignment in enumerate
 \input{Packages.tex}
+\newgeometry{left=2cm, right=2cm, top=2cm, bottom=2.5cm}
+\setenumerate{labelindent=1em,labelsep=0.5cm,leftmargin=*}
 
+\everymath{\displaystyle}
+% no numbering of align environments
 \makeatletter
 \renewcommand\tagform@[1]{}
 \makeatother
 
-\setlength{\mathindent}{0cm}
-
-\newgeometry{left=2cm, right=2cm, top=2cm, bottom=2.5cm}
-\setenumerate{labelindent=1em,labelsep=0.5cm,leftmargin=*}
-\usetikzlibrary{tikzmark}
-\everymath{\displaystyle}
 \newcommand{\Semester}{2023/24}
-\newcommand{\hp}{\hphantom}
-
 \newcommand{\Titelbanner}[2]{
     \begin{center}
         \textsc{
@@ -32,32 +26,24 @@
 }
 
 %%%% 
-% \includeonly{Lösungen_Lang/Thema_05} 
+% \includeonly{Lösungen_Lang/Thema_08} 
 %%%%
 
 \begin{document}
 \graphicspath{{./Bilder/}{../}}
-% \Deckblatt{Wintersemester \Semester}
-%           {Mathematik - Ein Vorkurs für Studienanfänger}
-%           {Martin Beyer}
-%           {Mathematik}
 
 \pagestyle{plain}
 \renewcommand{\headrulewidth}{0pt}
-\renewcommand{\footrulewidth}{0pt}
-\pagenumbering{gobble}
-% \tableofcontents
-% \newpage
+\pagenumbering{gobble} % no page numbers
   
-
 \include{Lösungen_Lang/Thema_01}
 \include{Lösungen_Lang/Thema_02} 
 \include{Lösungen_Lang/Thema_03}
 \include{Lösungen_Lang/Thema_04}
 \include{Lösungen_Lang/Thema_05}
-% \include{Lösungen_Lang/Thema_06}
+\include{Lösungen_Lang/Thema_06}
 % \include{Lösungen_Lang/Thema_07}
-% \include{Lösungen_Lang/Thema_08}
+\include{Lösungen_Lang/Thema_08}
 % \include{Lösungen_Lang/Thema_09}
 % \include{Lösungen_Lang/Thema_10}
 

@@ -1,0 +1,185 @@
+\section{Arithmetische und geometrische Reihen}
+
+Eine \emph{Folge} ist eine Liste nummerierter Objekte (endlich oder unendlich viele).
+\begin{align}
+    \qq{Schreibweise:} (a_k)_{k=1,\hdots,n} \qq{oder} (a_k)_{k\in\mathbb{N}}.
+\end{align}
+Folgen können definiert werden durch explizite Angabe der Folgenglieder, z.\,B. 
+\begin{align}
+    (a_k)_{k=1,\hdots,4} = (2,3,5,7), \qq{oder} a_1 = 2, a_2=3, a_3=5, a_4 = 7,
+\end{align}
+oder durch eine (explizite oder rekursive) Bildungsvorschrift wie z.\,B. 
+\begin{align}
+    a_k = 2^k \qq{,} k\in\mathbb{N}.
+\end{align}
+Eine \emph{Reihe} ist eine Liste von Summen aus Folgengliedern, also 
+\begin{align}
+    (s_n)_{n\in\mathbb{N}} \qq{, wobei} s_n = \sum_{k=1}^n a_k  \quad \leftarrow \qq{``Partialsummen''.}
+\end{align}
+Eine Reihe ist selbst wieder eine Folge. 
+
+\paragraph{Beispiel:}$~$ Sei $(a_k)_{k=1}^4$ die Folg der ersten vier Primzahlen, also $a_1 = 2, a_2 = 3, a_3 = 5, a_4 = 7$. Dann sind die Partialsummen gegeben als 
+\begin{alignat}{3}
+    s_1 &= \sum_{k=1}^1 a_k = a_1 = 2, \quad & s_2&= \sum_{k=1}^2 a_k = a_1+a_2 = 5, \notag \\
+    s_3 &= \sum_{k=1}^3 a_k = a_1 + a_2 + a_3 = 10, \quad & s_4&= \sum_{k=1}^4 a_k = a_1 + a_2 + a_3 + a_4 = 17.
+\end{alignat}
+Also ist die Folge der Reihe: 
+\begin{align}
+    (s_n)_{n=1}^4 = (2,5,10,17).
+\end{align}
+
+\subsection{Arithmetische Reihen}
+Bei einer arithmetischen Folge ist die Differenz $d$ zwei aufeinander folgender Glieder konstant. Wir können die Folge entweder \emph{rekursiv} oder \emph{explizit} definieren 
+\begin{subequations}
+    \begin{alignat}{3}
+            &\qq{rekursiv:}\quad &a_{k+1} &= a_k + d \\
+            &\qq{explizit:}\quad &a_k &= a_0 + k\cdot d,
+    \end{alignat}
+\end{subequations}
+wobei $a_0$ das Anfangsglied der Folge ist. Die Glieder einer arithmetischen Reihe sind nun die Partialsummen einer arithmetischen Folge: 
+\begin{align}
+    s_0 &= a_0 \notag \\
+    s_1 &= a_0 + (a_0 + d) \notag \\
+    s_2 &= a_0 + (a_0 + d) + (a_0 + 2d) \notag \\
+    s_n &= a_0 + (a_0 + d) + \hdots + (a_0 + nd) = \sum_{k=0}^n (a_0 + k d). 
+\end{align}
+Wir können durch vollständige Induktion zeigen, dass für das $n$-te Glied der Reihe gilt: 
+\begin{mymathbox}[ams align, title={Arithmetische Reihe}, colframe={FSUblau}]
+    s_n = (n+1) \qty(a_0 + n \frac{d}{2}).
+\end{mymathbox}
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=0: \quad s_n = a_0$ 
+    \item[(IV)] $\displaystyle n=k: \quad s_k = (k+1)\qty(a_0 + k \frac{d}{2})$
+    \item[(IB)] $\displaystyle n=k+1:\quad s_{k+1} = (k+2)\qty(a_0 + (k+1)\frac{d}{2})$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+           s_{k+1} &= s_k + a_0 + (k+1) d = (k+1)a_0 + k(k+1)\frac{d}{2} + a_0 + (k+1)d \notag \\
+           &= (k+2) a_0 + (k+1)(k+2)\frac{d}{2} = (k+2)\qty[a_0 + (k+1)\frac{d}{2}]. 
+        \end{align}
+    \end{proof}
+\end{enumerate}
+Es lässt sich $s_n$ auch durch $a_n$ ausdrücken. Dadurch eliminieren wir $d$: 
+\begin{align}
+    a_n &= a_0 + n d \quad \Rightarrow \quad nd = a_n - a_0 \notag \\
+    \Rightarrow s_n &= (n+1)\qty(a_0 + \frac{a_n -a_0}{2}) = \uuline{\frac{n+1}{2}(a_0 + a_n)}.
+\end{align}
+Wir können an dieser Darstellung durch das Anfangs- und Endglied bereits die Namensgebung der arithmetischen Folge/Reihe erahnen: 
+\begin{align}
+    a_{k+1} &= a_0 + (k+1)d \notag \\
+    a_{k-1} &= a_0 + (k-1)d \notag \\
+    \Rightarrow a_{k+1} + a_{k-1} &= 2 a_0 +2kd = 2\underbrace{(a_0 + kd)}_{a_k} \notag \\[-2mm]
+    \Rightarrow a_k &= \uuline{\frac{1}{2}(a_{k+1}+a_{k-1})}.
+\end{align}
+Die Glieder der arithmetischen Folge sind gleich dem arithmetischen Mittel (s.u.) ihrer Nachbarglieder.
+
+\subsection{Geometrische Reihen}
+Bei einer arithmetischen Folge ist der Quotient $q$ zwei aufeinander folgender Glieder konstant. Wir können die Folge entweder \emph{rekursiv} oder \emph{explizit} definieren 
+\begin{subequations}
+    \begin{alignat}{3}
+            &\qq{rekursiv:}\quad &a_{k+1} &= q \cdot a_k \\
+            &\qq{explizit:}\quad &a_k &= q^k \cdot a_0,
+    \end{alignat}
+\end{subequations}
+wobei $a_0$ das Anfangsglied der geometrischen Folge darstellt. Die Gleider einer geometrischen Reihe sind die Partialsummen einer geometrischen Folge: 
+\begin{align}
+    s_0 &= a_0 \notag \\
+    s_1 &= a_0 + q a_0 = (1+q) a_0 \notag \\
+    s_2 &= a_0 + q a_0 + q^2 a_0 = (1+q+q^2) a_0 \notag \\
+    s_n &= (1+q+q^2 + \hdots + q^n) a_0 = a_0 \sum_{k=0}^n q^k. 
+\end{align}
+Wir können, abhängig von $q$, unterschiedliche Fälle unterscheiden: 
+\begin{align}
+    q &> 0 \quad \begin{cases}
+        q > 1: & \text{Die Glieder der Folge werden größer.} \\
+        q = 1: & \text{Alle Glieder der Folge sind gleich.} \\
+        q < 1: & \text{Die Glieder der Folge werden kleiner.}
+    \end{cases} \\
+    q &< 0: \quad \text{Die Folge alterniert.}
+\end{align}
+Wir zeigen durch vollständige Induktion, dass für das $n$-te Glied der Reihe gilt: 
+\begin{mymathbox}[ams align, title={Arithmetische Reihe}, colframe={FSUblau}]
+    s_n = a_0 \frac{1-q^{n+1}}{1-q} \qq{wobei} q \neq 1.
+\end{mymathbox}
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=0: \quad s_n = a_0$ 
+    \item[(IV)] $\displaystyle n=k: \quad s_k = a_0 \frac{1-q^{k+1}}{1-q}$
+    \item[(IB)] $\displaystyle n=k+1:\quad s_{k+1} = a_0 \frac{1-q^{k+2}}{1-q}$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+           s_{k+1} &= s_k + a_{k+1} = a_0 \frac{1-q^{k+1}}{1-q} + a_0 q^{k+1} \notag \\
+           &= \frac{a_0}{1-q} \qty[1-q^{k+1} + (1-q)q^{k+1}] = \frac{a_0}{1-q}\qty(1-\cancel{q^{k+1}} + \cancel{q^{k+1}} - q^{k+2}) \notag \\
+           &= a_0 \frac{1-q^{k+2}}{1-q}. 
+        \end{align}
+    \end{proof}
+\end{enumerate}
+Es lässt sich $s_k$ auch durch das Endglied $a_n$ ausdrücken (Eliminierung der Potenz): 
+\begin{align}
+    a_n &= a_0 q^k \quad \Rightarrow \quad q^n = \frac{a_n}{a_0} \notag\\
+    \Rightarrow s_n = a_0 \frac{1-q \frac{a_n}{a_0}}{1-q} = \uuline{\frac{a_0 - q a_n}{1-q}}.
+\end{align}
+Wir können wieder anhand dieser Darstellung durch das Anfangs- und Endglied bereits die Namensgebung der geometrischen Folge/Reihe erahnen: 
+\begin{align}
+    a_{k+1} &= a_0 q^{k+1} \notag \\
+    a_{k-1} &= a_0 q^{k-1} \notag \\
+    \Rightarrow a_{k+1} \cdot a_{k-1} &= a_0^2 q^{2k} = (a_0 q^k)^2 = a_k^2 \notag \\
+    \Rightarrow a_k &= \uuline{\sqrt{a_{k+1}\cdot a_{k+1}}}.
+\end{align}
+Die Glieder der geometrischen Folge sind gleich dem geometrischen Mittel (s.u.) ihrer Nachbarglieder.
+
+\paragraph{Bemerkung}$~$
+
+Für $|q| < 1$ gilt $\lim_{n\to\infty}(q^{n+1}) = 0$. Demnach nimmt dann die unendliche geometrische Reihe einen Wert an, 
+\begin{mymathbox}[ams align, title={Unendliche geometrische Reihe}, colframe={FSUblau}]
+    \sum_{n=0}^\infty q^n = \frac{1}{1-q} \qq{für} |q| < 1.
+\end{mymathbox}
+Anders herum betrachtet haben wir damit eine Reihendarstellung der Funktion 
+\begin{align}
+    f(x) = \frac{1}{1-x}, \qq{für} 0 < x < 1
+\end{align}
+gefunden.
+
+\newpage
+\subsection{Arithmetisches und geometrisches Mittel}
+Es seien $a_1, a_2$ zwei reelle Zahlen. 
+\begin{itemize}
+    \item \emph{arithmetisches Mittel} von $a_1$ und $a_2$: $A = \dfrac{a_1+a_2}{2}$ 
+    \item \emph{geometrisches Mittel} von $a_1$ und $a_2$: $G = \sqrt{a_1 a_2}$.
+\end{itemize}
+Es gilt allgemein 
+\begin{align}
+    G \le A.
+\end{align}
+\begin{proof}$~$\\[-1.5cm]
+    \begin{alignat}{3}
+        && \sqrt{a_1 a_2} &\le \frac{a_1 + a_2}{2} \notag \\
+        &\Longleftrightarrow &4 a_1 a_2 &\le (a_1+a_2)^2 = a_1^2 + a_2^2 + 2a_1 a_2 \notag \\
+        &\Longleftrightarrow & 0 &\le a_1^2 +a_2^2 - 2a_1 a_2 = (a_1-a_2)^2.  
+    \end{alignat}
+\end{proof}
+
+\paragraph{geometrische Interpretation}$~$
+
+\begin{wrapfigure}{r}{6cm}
+    \centering
+    \vspace{-5mm}
+    \begin{tikzpicture}
+        \fill (0,0) circle (2pt);
+        \draw (0:2.5) arc (0:180:2.5);
+        \draw[thick] ($(cos{70}*2.5,sin{70}*2.5)$) --node[left]{$G$} ($(cos{70}*2.5,0)$);
+        \draw[thick, dashed] (180:2.5) --node[left]{$u$} ($(cos{70}*2.5,sin{70}*2.5)$);
+        \draw[thick, dashed] (0:2.5) --node[right]{$v$} ($(cos{70}*2.5,sin{70}*2.5)$);
+        \draw[thick, FSUblau] (180:2.5) --node[below]{$a_1$} ($(cos{70}*2.5,0)$);
+        \draw[thick, PAForange] (0:2.5) --node[below]{$a_2$} ($(cos{70}*2.5,0)$);
+        \draw[thick, {latex}-{latex}] (-2.5,-.5) --node[below]{$A$} (0,-.5);
+    \end{tikzpicture}
+    \vspace{-5mm}
+\end{wrapfigure}
+
+Für einen Punkt auf einem Halbkreis bildet das Dreieck, welches aus dem Punkt und den beiden Endpunkten gebildet wird, stets ein rechtwinkliges Dreieck (Thales-Kreis). Es gilt dann 
+\begin{align}
+    u^2 + v^2 &= (a_1 + a_2)^2 \notag \\
+    (G^2 + a_1^2) + (G^2 + a_2^2) &= (a_1 + a_2)^2 \notag \\
+    2G^2 + \cancel{a_1^2} + \cancel{a_2}^2 &= \cancel{a_1^2} + \cancel{a_2}^2 + 2 a_1 a_2 \notag \\
+    \Rightarrow G = \sqrt{a_1 a_2}. 
+\end{align}
+Das arithmetische Mittel ist also der Radius des Kreis mit Durchmesser $(a_1+a_2)$. Das geometrische Mittel ist die halbe Länge der Sehne, senkrecht zum Durchmesser, in dem Punkt, an dem $a_1$ und $a_2$ aneinander stoßen. Mit der geometrischen Interpretation wird auch direkt offensichtlich, warum $G \le A$ gelten muss.

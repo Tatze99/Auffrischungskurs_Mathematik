@@ -91,18 +91,117 @@ Wichtig ist es, bei der Kettenregel nach der richtigen Variable abzuleiten, d.\,
 Wir wollen im Folgenden eine Liste von häufig verwendeten Funktionen und deren Ableitungen angeben. 
 
 \begin{table}[htp]
-    \caption{}
-    \label{}
-    \begin{tabular}{l l}
+    \centering
+    \caption{Ableitungen spezieller Funktionen}
+    \begin{tabular}[t]{l l}
         \toprule
         $f(x)$ & $f'(x)$ \\
         \midrule 
         $x^n$ & $n x^n$ \\
+        $\sqrt{x}$ & $\dfrac{1}{2\sqrt{x}}$ \\
         $\ln(x)$ & $\dfrac{1}{x}$ \\
         $\sin(x)$ & $\cos(x)$ \\
         $\cos(x)$ & $-\sin(x)$ \\ 
         $\tan(x)$ & $1 + \tan^2(x)$ \\
-        $\arcsin(x)$ & $\dfrac{1}{\sqrt{1-}}$
+        $\exp(x)$ & $\exp(x)$ \\
+        $a^x$ & $\ln(a) a^x$ 
+    \end{tabular}
+    \hspace{1cm}
+    \begin{tabular}[t]{l l}
+        \toprule
+        $f(x)$ & $f'(x)$ \\
+        \midrule 
+        $\arcsin(x)$ & $\dfrac{1}{\sqrt{1-x^2}}$ \\
+        $\arccos(x)$ & $\dfrac{-1}{\sqrt{1-x^2}}$ \\
+        $\arctan(x)$ & $\dfrac{1}{1+x^2}$ \\
+        $\sinh(x)$ & $\cosh(x)$ \\
+        $\cosh(x)$ & $\sinh(x)$ \\
     \end{tabular}
 \end{table}
 
+Schauen wir uns mal ein Beispiel an: 
+\begin{align}
+    f(x) &= \sin(\sqrt[n]{x^3}) \cdot \ln(\cos(x)-3\e^{x\cdot \ln(x)}) \notag \\
+    \dv{f}{x} &= \dv{x}\qty[\sin(\sqrt[n]{x^3})]\cdot \ln(\cos(x)- 3\e^{x\ln(x)}) + \sin(\sqrt[n]{x^3}) \dv{x} \ln\underbrace{\big(\cos(x)-3\e^{x\cdot \ln(x)}\big)}_{\equiv A(x)} \notag \\
+    &= \ln(A(x)) \cdot \cos(\sqrt[n]{x^3}) \cdot \dv{x}\underbrace{(\sqrt[n]{x^3})}_{x^{3/n}} + \sin(\sqrt[n]{x^3}) + \sin(\sqrt[n]{x^3}) \frac{1}{A(x)} \dv{A}{x} \notag \\
+    &= \ln(A(x)) \cdot \cos(\sqrt[n]{x^3}) \cdot \frac{3}{n} \cdot \underbrace{x^{\frac{3}{n}-1}}_{\mathclap{x^{\frac{3-n}{n}} =\sqrt[n]{x^{3-n} = \sqrt[n]{x^3}\cdot x^{-1}}}} + \sin(\sqrt[n]{x^3}) \frac{1}{A(x)}\qty[-\sin(x)-3 \dv{x}\e^{x \ln(x)}] \notag\\
+    &= \frac{3 \ln(A(x)) \sqrt[n]{x^3}}{nx}\cos(\sqrt[n]{x^3}) - \frac{\sin(\sqrt[n]{x^3})}{A(x)} \qty[\sin(x)+3 \e^{x \ln(x)}(\ln(x)+1)]
+\end{align}
+
+\newpage
+\subsection{Kurvendiskussion} 
+Verschwindet die Ableitung an einem Punkt, $f'(x) = 0$, dann bedeutet dies, dass dort ein lokales Extremum (bzw. ein Sattelpunkt) vorliegt. Bei einem Maximum ist die zweite Ableitung $f''(x_0) < 0$, während sie bei einem lokalen Minimum $f''(x_0) >0$ ist. Für den Fall $f''(x_0) = 0$ liegt ein Sattelpunkt vor, falls $f^{(3)}(x_0) \neq 0$ ist. Ansonsten muss durch das Bilden von höheren Ableitungen weiter entschieden werden\footnote{Ein Beispiel dafür ist $f(x) = x^4$. Im Nullpunkt liegt ein Minimum vor, jedoch verschwinden dort die ersten drei Ableitungen.}. 
+
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={2.5}, xticklabels={$x_0$}, ytick, xlabel={$x$}, ylabel={$y$}, height=6cm, width=0.4\textwidth, xmin = 0, xmax=5, ymin=0, ymax=5]
+            \addplot[no marks, FSUblau, thick, domain=0:5]{-0.5*(x-2.5)^2+4};
+            \draw[thick] (1,4) -- (4,4);
+            \draw[thick, dashed] (2.5,0) -- (2.5,4);
+        \end{axis}
+        \node (A) at (2.3,-1){$f''(x_0) <0$ Maximum};
+    \end{tikzpicture}
+    \hfill
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={2.5}, xticklabels={$x_0$}, ytick, xlabel={$x$}, ylabel={$y$}, height=6cm, width=0.4\textwidth, xmin = 0, xmax=5, ymin=0, ymax=5]
+            \addplot[no marks, FSUblau, thick, domain=0:5]{0.5*(x-2.5)^2+1};
+            \draw[thick] (1,1) -- (4,1);
+            \draw[thick, dashed] (2.5,0) -- (2.5,1);
+            
+        \end{axis}
+        \node (A) at (2.3,-1){$f''(x_0) < 0$ Minimum};
+    \end{tikzpicture}
+    \hfill
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={2.5}, xticklabels={$x_0$}, ytick, xlabel={$x$}, ylabel={$y$}, height=6cm, width=0.4\textwidth, xmin = 0, xmax=5, ymin=0, ymax=5]
+            \addplot[no marks, FSUblau, thick, domain=0:5]{0.2*(x-2.5)^3+2.5};
+            \draw[thick] (1,2.5) -- (4,2.5);
+            \draw[thick, dashed] (2.5,0) -- (2.5,2.5);
+            
+        \end{axis}
+        \node (A) at (2.3,-1){$f''(x_0) = 0$ Sattelpunkt};
+    \end{tikzpicture}
+    \caption{lokale Extremstellen einer Funktion abhängig vom Vorzeichen der zweiten Ableitung $f''(x_0)$. Für den Sattelpunkt muss außerdem noch gelten: $f^{(3)}(x_0) \neq 0$.}
+\end{figure}
+
+Das Vorzeichen der zweiten Ableitung gibt Auskunft über die Krümmung der Kurve:
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={2,2.5,3}, xticklabels={$x_1$,$x_2$,$x_3$}, ytick, xlabel={$x$}, ylabel={$y$}, height=6cm, width=0.55\textwidth, xmin=1,xmax=4.5,ymin=0,ymax=10]
+            \addplot[no marks, FSUblau, very thick, domain=0:3.7]{(x-1)^2+1} node[above]{$f(x)$};
+            \fill (2,2) circle (2pt);
+            \fill (3,5) circle (2pt);
+            \fill (2.5,3.25) circle (2pt);
+            \addplot[no marks, PAForange, domain=0:3.7]{2*x-2}node[right]{$f'(x_1)$};
+            \addplot[no marks, PAForange, domain=0:3.7]{3*x-4.25}node[right]{$f'(x_2)$};
+            \addplot[no marks, PAForange, domain=0:3.7]{4*x-7}node[right]{$f'(x_3)$};
+
+            \draw[gray, dashed] (2,0) -- (2,2);
+            \draw[gray, dashed] (2.5,0) -- (2.5,3.25);
+            \draw[gray, dashed] (3,0) -- (3,5);
+            \node (A) at (2,7){konvex};
+        \end{axis}
+    \end{tikzpicture}
+    \hfill 
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={2,2.5,3}, xticklabels={$x_1$,$x_2$,$x_3$}, ytick, xlabel={$x$}, ylabel={$y$}, height=6cm, width=0.55\textwidth, xmin=1,xmax=4.5,ymin=0,ymax=10]
+            \addplot[no marks, FSUblau, very thick, domain=0:3.7]{-(x-1)^2+8} node[left]{$f(x)$};
+            \fill (2,8-1) circle (2pt);
+            \fill (3,8-4) circle (2pt);
+            \fill (2.5,8-2.25) circle (2pt);
+            \addplot[no marks, PAForange, domain=0:3.7]{-2*x+2+9}node[right]{$f'(x_1)$};
+            \addplot[no marks, PAForange, domain=0:3.7]{-3*x+4.25+9}node[right]{$f'(x_2)$};
+            \addplot[no marks, PAForange, domain=0:3.7]{-4*x+7+9}node[right]{$f'(x_3)$};
+
+            \draw[gray, dashed] (2,0) -- (2,8-1);
+            \draw[gray, dashed] (2.5,0) -- (2.5,8-2.25);
+            \draw[gray, dashed] (3,0) -- (3,8-4);
+            \node (A) at (3.5,7){konkav};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Links: Beispiel für eine konvexe Kurve. Der Anstieg $f'(x)$ nimmt zu, es gilt also $f''(x) > 0$ \\
+    Rechts: Beispiel für eine konkave Kurve. Der Anstieg $f'(x)$ nimmt ab, es gilt also $f''(x) < 0$}
+    \label{}
+\end{figure}

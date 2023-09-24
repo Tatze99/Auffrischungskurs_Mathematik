@@ -1,12 +1,34 @@
 \Titelbanner{8}{Die Methode der vollständigen Induktion}
 
-\textbf{Aufgabe 1: } \emph{Rekursive und explizite Zuordnungsvorschrift}
+\paragraph{Wiederholung des Beweisverfahrens}$~$
+
+\begin{itemize}
+    \item Zeige Richtigkeit einer Aussage für einen Startwert 
+    \item Zeige: ``Aussage richtig für $k$'' impliziert ``Aussage richtig für $k+1$''
+\end{itemize}
+
+\emph{Beispiel:} rekursive Bildungsvorschrift $a_{n+1} = a_n + 2(n+1), \quad a_1 = 1$. Wir wollen nun folgende explizite Darstellung beweisen:\footnote{Solche Ausdrücke kann Mathematica mit Hilfe des Befehls ``FindSequenceFunction[]'' erraten.} 
+\begin{align}
+    a_n = n^2 + n-1
+\end{align}
+\begin{enumerate}
+    \item[(IA)] Induktionsanfang $n=1: a_1 = 1^2 +1 - 1 = 1 \quad\checkmark$ 
+    \item[(IV)] Induktionsvoraussetzung $n=k: \quad a_k = k^2 + k -1 $
+    \item[(IB)] Induktionsbehauptung $n=k+1: \quad a_{k+1}= (k+1)^2 + (k+1) - 1$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            \qquad a_{k+1} = a_k + 2(k+1) = k^2 +k-1 + 2(k+1) = (k+1)^2 + k.
+        \end{align}
+    \end{proof}
+\end{enumerate}
+
+\paragraph{Aufgabe 1: } \emph{Rekursive und explizite Zuordnungsvorschrift}
 \begin{align}
     &\text{Vermutung: }\hspace{0.2cm} a_n=2^n-1 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} a_{n+1}=2^{n+1}-1 \\
     &a_{k+1}=2a_k+1=2\qty(2^k-1)=2^{k+1}-1
-\end{align}\hfill $\Box$\\[0.7cm] 
+\end{align}\hfill $\Box$
 %
-\textbf{Aufgabe 2: } \emph{Vollständige Induktion I} $\quad S_n = 1^2 -2^2 + 3^2 -4^2 + \hdots + (-1)^{n-1}n^2 = (-1)^{n-1}\frac{n(n+1)}{2}$
+\paragraph{Aufgabe 2: } \emph{Vollständige Induktion I} $\quad S_n = 1^2 -2^2 + 3^2 -4^2 + \hdots + (-1)^{n-1}n^2 = (-1)^{n-1}\frac{n(n+1)}{2}$
 \begin{enumerate}
     \item[(IA)] $n=1: \quad S_1 = 1. \quad\checkmark$ 
     \item[(IV)] $n=k: \quad S_k=(-1)^{k-1}\frac{k(k+1)}{2}$
@@ -19,7 +41,7 @@
     \end{proof}
 \end{enumerate}
 %
-\textbf{Aufgabe 3: } \emph{Vollständige Induktion II} $\quad S_n=1^3+2^3+3^3+\dots+n^3 = \qty[\frac{n(n+1)}{2}]^2$
+\paragraph{Aufgabe 3: } \emph{Vollständige Induktion II} $\quad S_n=1^3+2^3+3^3+\dots+n^3 = \qty[\frac{n(n+1)}{2}]^2$
 
 \begin{enumerate}
     \item[(IA)] $n=1: \quad S_1 = 1. \quad\checkmark$ 
@@ -32,9 +54,8 @@
     \end{proof}
 \end{enumerate}
 %
-\newpage
-\ \\
-\textbf{Aufgabe 4: } \emph{Vollständige Induktion III} $\quad S_n = (n-1)^3 + n^3 + (n+1)^3, \quad S_n = 9m \qq{mit} m \in \mathbb{N}$
+
+\paragraph{Aufgabe 4: } \emph{Vollständige Induktion III} $\quad S_n = (n-1)^3 + n^3 + (n+1)^3, \quad S_n = 9m \qq{mit} m \in \mathbb{N}$
 
 \begin{enumerate}
     \item[(IA)] $n=1: \quad S_1 = 0 + 1^3 + 2^3 = 9. \quad\checkmark$ 
@@ -48,7 +69,7 @@
     \end{proof}
 \end{enumerate}
 %
-\textbf{Aufgabe 5: } \emph{Die Suche nach der richtigen Summenformel}\\
+\paragraph{Aufgabe 5: } \emph{Die Suche nach der richtigen Summenformel}\\
 \begin{align}
 \text{Vermutung: }\hspace{0.2cm} S_n=\frac{(1-x)(2-x)\dots(n-x)}{n!} \hspace{0.5cm}
 \end{align}
@@ -69,8 +90,7 @@
     \end{proof}
 \end{enumerate}
 
-\newpage
-\textbf{Aufgabe 6: } \emph{Fibonacci-Zahlen} $\quad a_n=\frac{1}{\sqrt{5}}\qty(x_+^n-x_-^n) \qq{mit}x_\pm = \frac{1\pm \sqrt{5}}{2}$\hfill (Zusatzaufgabe)
+\paragraph{Aufgabe 6: } \emph{Fibonacci-Zahlen} $\quad a_n=\frac{1}{\sqrt{5}}\qty(x_+^n-x_-^n) \qq{mit}x_\pm = \frac{1\pm \sqrt{5}}{2}$\hfill (Zusatzaufgabe)
 
 \begin{enumerate}
     \setlength{\mathindent}{0cm}
@@ -86,24 +106,3 @@
         \end{align}
     \end{proof}
 \end{enumerate}
-%
-%
-%\begin{minipage}{0.6\linewidth}
-%\begin{align*}
-%\text{Vermutung: }\hspace{0.2cm} S_n=(-1)^n \hspace{0.5cm} \Rightarrow \hspace{0.5cm} S_{n+1}=(-1)^{n+1}
-%\end{align*}
-%\end{minipage}\\
-%\begin{align*}
-%S_{n+1}&=\sum_{k=0}^{n+1}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n+1}{k}\binom{n+1-k}{l}\\
-%&=\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n+1}{k}\binom{n+1-k}{l}+\underbrace{\sum_{l=0}^0(-1)^{n+1+l}\overbrace{\binom{n+1}{n+1}}^1\overbrace{\binom{0}{l}}^1}_{(-1)^{n+1}}\\
-%&=\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k}\binom{n-k}{l}+\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k}\binom{n-k}{l-1}\\
-%&\quad +\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}+\sum_{k=0}^{n}\sum_{l=0}^{n+1-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l-1}+(-1)^{n+1}\\
-%\end{align*}
-%\newpage
-%\begin{align*}
-%&=\underbrace{\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k}\binom{n-k}{l}}_{(-1)^n}+\sum_{k=0}^{n}(-1)^{n+1}\binom{n}{k}\underbrace{\binom{n-k}{n+1-k}}_{0}\\
-%&\quad -\sum_{k=0}^{n}\sum_{l=-1}^{n-k}(-1)^{k+l}\binom{n}{k}\underbrace{\binom{n-k}{l}}_\text{Null für $l=-1$}+\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}\\
-%&\quad +\sum_{k=0}^{n}(-1)^{n+1}\binom{n}{k-1}\underbrace{\binom{n-k}{n+1-k}}_0-\sum_{k=0}^{n}\sum_{l=-1}^{n-k}(-1)^{k+l}\binom{n}{k-1}\underbrace{\binom{n-k}{l}}_\text{Null für $l=-1$}+(-1)^{n+1}\\
-%&=\cancel{(-1)^n}-\cancel{(-1)^n}+\bcancel{\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}}-\bcancel{\sum_{k=0}^{n}\sum_{l=0}^{n-k}(-1)^{k+l}\binom{n}{k-1}\binom{n-k}{l}}+(-1)^{n+1}\\
-%&=(-1)^{n+1}
-%\end{align*}\hfill $\Box$

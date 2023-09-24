@@ -1,5 +1,4 @@
-% \usepackage[english]{babel}         % Deutsches Sprachpaket
-
+\usepackage[ngerman]{babel}         % Deutsches Sprachpaket
 \usepackage{iftex}
 \ifPDFTeX
    \usepackage[utf8]{inputenc}% Eingaben codieren
@@ -45,6 +44,10 @@
 \usepackage{setspace}% http://ctan.org/pkg/setspace
 % \usepackage{pdfpages}             % insert whole pdf files
 \usepackage[normalem]{ulem}
+\usepackage{tabto}                  % alignment in enumerate
+\usepackage{tcolorbox}
+\tcbuselibrary{theorems}
+\newtcolorbox{mymathbox}[1][]{colback=white, sharp corners, #1}
 
 \definecolor{FSUblau}{cmyk}{1,0.7,0.1,0.5}
 \definecolor{PAForange}{cmyk}{0.1,0.7,1,0}
@@ -72,6 +75,7 @@
 \newcommand{\minus}{\scalebox{0.75}[1.0]{$-$}}
 \newcommand{\e}{\mathrm{e}}
 \renewcommand{\i}{\mathrm{i}}
+\newcommand{\hp}{\hphantom}
 
 \usepackage[detect-all,
             locale=DE,
@@ -86,6 +90,8 @@
 \sisetup{range-phrase = {\mydots}}
 % Commands
 \usetikzlibrary{positioning,intersections,calc,external}
+\usetikzlibrary{decorations.pathreplacing,calligraphy}
+\usetikzlibrary{tikzmark}
 \usepgfplotslibrary{fillbetween, groupplots}
 \pgfplotsset{
 tick label style={font=\small},
@@ -93,7 +99,6 @@ label style={font=\small},
 legend style={font=\footnotesize},
 every axis post/.style={legend cell align={left}}}
 \tikzstyle{every node}=[font=\small]
-
 
 \setlength{\parindent}{0px}         % keine Absätze durch Leerzeilen im Code
 \numberwithin{equation}{section}
@@ -147,8 +152,4 @@ every axis post/.style={legend cell align={left}}}
 \renewcommand{\headrulewidth}{0.5pt}
 \renewcommand{\footrulewidth}{0pt}
 
-\numberwithin{equation}{section}
-\usetikzlibrary{decorations.pathreplacing,calligraphy}
-\usepackage{tcolorbox}
-\tcbuselibrary{theorems}
-\newtcolorbox{mymathbox}[1][]{colback=white, sharp corners, #1}
+

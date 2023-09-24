@@ -1,0 +1,124 @@
+\section{Die Methode der vollständigen Induktion}
+
+Wir wollen in diesem Kapitel ein wichtiges Beweisverfahren der Mathematik einführen, die \emph{vollständige Induktion}. Dabei wollen wir zunächst das Beweisverfahren selbst beweisen:
+
+\begin{satz}[Vollständige Induktion]
+    Eine Aussage ist für jede natürliche Zahl $n \in \mathbb{N}$ richtig, wenn 
+    \begin{enumerate}
+        \item sie für $n=1$ richtig ist \emph{und}
+        \item aus der Richtigkeit der Aussage für eine willkürliche natürliche Zahl $n=k$ die Richtigkeit für $n=k+1$ folgt.
+    \end{enumerate}
+\end{satz}
+
+\begin{proof}
+    Annahme: Eine Aussage sei \emph{nicht} für jede natürliche Zahl gültig, \emph{obwohl} (1) und (2) gelten. $\Rightarrow$ Dann existiert ein $m$, sodass die Aussage für $n=m$ falsch ist und für $n < m$ richtig. 
+
+    Aber: Die Aussage gilt für $n=1$. Also muss $m > 1$ sein. Dann ist $m-1$ eine natürliche Zahl, für die die Aussage richtig ist, ohne es für die darauffolgende zu sein. Das stellt allerdings einen Widerspruch zu Annahme (2) dar. \\
+    $\Longrightarrow$ Die Annahme ist falsch (Beweis durch Widerspruch).
+\end{proof}
+
+Für eine bessere Strukturierung des Induktionsbeweises wollen wir nochmal die Schritte notieren, die uns zum erfolgreichen Beweis führen:
+\begin{enumerate}
+    \item Induktionsanfang (IA): Zeige, dass die Aussage für einen bestimmten Startwert z.\,B. $n=0,1$ gültig ist.
+    \item Induktionsvoraussetzung (IV): Wir nehmen an, die Aussage sei für $n=k$ gültig und notieren sie. 
+    \item Induktionsbehauptung (IB): Wir notieren wie die Aussage für $n=k+1$ lautet. 
+    \item Beweis: Für führen den Induktionsschritt aus und benutzen die Induktionsvoraussetzung, um die Aussage für $n=k+1$ zu zeigen.
+\end{enumerate}
+
+Wir wollen im Folgenden ein paar Beispiele angeben:
+
+\paragraph{Summe: $\displaystyle S_n = \frac{1}{1\cdot 2} + \frac{1}{2\cdot 3}+ \frac{1}{3\cdot 4} + \hdots + \frac{1}{n\cdot (n+1)} \overset{?}{=} \frac{n}{n+1}$}$~$
+
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=1: \quad S_1 = \frac{1}{1\cdot 2} = \frac{1}{1+1} = \frac{1}{2} .\quad\checkmark$ 
+    \item[(IV)] $\displaystyle n=k: \quad S_k = \frac{k}{k+1}$
+    \item[(IB)] $\displaystyle n=k+1:\quad S_{k+1} = \frac{k+1}{k+2}$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            S_{k+1} &= S_k + \frac{1}{(k+1)(k+2)} \overset{(\text{IV})}{=} \frac{k}{k+1} + \frac{1}{(k+1)(k+2)} = \frac{1}{k+1} \qty(k+\frac{1}{k+2}) \notag \\
+            &= \frac{1}{k+1} \frac{k^2+2k+1}{k+2} = \frac{(k+1)^{\cancel{2}}}{\cancel{(k+1)}(k+2)} = \frac{k+1}{k+2}
+        \end{align}
+    \end{proof}
+\end{enumerate}
+
+\paragraph{Summe der ersten $n$ ungeraden Zahlen} $S_n = 1 +3 + \hdots + (2n-1) \overset{?}{=} n^2$
+
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=1: \quad S_1 = 1 = 1^2 .\quad\checkmark$ 
+    \item[(IV)] $\displaystyle n=k: \quad S_k = k^2$
+    \item[(IB)] $\displaystyle n=k+1:\quad S_{k+1} = (k+1)^2$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            S_{k+1} &= S_k + (2(k+1)-1) = k^2 + 2k +1 = (k+1)^2
+        \end{align}
+    \end{proof}
+\end{enumerate}
+
+\paragraph{Gauß'sche Summenformel} $S_n = 1 +2+3+\hdots + n = \sum_{m=1}^n m \overset{?}{=} \frac{n(n+1)}{2}$
+
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=1: \quad S_1 = \frac{1(1+1)}{2} = 1 .\quad\checkmark$ 
+    \item[(IV)] $\displaystyle n=k: \quad S_k = \frac{k(k+1)}{2}$
+    \item[(IB)] $\displaystyle n=k+1:\quad S_{k+1} = \frac{(k+1)(k+2)}{2}$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            S_{k+1} &= S_k + (k+1) = (k+1)\qty(\frac{k}{2}+1) = \frac{(k+1)(k+2)}{2}.
+        \end{align}
+    \end{proof}
+\end{enumerate}
+
+\paragraph{Summe der Quadratzahlen} $S_n = 1^2 + 2^2 + 3^2+\hdots + n = \sum_{m=1}^n m^2 \overset{?}{=} \frac{n(n+1)(2n+1)}{6}$
+
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=1: \quad S_1 = \frac{1(1+1)(2+1)}{6} = 1 .\quad\checkmark$ 
+    \item[(IV)] $\displaystyle n=k: \quad S_k = \frac{k(k+1)(2k+1)}{6}$
+    \item[(IB)] $\displaystyle n=k+1:\quad S_{k+1} = \frac{(k+1)(k+2)(2k+3)}{6}$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            S_{k+1} &= S_k + (k+1)^2 = \frac{1}{6}\qty[k(k+1)(k+2)+6(k+1)^2] \notag \\
+            &= \frac{k+1}{6}\qty[k(k+2)+6(k+1)] = \frac{k+1}{6}\qty(2k^2+7k+6).
+        \end{align}
+        \begin{align}
+            \begin{array}{r r@{} r@{}  r@{} r}
+                \text{Polynomdivision}&(2k^2 &{}+7k\hp{)}&{}+6) &\;:(k+2) = 2k+3 \\
+              &-(2k^2 &{}+4k) \\ 
+              \cmidrule{2-3}
+                    & & 3k \hp{)} &{}+6\hp{)}\\
+                    & &-(3k\hp{)}&{}+6) \\
+              \cmidrule{3-4}
+                    & & & 0
+            \end{array}
+        \end{align}
+    \end{proof}
+    Alternativ lässt sich die Behauptung zeigen, indem man das Ergebnis und den Anfang jeweils so weit wie möglich ausmultipliziert und damit die Gleichheit beider Terme zeigt.
+\end{enumerate}
+
+\paragraph{Endliche geometrische Reihe} $S_n = 1+ x+x^2+ x^3+ \hdots + x^n =\sum_{m=0}^n x^m = \frac{x^{n+1}-1}{x-1}$ für $x\neq 1$ 
+
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=0: \quad S_0 = 1, \quad n=1: \quad S_1 = \frac{x^2 -1}{x-1} = \frac{\cancel{(x-1)}(x+1)}{\cancel{x-1}} = x+1 .\quad\checkmark$ 
+    \item[(IV)] $\displaystyle n=k: \quad S_k = \frac{x^{k+1}-1}{x-1}$
+    \item[(IB)] $\displaystyle n=k+1:\quad S_{k+1} = \frac{x^{k+2}-1}{x-1}$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            S_{k+1} &= S_k + x^{k+1} = \frac{x^{k+1}-1}{x-1} + x^{k+1} = \frac{x^{k+1}-1 + (x-1)x^{k+1}}{x-1} \notag \\
+            &= \frac{\cancel{x^{k+1}}-1 + x^{k+2}-\cancel{x^{k+1}}}{x-1}.
+        \end{align}
+    \end{proof}
+\end{enumerate}
+
+\paragraph{Bernoulli'sche Ungleichung} $(1+\alpha)^n > 1 + n\alpha \qquad (\alpha > -1, \alpha \neq 0, n>1)$ 
+
+\begin{enumerate}
+    \item[(IA)] $\displaystyle n=2: \quad (1+\alpha)^2 = 1 + 2\alpha + \alpha^2 > 1+2\alpha \Rightarrow \alpha^2 > 0. \quad\checkmark$ 
+    \item[(IV)] $\displaystyle n=k: \quad (1+\alpha)^k > 1 + k\alpha \quad$
+    \item[(IB)] $\displaystyle n=k+1:\quad (1+\alpha)^{k+1} > 1+(k+1)\alpha$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            (1+\alpha)^{k+1} &= (1+\alpha)^k (1+\alpha) \notag \\
+            \overset{(\text{IV})}&{>} (1+k\alpha)(1+\alpha) \qq{da $1+\alpha >0$} \notag \\
+            &= 1 + \alpha + k\alpha + k\alpha^2 = 1 + (k+1)\alpha + \underbrace{k \alpha^2}_{>0} \notag \\[-2mm]
+            &> 1+(k+1)\alpha. 
+        \end{align}
+    \end{proof}
+\end{enumerate}
