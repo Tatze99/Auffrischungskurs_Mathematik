@@ -7,7 +7,8 @@
     \item Zeige: ``Aussage richtig für $k$'' impliziert ``Aussage richtig für $k+1$''
 \end{itemize}
 
-\emph{Beispiel:} rekursive Bildungsvorschrift $a_{n+1} = a_n + 2(n+1), \quad a_1 = 1$. Wir wollen nun folgende explizite Darstellung beweisen:\footnote{Solche Ausdrücke kann Mathematica mit Hilfe des Befehls ``FindSequenceFunction[]'' erraten.} 
+\emph{Beispiel 1:}\\
+rekursive Bildungsvorschrift $a_{n+1} = a_n + 2(n+1), \quad a_1 = 1$. Wir wollen nun folgende explizite Darstellung beweisen:\footnote{Solche Ausdrücke kann Mathematica mit Hilfe des Befehls ``FindSequenceFunction$[\hdots]$'' erraten.} 
 \begin{align}
     a_n = n^2 + n-1
 \end{align}
@@ -22,10 +23,28 @@
     \end{proof}
 \end{enumerate}
 
+\emph{Beispiel 2:}\\
+Reihe $S_n = 1\cdot \ln(\frac{2}{1}) + 2\cdot \ln(\frac{3}{2}) + \hdots + (n-1) \cdot \ln(\frac{n}{n-1}) = \sum_{k=1}^{n-1} k \cdot \ln(\frac{k+1}{k})$
+\begin{align}
+        \text{Vermutung:} \quad S_n = n \cdot \ln(n) - \ln(n!)
+\end{align}
+\begin{enumerate}
+    \item[(IA)] $n=2: S_n = 2 \cdot \ln(2) - \ln(2!) = \ln(2) \quad\checkmark$ 
+    \item[(IV)] $n=k: \quad S_k = k \ln(k) - \ln(k!) $
+    \item[(IB)] $n=k+1: \quad S_{k+1}= (k+1)\ln(k+1) - \ln((k+1)!)$
+    \begin{proof}$~$\\[-1.5cm]
+        \begin{align}
+            \qquad S_{k+1} &= S_k + k \ln(\frac{k+1}{k}) \\
+                           &= \cancel{k \ln(k)} - \ln(k!) + k \ln(k+1) - \cancel{k \ln(k)} \\
+                           &= (k+1) \ln(k+1) \underbrace{-\ln(k+1)-\ln(k!)}_{-\ln((k+1)!)}.
+        \end{align}
+    \end{proof}
+\end{enumerate}
+
 \paragraph{Aufgabe 1: } \emph{Rekursive und explizite Zuordnungsvorschrift}
 \begin{align}
-    &\text{Vermutung: }\hspace{0.2cm} a_n=2^n-1 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} a_{n+1}=2^{n+1}-1 \\
-    &a_{k+1}=2a_k+1=2\qty(2^k-1)=2^{k+1}-1
+    & a_1 = 1, a_2 = 3, a_3 = 7, a_4 = 15 \quad \Rightarrow \qq{Vermutung: } a_n=2^n-1 \hspace{0.5cm} \Rightarrow \hspace{0.5cm} a_{n+1}=2^{n+1}-1 \\
+    &a_{k+1}=2a_k+1=2\qty(2^k-1)=2^{k+1}-1.
 \end{align}\hfill $\Box$
 %
 \paragraph{Aufgabe 2: } \emph{Vollständige Induktion I} $\quad S_n = 1^2 -2^2 + 3^2 -4^2 + \hdots + (-1)^{n-1}n^2 = (-1)^{n-1}\frac{n(n+1)}{2}$
