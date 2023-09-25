@@ -59,24 +59,74 @@
 \paragraph{Aufgabe 2: } \emph{Ableitungen II}\hfill Ziel: (a) bis (d)\\[0.2cm]
 \emph{Finden Sie die $n$-te Ableitung der folgenden Funktionen.}
     \begin{enumerate}[label=(\alph*)]
-        \item $f(x)=x^n$
+        \setlength{\mathindent}{0cm}
+        \item $f(x)=x^n$ 
+        \begin{align}
+            f'(x) &= n x^{n-1}, \quad f''(x) = n(n-1) x^{n-2}, \quad \hdots \quad \Rightarrow \quad \dv[n]{f(x)}{x} = n!
+        \end{align}
         \item $f(x)=\e^{kx}+\e^{-kx}$
+        \begin{align}
+            f'(x) = k\qty(\e^{kx}-\e^{-kx}), \quad f''(x) = k^2 \qty(\e^{kx}+\e^{-kx})\quad \hdots \quad \Rightarrow \quad \dv[n]{f(x)}{x} = k^n \qty(\e^{kx} + (-1)^n \e^{kx})
+        \end{align}
         \item $f(x)=x^{n-1}$
+        \begin{align}
+            \dv[n-1]{f(x)}{x} \overset{(a)}{=} (n-1)! \quad \Rightarrow \quad \dv[n]{f(x)}{x} = 0.
+        \end{align}
         \item $f(x)=a^x$ 
+        \begin{align}
+            f'(x) = (\ln a) a^x, \quad f''(x) = (\ln a)^2 a^x, \quad \hdots \quad \Rightarrow \quad \dv[n]{f(x)}{x} = (\ln a)^n a^x
+        \end{align}
         \item $f(x)=\frac{1}{1-x}$
-        \item[(f)*] $f(x)=\frac{x}{1-x-x^2}$ 
+        \begin{align}
+            f'(x) = \frac{1}{(1-x)^2}, \quad f''(x) = \frac{2}{(1-x)^3}, \quad \hdots \quad \Rightarrow \quad \dv[n]{f(x)}{x} = \frac{n!}{(1-x)^{n+1}}
+        \end{align}
+        \item $f(x)=\frac{x}{1-x-x^2}\qq{,} $ Nullstellen des Nenners $\frac{-1\pm\sqrt{5}}{2}$  
+        \begin{align}
+            &\text{Partialbruchzerlegung:}\quad \frac{-x}{1-x-x^2} \overset{!}{=} \frac{\alpha}{x-x_1} + \frac{\beta}{x-x_2} = \frac{\alpha (x-x_2)+\beta (x-x_1)}{(x-x_1)(x-x_2)} \\
+            &\text{Koeffizientenvergleich:}\quad 1 = \alpha + \beta \qq{und} 0 = \alpha x_1 + \beta x_2 \\
+            &\Rightarrow x_1 = \alpha (x_1 - x_2) \quad \Rightarrow \quad \alpha = \frac{x_1}{x_1-x_2} \quad \Rightarrow\quad \beta = 1-\alpha = -\frac{x_2}{x_1-x_2} \\
+            &\Rightarrow f(x) = \frac{-1}{x_1-x_2}\qty(\frac{x_1}{x-x_1}- \frac{x_2}{x-x_2})
+        \end{align}
+        \begin{align}
+            \overset{(e)}{\Rightarrow} \dv[n]{f(x)}{x} &= \frac{(-1)^n n!}{x_1-x_2} \qty(\frac{x_1}{(x-x_1)^{n+1}} - \frac{x_2}{(x-x_2)^{n+1}}) \\
+            &= \frac{(-1)^n n!}{x_1-x_2} \qty(\frac{x_2^{n+1}}{x_2^{n+1}} \frac{x_1}{(x-x_1)^{n+1}} - \frac{x_1^{n+1}}{x_1^{n+1}} \frac{x_2}{(x-x_2)^{n+1}}), \quad x_1-x_2 =  \sqrt{5}\\
+            &= \frac{(-1)^n n!}{\sqrt{5}} \qty( \frac{x_1 x_2^{n+1}}{(x_2x-x_1x_2)^{n+1}} -  \frac{x_2 x_1^{n+1}}{(xx_1-x_1x_2)^{n+1}}), \quad x_1 x_2 = -1 \\
+            &= \frac{(-1)^n n!}{\sqrt{5}} \qty( \frac{x_1^n}{(x_2x+1)^{n+1}} -  \frac{x_2^n}{(xx_1+1)^{n+1}}).
+        \end{align}
+        Es ergibt $\frac{1}{n!} \dv[n]{f(x)}{x}\eval_{x=0} = \frac{(-1)^n}{\sqrt{5}}(x_1^n -x_2^n)$ die $n$-te Fibonacci-Zahl.
     \end{enumerate}
 %
+\newpage
 \paragraph{Aufgabe 3: } \emph{Kurvendiskussion I}\\[0.2cm]
 \emph{Ein zweiatomiges Molekül lässt sich näherungsweise durch das sogenannte ``Morse-Potential'' beschreiben,}
 \begin{align*}
 U(x)=D\qty(\e^{-2\alpha x}-2\e^{-\alpha x})\,, \hspace{1cm} D,\alpha=\operatorname{const}.
 \end{align*}
 \begin{itemize}
-\item Bestimmen Sie Nullstellen und lokale Extrema der Funktion $U(x)$ sowie deren Verhalten für $x \to\pm\infty$.
-\item Skizzieren Sie die Funktion $U(x)$ für $D=\alpha=1$ im Intervall $x\in[-1,5]$.
+\item \emph{Bestimmen Sie Nullstellen und lokale Extrema der Funktion $U(x)$ sowie deren Verhalten für $x \to\pm\infty$.} 
+\begin{align}
+    \text{Nullstellen: } \e^{-2\alpha x_0} \overset{!}{=} 2 \e^{-\alpha x_0} \quad \Rightarrow \quad -2\alpha x_0 &= \ln(2) - \alpha x_0 \\
+    \Rightarrow x_0 &= \uuline{-\frac{\ln(2)}{\alpha}} 
+\end{align}
+\begin{align}
+    \text{Extrema: } \dv{U(x)}{x} &= D \qty(-\cancel{2\alpha} \e^{-2\alpha x} + \cancel{2\alpha} \e^{-\alpha x}) \overset{!}{=} 0 \\
+    \Rightarrow \quad -2\alpha x &= -\alpha x \quad \Rightarrow \quad \uuline{x=0, \quad U(x=0) = -D}. 
+\end{align}
+\begin{align}
+    \text{Grenzwerte: } \lim_{x\to \infty} U(x) = 0 \qq{,} \lim_{x\to -\infty} U(x) = \infty
+\end{align}
+\item \emph{Skizzieren Sie die Funktion $U(x)$ für $D=\alpha=1$ im Intervall $x\in[-1,5]$.}
 \end{itemize}
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={-0.693}, xticklabels={$\frac{-\ln2}{\alpha}$}, ytick={-1}, xlabel={$x$}, ylabel={$U(x)/D$}, height=6cm, width=0.9\textwidth, samples=100, ymin=-1.2, xticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, yticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, set layers = axis on top]
+            \addplot[no marks, FSUblau, thick, domain=-1:5]{exp(-2*x)-2*exp(-x)};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 %
+\newpage
 \paragraph{Aufgabe 4: } \emph{Kurvendiskussion II}\\[0.2cm]
 \emph{Die Bewegung eines Teilchens mit Drehimpuls $L$ und Energie $E$ in der gekrümmten Raumzeit eines Schwarzen Loches der Masse $m$ wird beschrieben durch das Potential}
 \begin{align*}
@@ -84,9 +134,46 @@ U(r)=\frac{E}{2}-\frac{Em}{r}+\frac{L^2}{2r^2}-\frac{mL^2}{r^3}\,, \hspace{1cm} 
 \end{align*}
 \begin{itemize}
 \item \emph{Bestimmen Sie Nullstellen und lokale Extrema der Funktion $U(r)$ sowie deren Verhalten für $\to\infty$ und $\to 0$.}
+\begin{align}
+    \text{Nullstellen: } 0 \overset{!}&{=} \frac{E}{2} - E m u + \frac{L^2}{2} u^2 - m L^2 u^3 \qq{,} u = \frac{1}{r} \\
+    0 &= 1 - 2m u + \frac{L^2}{E}u^2 - \frac{2m L^2}{E} u^3 \\
+    &= 1- 2m u + \frac{L^2}{E}(1-2mu) u^2 = (1-2mu)\qty(1+\frac{L^2}{E}u^2) \\
+    &\Rightarrow u_0 = \frac{1}{2m} \qq{,} \uuline{r_0 = 2m}.
+\end{align}
+\begin{align}
+    \text{Extrema: } \dv{U(r)}{r} &=  \frac{E m}{r^2} - \frac{L^2}{r^3} + \frac{3mL^2}{r^4}\overset{!}{=} 0 \quad |\cdot r^4 \\
+    \Rightarrow \quad 0 &= r^2 - \frac{L^2}{E m} r + \frac{3L^2}{E}  \\
+    \Rightarrow \quad r_{1/2} &= \frac{L^2}{2E m} \pm \sqrt{\frac{L^4}{4E^2 m^2}- \frac{3L^2}{E}} = \uuline{\frac{L^2}{2Em} \qty(1\pm \sqrt{1-\frac{12Em^2}{L^2}})}
+\end{align}
+\begin{align}
+    \text{Grenzwerte: } \lim_{r\to \infty} U(r) = \frac{E}{2} \qq{,} \lim_{r\to 0} U(r) = -\infty.
+\end{align}
 \item \emph{Setzen Sie $\textstyle m=\frac{1}{2}$. Welche Bedingungen an $E$ und $L$ müssen erfüllt sein, damit $U(r)$ zwei, ein oder keine lokalen Extrema besitzt?}
+Für $m = 1/2$ nimmt die Diskriminante den Wert $1-\frac{3E}{L^2}$ an. Damit können wir zwischen drei Lösungen unterscheiden: 
+\begin{align}
+    & 3E < L^2: \quad \qq{zwei Extrema.}\\
+    & 3E = L^2: \quad \qq{ein Extremum.}\\
+    & 3E > L^2: \quad \qq{keine Extrema.}
+\end{align}
 \item \emph{Skizzieren Sie die Funktion $U(r)$ für $E=1$ und $L=2$ (nicht maßstabsgerecht).}
+Für diesen Fall finden wir zwei Extrema. Es ergibt sich 
+\begin{align}
+    r_{1/2} = 4 \qty(1\pm \sqrt{\frac{1}{4}}) = \begin{cases}
+        6&, \quad U(r_1) = \frac{25}{54}= \frac{1}{2}-\frac{1}{27} \\ 2&, \quad U(r_2) = \frac{1}{2}
+    \end{cases}
+\end{align}
 \end{itemize} 
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={1,2,3,4,5,6,7,8,9,10, 12,14,16,18,20}, ytick={0.5,25/54}, yticklabels={$\frac{1}{2}$, $\frac{25}{54}$} , xlabel={$x$}, ylabel={$U(x)/D$}, height=6cm, width=0.9\textwidth, samples=200, xticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, yticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, set layers = axis on top, ymin=0.43, ymax=0.51, xmin=0, xmax=21]
+            \addplot[no marks, FSUblau, thick, domain=0.9:20]{1/2 - 1/(2*x) + 2/x^2 - 2/x^3};
+            \draw[dashed] (0,25/54) -- (6,25/54) -- (6,0.3);
+            \fill (6,25/54) circle (2pt);
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
+
 %
 \paragraph{Aufgabe 5: } \emph{Gewöhnliche Differentialgleichungen}\hfill (Zusatzaufgabe)\\[0.2cm]
 \begin{enumerate}[label=(\alph*)]
@@ -94,8 +181,25 @@ U(r)=\frac{E}{2}-\frac{Em}{r}+\frac{L^2}{2r^2}-\frac{mL^2}{r^3}\,, \hspace{1cm} 
 \begin{align*}
 f''(x)=a^2f(x)+bx\,.
 \end{align*}
+Wir suchen eine Funktion, die sich selbst (teilweise) reproduziert 
+\begin{align}
+    &\text{Versuch 1: } f(x) = \e^{\lambda x} \quad \Rightarrow \quad f''(x) = \lambda^2 \e^{\lambda x} = \lambda^2 f(x) \\
+    &\text{Versuch 2: } f(x) = \e^{ax} + mx  \\
+    &\quad \Rightarrow f''(x) = a^2 \e^{ax} \overset{!}{=} a^2 f(x) + bx = a^2 \e^{ax} + a^2 mx + bx \\
+    &\text{offenbar: } m = -\frac{b}{a^2} \quad \Rightarrow \quad \uuline{f(x) = \e^{ax} - \frac{b}{a^2} x}\\
+    &\qty(\text{allgemeine Lösung: } f(x) = c_1 \e^{ax} + c_2 \e^{-ax} - \frac{b}{a^2} x)
+\end{align}
 \item \emph{Finden Sie eine Funktion $f(x)$, welche die folgende Gleichung erfüllt:}
 \begin{align*}
 f'(x)=\qty(1+\ln(x))f(x)\,.
 \end{align*}
+Überlegung: Ableitung von $\e^{g(x)}$ ergibt $g'(x) \e^{g(x)}$
+\begin{itemize}
+    \item[$\Rightarrow$] Welche Funktion ergibt abgeleitet $1+ \ln(x)$? Keine Funktion ergibt abgeleitet $\ln(x)$. 
+    \item[$\Rightarrow$] Es kann $\ln(x)$ durch die Produktregel entstehen. \\
+    $\dv{x} (x \ln(x)) = \ln(x) + x \frac{1}{x} = \ln(x)+1$ 
+\end{itemize}
+\begin{align}
+    \Rightarrow \uuline{f(x) = \e^{x \ln(x)} = x^x}.
+\end{align}
 \end{enumerate}

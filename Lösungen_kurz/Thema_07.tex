@@ -28,9 +28,15 @@
     \item Nullstelle: $x_0=-\frac{\ln 2}{\alpha}$\\[0.2cm]
     Extremum: $x=0$, $U(x=0)=-D$\\[0.2cm]
     Asymptotik: $\lim\limits_{x\rightarrow -\infty}U(x)=\infty$, $\lim\limits_{x\rightarrow \infty}U(x)=0$\\
-    % \item\adjustbox{valign=t}{
-    % \includegraphics[scale=0.6]{aufg3.pdf}}
 \end{itemize}
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={-0.693}, xticklabels={$\frac{-\ln2}{\alpha}$}, ytick={-1}, xlabel={$x$}, ylabel={$U(x)/D$}, height=6cm, width=0.9\textwidth, samples=100, ymin=-1.2, xticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, yticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, set layers = axis on top]
+            \addplot[no marks, FSUblau, thick, domain=-1:5]{exp(-2*x)-2*exp(-x)};
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 \vspace{1cm}
 %
 \textbf{Aufgabe 4: } \emph{Kurvendiskussion II}
@@ -38,10 +44,17 @@
     \item Nullstelle: $r_0=2m$\\[0.2cm]
     Extrema: $r_{1/2}=\frac{L^2}{2Em}\left(1\pm\sqrt{1-\frac{12Em^2}{L^2}}\right)$\\[0.2cm]
     Asymptotik: $\lim\limits_{r\rightarrow\infty}U(r)=\frac{E}{2}$, $\lim\limits_{r\rightarrow 0}U(r)=-\infty$
-    \item 2 Extrema für $3E<L^2$, 1 Extremum für $3E=L^2$, kein (reelles) Extremum für $3E>L^2$
-    % \item\adjustbox{valign=t}{
-    % \includegraphics[scale=0.6]{aufg4.pdf}}
 \end{itemize}
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[disabledatascaling, axis lines=middle, xtick={1,2,3,4,5,6,7,8,9,10, 12,14,16,18,20}, ytick={0.5,25/54}, yticklabels={$\frac{1}{2}$, $\frac{25}{54}$} , xlabel={$x$}, ylabel={$U(x)/D$}, height=6cm, width=0.9\textwidth, samples=200, xticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, yticklabel style = {fill=white, fill opacity=0.6, text opacity=1}, set layers = axis on top, ymin=0.43, ymax=0.51, xmin=0, xmax=21]
+            \addplot[no marks, FSUblau, thick, domain=0.9:20]{1/2 - 1/(2*x) + 2/x^2 - 2/x^3};
+            \draw[dashed] (0,25/54) -- (6,25/54) -- (6,0.3);
+            \fill (6,25/54) circle (2pt);
+        \end{axis}
+    \end{tikzpicture}
+\end{figure}
 \vspace{1cm}
 %
 
