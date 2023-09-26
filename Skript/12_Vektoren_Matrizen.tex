@@ -110,7 +110,7 @@ Beachte: Das Vektorprodukt kann in dieser Form nur in drei Dimensionen existiere
 
 Eine wichtige algebraische Eigenschaft ist die \emph{Jacobi-Identität}, 
 \begin{align}
-    \bm{a} \times (\bm{b}\times\bm{c}) + \bm{b} \times (\bm{c}\times\bm{a}) + \bm{c}\times (\bm{a}\times\bm{b}) = 0.
+    \bm{a} \times (\bm{b}\times\bm{c}) + \bm{b} \times (\bm{c}\times\bm{a}) + \bm{c}\times (\bm{a}\times\bm{b}) = \bm{0}.
 \end{align}
 Weiterhin lauten die Vektorprodukte der Basisvektoren: 
 \begin{align}
@@ -164,4 +164,77 @@ Das Skalarprodukt kann auch geschrieben werden als
 Mit Hilfe von Skalar- und Vektorprodukt kann das Volumen des durch drei Vektoren aufgespannten Spates berechnet werden (\emph{Spatprodukt}): 
 \begin{align}
     V = |(\bm{a}\times\bm{b}) \cdot\bm{c}|.
+\end{align}
+
+\subsection{Lineare Unabhängigkeit}
+Eine Menge von Vektoren $\{\bm{a}_i \in \mathbb{R}^3\}$ heißt linear unabhängig, wenn sich keiner der Vektoren $\bm{a}_i$ als Linearkombination der übrigen Vektoren $\bm{a}_j, j \neq i,$ schreiben lässt. 
+
+Eine Menge von Vektoren heißt linear abhängig, wenn sie nicht linear unabhängig ist. 
+
+Anders gesagt: Lineare Abhängigkeit liegt genau dann vor, wenn der Nullvektor als Linearkombination 
+\begin{align}
+    \bm{0} = \sum_i \alpha_i \bm{a}_i
+\end{align}
+geschrieben werden kann, ohne, dass alle $\alpha_i$ Null sind.
+
+Feststellungen: 
+\begin{itemize}
+    \item Im dreidimensionalen euklidischen Raum $\mathbb{R}^3$ können nicht mehr als drei Vektoren linear unabhängig sein. 
+    \item Vektoren, die in einer Ebene liegen, sind linear abhängig, sofern es mehr als zwei sind. 
+    \item Enthält eine Menge von Vektoren den Nullvektor, dann ist sie linear abhängig. 
+    \item Ist das Skalarprodukt zweier Vektoren Null, dann sind diese beiden Vektoren linear unabhängig, sofern keiner der beiden der Nullvektor ist. 
+    \item Die Basisvektoren $\vu{e}_x, \vu{e}_y, \vu{e}_z$ sind linear unabhängig.
+\end{itemize}
+
+\emph{Bsp.:} Die Vektoren $\bm{r}_1 = \mqty(1\\0\\1), \bm{r}_2 = \mqty(2\\1\\4), \bm{r}_3 = \mqty(0\\1/2\\1)$ sind linear abhängig, da $\bm{r}_1 - \frac{1}{2}\bm{r}_2 + \bm{r}_3 = \bm{0}$.
+
+\subsection{Grundlagen der Matrix-Rechnung}
+
+Eine Matrix $A$ ist eine Zusammenfassung von Elementen $a_{ij}$ in Form einer Tabelle (hier: zweidimensional). 
+
+Eine $(m\times n)$-Matrix besitzt $m$ Zeilen und $n$ Spalten und das Element $a_{ij}$ befindet sich in der $i$-ten Zeile der $j$-ten Spalte ($i= 1,\hdots,m\qq{;} j=1,\hdots,n$). Man schreibt: 
+\begin{align}
+    A = (a_{ij}) = 
+        \underbrace{\begin{rcases}\mqty(a_{11} & a_{12} & a_{13} & \hdots & a_{1n} \\
+        a_{21} & a_{22} & a_{23} & \hdots & a_{2n} \\
+        a_{31} & a_{32} & a_{33} & \hdots & a_{3n} \\
+        \vdots & \vdots & \vdots & \ddots & \vdots \\
+        a_{m1} & a_{m2} & a_{m3} & \hdots & a_{mn})
+        \end{rcases}}_{n \text{ Spalten}} 
+        \quad m \text{ Zeilen} \qq{,} a_{ij} \in \mathbb{R}.
+\end{align}
+
+\begin{itemize}
+    \item Jeder Spaltenvektor kann als $(n\times 1)$-Matrix aufgefasst werden. 
+    \item Eine $(n\times n)$-Matrix heißt \emph{quadratische Matrix}. 
+    \item Hat eine quadratische Matrix nur Einträge auf der Hauptdiagonalen, $a_{ij} = 0$ für $i\neq j$, dann heißt sie \emph{Diagonalmatrix}. Man schreibt kurz: 
+    \begin{align}
+        A = \text{diag}(a_{11}, a_{22}, a_{33}, \hdots, a_{nn}).
+    \end{align}
+    \item Die Matrix $\mathds{1}_n = \text{diag}(1,1,\hdots,1)$ heißt \emph{Einheitsmatrix}.
+\end{itemize}
+
+Eine Matrix $A$ kann mit einem Skalar $k \in \mathbb{R}$ multipliziert werden 
+\begin{align}
+    k\cdot A = k\cdot \mqty(a_{11} & a_{12} & \hdots & a_{1n} \\
+    a_{21} & a_{22} & \hdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \hdots & a_{mn}) = \mqty(k \cdot a_{11} & k \cdot a_{12} & \hdots & k \cdot a_{1n} \\
+    k \cdot a_{21} & k \cdot a_{22} & \hdots & k \cdot a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    k \cdot a_{m1} & k \cdot a_{m2} & \hdots & k \cdot a_{mn}).
+\end{align}
+Zwei Matrizen $A,B$ können addiert/subtrahiert werden, 
+\begin{align}
+    A \pm B &= \mqty(a_{11} & a_{12} & \hdots & a_{1n} \\
+    a_{21} & a_{22} & \hdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \hdots & a_{mn}) \pm \mqty(b_{11} & b_{12} & \hdots & b_{1n} \\
+    b_{21} & b_{22} & \hdots & b_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    b_{m1} & b_{m2} & \hdots & b_{mn}) \notag \\
+    &= \mqty(a_{11} \pm b_{11} & a_{12} \pm b_{12}& \hdots & a_{1n} \pm b_{1n}\\
+    a_{21} \pm b_{21}& a_{22} \pm b_{22}& \hdots & a_{2n} \pm b_{2n}\\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} \pm b_{m1}& a_{m2} \pm b_{m2}& \hdots & a_{mn}\pm b_{mn}).
 \end{align}

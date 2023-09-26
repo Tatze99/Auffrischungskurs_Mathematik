@@ -101,8 +101,8 @@ Reihe $S_n = 1\cdot \ln(\frac{2}{1}) + 2\cdot \ln(\frac{3}{2}) + \hdots + (n-1) 
     \begin{proof}
         \begin{align}
             S_{k+1}&=S_k+(-1)^{k+1}\frac{x(x-1)(x-2)\dots(x-k+1)(x-k)}{(k+1)!}\\
-            &=\frac{(1-x)(2-x)\dots(k-x)}{k!}+(-1)^{k+1}\frac{x(x-1)(x-2)\dots(x-k+1)(x-k)}{(k+1)!}\\
-            &=\frac{1}{(k+1)!}\qty[(1-x)(2-x)\dots(k-x)(k+1)+(-1)^{k+1}(-1)^kx(x-1)(x-2)\dots(x-k+1)(x-k)]\\
+            &=\frac{(1-x)(2-x)\dots(k-x)}{k!}+(-1)^{k+1}\frac{\textcolor{red!70!black}{x(x-1)(x-2)\dots(x-k+1)(x-k)}}{(k+1)!}\\
+            &=\frac{1}{(k+1)!}\qty[(1-x)(2-x)\dots(k-x)(k+1)+(-1)^{k+1}\textcolor{red!70!black}{(-1)^k x(1-x)(2-x)\dots(k-x-1)(k-x)}]\\
             &=\frac{(1-x)(2-x)\dots(k-x)(k-x+1)}{(k+1)!}\underbrace{\qty[\frac{k+1}{k-x+1}+(-1)^{2k+1}\frac{x}{k-x+1}]}_1\\
             &=\frac{(1-x)(2-x)\dots(k-x)(k-x+1)}{(k+1)!}
         \end{align}
