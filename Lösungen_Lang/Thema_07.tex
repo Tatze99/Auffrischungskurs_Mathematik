@@ -80,12 +80,13 @@
         \begin{align}
             f'(x) = \frac{1}{(1-x)^2}, \quad f''(x) = \frac{2}{(1-x)^3}, \quad \hdots \quad \Rightarrow \quad \dv[n]{f(x)}{x} = \frac{n!}{(1-x)^{n+1}}
         \end{align}
-        \item $f(x)=\frac{x}{1-x-x^2}\qq{,} $ Nullstellen des Nenners $\frac{-1\pm\sqrt{5}}{2}$  
+        \item $f(x)=\frac{x}{1-x-x^2} = \frac{-x}{x^2+x-1}\qq{,} $ Nullstellen des Nenners $\frac{-1\pm\sqrt{5}}{2}$  
         \begin{align}
-            &\text{Partialbruchzerlegung:}\quad \frac{-x}{1-x-x^2} \overset{!}{=} \frac{\alpha}{x-x_1} + \frac{\beta}{x-x_2} = \frac{\alpha (x-x_2)+\beta (x-x_1)}{(x-x_1)(x-x_2)} \\
-            &\text{Koeffizientenvergleich:}\quad 1 = \alpha + \beta \qq{und} 0 = \alpha x_1 + \beta x_2 \\
-            &\Rightarrow x_1 = \alpha (x_1 - x_2) \quad \Rightarrow \quad \alpha = \frac{x_1}{x_1-x_2} \quad \Rightarrow\quad \beta = 1-\alpha = -\frac{x_2}{x_1-x_2} \\
-            &\Rightarrow f(x) = \frac{-1}{x_1-x_2}\qty(\frac{x_1}{x-x_1}- \frac{x_2}{x-x_2})
+            &\text{Partialbruchzerlegung:}\quad \frac{-x}{x^2+x-1} \overset{!}{=} \frac{\alpha}{x-x_1} + \frac{\beta}{x-x_2} = \frac{\alpha (x-x_2)+\beta (x-x_1)}{(x-x_1)(x-x_2)} \\[3mm]
+            &\text{Koeffizientenvergleich:}\quad -1 = \alpha + \beta \qquad\quad\, (1) \\
+            &\hspace{4.4cm}\quad 0 = \alpha x_1 + \beta x_2 \quad (2)\\[2mm]
+            &x_1\cdot(1)-(2) \Rightarrow -x_1 = \alpha (x_1 - x_2)  \quad \Rightarrow \quad \alpha = \frac{-x_1}{x_1-x_2} \quad \Rightarrow\quad \beta = -(1+\alpha) = \frac{x_2}{x_1-x_2} \\
+            &\Rightarrow f(x) = \frac{1}{x_1-x_2}\qty(\frac{x_2}{x-x_1}- \frac{ x_1}{x-x_2})
         \end{align}
         \begin{align}
             \overset{(e)}{\Rightarrow} \dv[n]{f(x)}{x} &= \frac{(-1)^n n!}{x_1-x_2} \qty(\frac{x_1}{(x-x_1)^{n+1}} - \frac{x_2}{(x-x_2)^{n+1}}) \\

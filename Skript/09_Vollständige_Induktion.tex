@@ -67,7 +67,7 @@ Wir wollen im Folgenden ein paar Beispiele angeben:
     \end{proof}
 \end{enumerate}
 
-\paragraph{Summe der Quadratzahlen} $S_n = 1^2 + 2^2 + 3^2+\hdots + n = \sum_{m=1}^n m^2 \overset{?}{=} \frac{n(n+1)(2n+1)}{6}$
+\paragraph{Summe der Quadratzahlen} $S_n = 1^2 + 2^2 + 3^2+\hdots + n^2 = \sum_{m=1}^n m^2 \overset{?}{=} \frac{n(n+1)(2n+1)}{6}$
 
 \begin{enumerate}
     \item[(IA)] $\displaystyle n=1: \quad S_1 = \frac{1(1+1)(2+1)}{6} = 1 .\quad\checkmark$ 
@@ -75,8 +75,8 @@ Wir wollen im Folgenden ein paar Beispiele angeben:
     \item[(IB)] $\displaystyle n=k+1:\quad S_{k+1} = \frac{(k+1)(k+2)(2k+3)}{6}$
     \begin{proof}$~$\\[-1.5cm]
         \begin{align}
-            S_{k+1} &= S_k + (k+1)^2 = \frac{1}{6}\qty[k(k+1)(k+2)+6(k+1)^2] \notag \\
-            &= \frac{k+1}{6}\qty[k(k+2)+6(k+1)] = \frac{k+1}{6}\qty(2k^2+7k+6).
+            S_{k+1} &= S_k + (k+1)^2 = \frac{1}{6}\qty[k(k+1)(2k+1)+6(k+1)^2] \notag \\
+            &= \frac{k+1}{6}\qty[k(2k+1)+6(k+1)] = \frac{k+1}{6}\qty(2k^2+7k+6).
         \end{align}
         \begin{align}
             \begin{array}{r r@{} r@{}  r@{} r}

@@ -31,7 +31,7 @@ Wir betrachten im Folgenden einige Spezialfälle:
 \end{align}
 Außerdem gilt die Rekursionsrelation 
 \begin{align}
-    \binom{n}{k} + \binom{n}{k+1} &= \binom{n+1}{k+1}, \\
+    \binom{n}{k} + \binom{n}{k+1} &= \binom{n+1}{k+1}, \label{eqn:11_Rekursion}\\
     \qq{denn:} \binom{n}{k} + \binom{n}{k+1} &= \frac{n(n-1)\hdots (n-k+1)}{k!} + \frac{n(n-1)\hdots (n-k)}{(k+1)!} \notag \\
     &= \frac{n(n-1)\hdots (n-k+1)}{(k+1)!} \qty[(\cancel{k}+1)+(n-\cancel{k})] \notag \\
     &= \frac{(n+1)n(n-1) \hdots (n-k+1)}{(k+1)!} = \binom{n+1}{k+1}.
@@ -45,30 +45,124 @@ Eine Verallgemeinerung der Binomialkoeffizienten für reelle $n$ (und natürlich
 \end{align}
 Die Binomialkoeffizienten können (sowohl in $n$ als auch in $k$) als Folge aufgefasst werden; sie ist weder arithmetisch noch geometrisch. 
 
+\newpage
 \subsection{Der binomische Satz}
 
 Mithilfe des Binomialkoeffizienten des letzten Abschnitts können wir nun den binomsichen Satz formulieren: 
 \begin{mymathbox}[ams align, title={binomischer Lehrsatz}, colframe={FSUblau}]
     (a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k \qq{für} a,b \in \mathbb{R}, n\in\mathbb{N}_0
 \end{mymathbox}
-Wir wollen im Folgenden den Satz der Induktion beweisen. Dafür betrachten wir zunächst die Formel für $n=0,1,2$ 
+Wir wollen im Folgenden den Satz durch Induktion beweisen. Dafür betrachten wir zunächst die Formel für $n=0,1,2$ 
 \begin{enumerate}
-    \item[(IA)] $\displaystyle n=0: \quad  \binom{0}{0} a^0 b^0 = 1\quad \checkmark$ \\
-    $\displaystyle n=1: \quad  \binom{1}{0} a^1 b^0 + \binom{1}{1} a^0 b^1= a+b \quad\checkmark$ \\
-    $\displaystyle n=1: \quad  \binom{2}{0} a^2 b^0 + \binom{2}{1} a^1 b^1 + \binom{2}{2} a^0 b^2= a^2 + 2ab +b^2 \quad\checkmark$
+    \item[(IA)] $\displaystyle n=0: \quad  \binom{0}{0} a^0 b^0 = 1\quad \checkmark \qquad \displaystyle n=1: \quad  \binom{1}{0} a^1 b^0 + \binom{1}{1} a^0 b^1= a+b \quad\checkmark$ \\
+    $\displaystyle n=2: \quad  \binom{2}{0} a^2 b^0 + \binom{2}{1} a^1 b^1 + \binom{2}{2} a^0 b^2= a^2 + 2ab +b^2 \quad\checkmark$
     \item[(IV)] $\displaystyle n=l: \quad (a+b)^l = \sum_{k=0}^l \binom{l}{k} a^{l-k} b^k$
     \item[(IB)] $\displaystyle n=l: \quad (a+b)^{l+1} = \sum_{k=0}^{l+1} \binom{l+1}{k} a^{l+1-k} b^k$\\
     \begin{proof}$~$\\[-1.65cm]
         \begin{align}
-            \quad(a+b)^{l+1} &= (a+b)^l (a+b) \overset{\text{(IV)}}{=} \sum_{k=0}^l \binom{l}{k} a^{l-k} b^k (a+b) \notag \\
-            &= \sum_{k=0}^l \binom{l}{k} a^{l+1-k} b^k + \sum_{k=0}^l \binom{l}{k} a^{l-k} b^{k+1} \notag \\
+            \;\;(a+b)^{l+1} &= (a+b)^l (a+b) \overset{\text{(IV)}}{=} \sum_{k=0}^l \binom{l}{k} a^{l-k} b^k (a+b) \notag \\
+            &\tikzmarknode{eq1}{}= \sum_{k=0}^l \binom{l}{k} a^{l+1-k} b^k + \sum_{k=0}^l \binom{l}{k} a^{l-k} b^{k+1} \notag \\[3mm]
             &\qquad \text{Indextransformation } m=k+1 \Rightarrow k=m-1: \notag \\
-            &\qquad \sum_{m=1}^{l+1} \binom{l}{m-1} a^{l+1-m} b^m \qq{,} \qq{Umbennennung} m \to k \notag \\
-            &= \binom{l}{0} a^{l+1} + \sum_{k=1}^l \qty[\binom{l}{k} + \binom{l}{k-1}] a^{l+1-k} b^k + \binom{l}{l} b^{l+1} \notag \\
-            &= a^{l+1} + \sum_{k=1}^l \binom{l+1}{k} a^{l+1-k} b^k + b^{l+1} \notag \\
+            &\qquad \sum_{m=1}^{l+1} \binom{l}{m-1} a^{l+1-m} b^m \qq{,} \qq{Umbennennung} m \to k \notag \\[3mm]
+            &\tikzmarknode{eq2}{}= \binom{l}{0} a^{l+1} + \sum_{k=1}^l \qty[\binom{l}{k} + \binom{l}{k-1}] a^{l+1-k} b^k + \binom{l}{l} b^{l+1} \notag \\
+            &\tikzmarknode{eq3}{}= a^{l+1} + \sum_{k=1}^l \binom{l+1}{k} a^{l+1-k} b^k + b^{l+1} \notag \\[3mm]
             & \qquad \text{für } k=0: \quad \binom{l+1}{0} a^{l+1} = \binom{l}{0} a^{l+1} = a^{l+1}. \notag \\ 
-            & \qquad \hp{für } k=l+1: \quad \binom{l+1}{l+1} b^{l+1} = \binom{l}{l} b^{l+1} = b^{l+1}. \notag \\
-            &= \sum_{k=0}^{l+1} \binom{l+1}{k} a^{l+1-k} b^k.  
-        \end{align}
+            & \qquad \text{für } k=l+1: \quad \binom{l+1}{l+1} b^{l+1} = \binom{l}{l} b^{l+1} = b^{l+1}. \notag \\[3mm]
+            &\tikzmarknode{eq4}{}= \sum_{k=0}^{l+1} \binom{l+1}{k} a^{l+1-k} b^k.  \\[-1.4cm] \notag
+        \end{align} 
+        \tikz[overlay, remember picture]{
+        \draw[shorten >=2pt,shorten <=2pt, thick] ($(eq1)+(0.2,0)$) -- ($(eq2)+(0.2,0.2)$);
+        \draw[shorten >=2pt,shorten <=2pt, thick] ($(eq3)+(0.2,0)$) -- ($(eq4)+(0.2,0.2)$);
+        }
     \end{proof}
 \end{enumerate}
+
+\paragraph{Pascal'sches Dreieck}$~$
+
+Eine einfache Möglichkeit, die Werte der Binomialkoeffizienten zu berechnen, stellt das Pascal'sche Dreieck dar (siehe Abbildung\ref{fig:11_Pascal1}). 
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \foreach{\y} in {0,...,5}{
+            \node (A) at (-\y,-\y){$\displaystyle \binom{\y}{0}$};
+        }
+        \foreach{\y} in {1,...,5}{
+            \node (A) at (2-\y,-\y){$\displaystyle \binom{\y}{1}$};
+        }
+        \foreach{\y} in {2,...,5}{
+            \node (A) at (4-\y,-\y){$\displaystyle \binom{\y}{2}$};
+        }
+        \foreach{\y} in {3,...,5}{
+            \node (A) at (6-\y,-\y){$\displaystyle \binom{\y}{3}$};
+        }
+        \foreach{\y} in {4,...,5}{
+            \node (A) at (8-\y,-\y){$\displaystyle \binom{\y}{4}$};
+        }
+        \node (A) at (10-5,-5){$\displaystyle \binom{5}{5}$};
+        \node (A) at (8,1){$\displaystyle n$};
+        \foreach{\y} in {0,...,5}{
+            \node (A) at (8,-\y){$\displaystyle \y$};
+        }
+        \foreach{\y} in {0,...,5}{
+            \node (A) at (1+\y,-\y+1){$\displaystyle k = \y$};
+        }
+        \foreach{\x} in {1.5,...,5.5}{
+            \draw[dashed] (\x,-\x+2) -- +(225:10-1.4*\x);  
+        }
+    \end{tikzpicture}
+    \caption{Das Pascal'sche Dreieck der Binomialkoeffizienten.}
+    \label{fig:11_Pascal1}
+\end{figure}
+
+Wir können nun die Binomialkoeffizienten im Pascal'schen Dreieck mithilfe der Rekursionsrelation~\eqref{eqn:11_Rekursion} berechnen. Dafür nehmen wir als Voraussetzung, dass $\binom{n}{1} = 1 = \binom{n}{n}$ gelten. In der Art und Weise wie wir das Pascal'sche Dreieck gezeichnet haben, ergibt sich dann der Wert eines Binomialkoeffizienten als die Summe der schräg darüberliegenden Binomialkoeffizienten (siehe rote Pfeile in Abb.~\ref{fig:11_Pascal2}).
+
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}[scale=0.7]
+
+        \foreach{\x} in {0,...,7}{
+            \foreach{\y} in {\x,...,7}{
+                \pgfmathsetmacro{\binomial}{int(round(factorial(\y)/(factorial(\x)*factorial(\y-\x))))}
+            \node at (2*\x-\y,-\y) {$\binomial$};
+            } 
+            \node (A) at (10,-\x){$\displaystyle \x$};
+            \node (A) at (1+\x,-\x+1){$\displaystyle k = \x$};
+        }
+
+        \node (A) at (10,1){$\displaystyle n$};
+        % \foreach{\y} in {0,...,5}{
+        %     \node (A) at (9,-\y){$\displaystyle \y$};
+        % }
+        % \foreach{\y} in {0,...,5}{
+            
+        % }
+        \foreach{\x} in {1.5,...,7.5}{
+            \draw[dashed] (\x,-\x+2) -- +(225:13-1.4*\x);  
+        }
+        \draw[thick, red, -{latex}] ($(0,-2)+(-.2,-.2)$) -- +(-.6,-.6);
+        \draw[thick, red, -{latex}] ($(-2,-2)+(.2,-.2)$) -- +(.6,-.6);
+
+    \end{tikzpicture}
+    \caption{Das Pascal'sche Dreieck mit den berechneten Binomialkoeffizienten. Zur zeilenweisen Berechnung der Werte nutzen wir die Rekursionsrelation~\eqref{eqn:11_Rekursion}. Wir erkennen zudem im Pascal'schen Dreieck die Symmetrie unter $k \mapsto n-k$.}
+    \label{fig:11_Pascal2}
+\end{figure}
+
+Wir können mithilfe des Pascal'schen Dreiecks Binome unmittelbar ausmultiplizieren, bspw. (siehe letzte Zeile von Abb.~\ref{fig:11_Pascal2}): 
+\begin{align}
+    (a+b)^7 = a^7 + 7 a^6 b + 21 a^5 b^2 + 35 a^4 b^3 + 35 a^3 b^4 + 21 a^2 b^5 + 7 ab^6 + b^7.
+\end{align}
+
+\paragraph{Weitere Bemerkungen}$~$
+
+Der binomische Satz liefert uns insbesondere eine Reihendarstellung der Funktion $f_n(x) = (1+x)^n$: 
+\begin{align}
+    f_n(x) = \sum_{k=0}^n \binom{n}{k} x^k = \binom{n}{0} + \binom{n}{1} x + \binom{n}{2} x^2 + \hdots.
+\end{align}
+Durch Verallgemeinerung auf nicht-ganze $n$ können weitere nützliche Reihendarstellungen gefunden werden, bspw. 
+\begin{align}
+    \sqrt{1+x} = \sum_{k=0}^\infty \binom{1/2}{k} x^k \qq{(Newton'sches Binomialtheorem).}
+\end{align}
+Es existiert auch eine sogenanntens Multinomialtheorem für Ausdrücke der Form 
+\begin{align}
+    (x_1 + x_2 + \hdots + x_j)^n.
+\end{align}

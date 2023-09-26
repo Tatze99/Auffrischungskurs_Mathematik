@@ -1,0 +1,167 @@
+\section{Rechnen mit Vektoren und Matrizen}
+
+Vektoren und Matrizen kommen in allen Teilbereichen der Physik fundamentale Rollen zu. Hier betrachten wir den dreidimensionalen euklidischen Raum $\mathbb{R}^3$, bestehend aus Punkten, die durch Angabe ihrer Koordinaten $x,y,z$ in einem kartesischen Koordinatensystem gekennzeichnet sind. 
+
+\begin{wrapfigure}{r}{5cm}
+    \centering
+    \vspace{-5mm}
+    \begin{tikzpicture}
+        \draw[thick, -{latex}] (0,0) -- (2.6,0)node[right]{$y$};
+        \draw[thick, -{latex}] (0,0) -- (-1.6,-1.6)node[below]{$x$};
+        \draw[thick, -{latex}] (0,0) -- (0,2.6)node[right]{$z$};
+        \draw[thick, PAForange, -{latex}] (0,0) -- (1.5,1); 
+        \draw[dashed, gray] (0,0) -- (1.5,-1);
+        \draw[dashed, gray] (-1,-1) -- (1.5,-1);
+        \draw[dashed, gray] (2.5,0) -- (1.5,-1);
+        \draw[dashed, gray] (1.5,1) -- (1.5,-1);
+        \draw[dashed, gray] (0,2) -- (1.5,1);
+        \fill (1.5,1) circle (1.5pt);
+    \end{tikzpicture}
+    \vspace{-5mm}
+\end{wrapfigure}
+Ziehen wir eine Verbindungslinie vom Koordinatenursprung zu einem Punkt mit den Koordinaten $(x;y;z)$, dann entspricht das dem \emph{Ortsvektor} dieses Punktes und wir schreiben\footnote{Wir verwenden die häufig in Büchern benutzte Notation, Vektoren \textbf{fett} zu schreiben, statt mit einem Vektorpfeil.}
+\begin{align}
+    \bm{r} = \mqty(x\\y\\z) \qq{,} \bm{r} \in \mathbb{R}^3.
+\end{align}
+Vorteil einer solchen vektoriellen Größe ist, dass sie neben ihrem Betrag auch Information über die Richtung (inkl. Orientierung) enthält.
+
+\subsection{Grundlagen der Vektorrechnung}
+
+Offenbar können Vektoren \emph{addiert} bzw. \emph{subtrahiert} werden, 
+\begin{align}
+    \bm{r}_1 + \bm{r}_2 = \bm{r}_3 = \bm{r}_2 + \bm{r}_1 \qq{bzw.} \bm{r}_1 - \bm{r}_2 = \bm{r}_3.
+\end{align} 
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \draw[thick, FSUblau, -{latex}] (0,0) --node[below]{$\bm{r}_1$} (3,0);
+        \draw[thick, FSUblau, -{latex}] (3,0) --node[right]{$\bm{r}_2$} (4.5,2);
+        \draw[thick, FSUblau, -{latex}] (0,0) --node[above]{$\bm{r}_3$} (4.5,2); 
+
+        \begin{scope}[shift={(6,0)}]
+            \draw[thick, FSUblau, -{latex}] (0,0) --node[below]{$\bm{r}_1$} (3,0);
+        \draw[thick, FSUblau, -{latex}] (0,0) --node[left]{$\bm{r}_2$} (1.5,2);
+        \draw[thick, FSUblau, -{latex}] (1.5,2) --node[right]{$\bm{r}_3$} (3,0);
+        \end{scope}
+    \end{tikzpicture}
+    \caption{Addition (links) und Subtraktion (rechts) von zwei Vektoren $\bm{r}_1$ und $\bm{r}_2$.}
+\end{figure}
+
+Jeder dreidimensionale Vektor kann als Linearkombination dreier \emph{Basisvektoren} geschrieben werden, 
+\begin{align}
+    \bm{r} = \mqty(x\\y\\z) = x \vu{e}_x + y \vu{e}_y + z \vu{e}_z;
+\end{align}
+damit gilt bei Addition 
+\begin{align}
+    \bm{r}_1 + \bm{r}_2 = \mqty(x_1\\y_1\\z_1) + \mqty(x_2\\y_2\\z_2) = \mqty(x_1+x_2\\y_1+y_2\\z_1+z_2) = (x_1+x_2)\vu{e}_x + (y_1+y_2)\vu{e}_y + (z_1+z_2)\vu{e}_z.
+\end{align}
+Der \emph{Betrag} (die Länge) eines Vektors ist definiert als 
+\begin{align}
+    |\bm{r}| = \sqrt{x^2+y^2+z^2} \ge 0 \qq{(dreidimensionaler Pythagoras).}
+\end{align}
+Speziell gilt für die Basisvektoren $|\vu{e}_x| = |\vu{e}_y| = |\vu{e}_z| = 1$ sowie für denn Nullvektor $|\bm{0}| = 0$. Es gilt zudem die \emph{Dreiecksungleichung}
+\begin{align}
+    |\bm{r}_1 + \bm{r}_2| \le |\bm{r}_1| + |\bm{r}_2|. 
+\end{align} 
+Vektoren können mit Skalaren (``Zahlen'' ohne Richtung, hier: Elemente des $\mathbb{R}$) multipliziert werden. 
+
+Jedem Vektor kann ein \emph{Einheitsvektor} zugeordnet werden, 
+\begin{align}
+    \vu{e}_r = \frac{\bm{r}}{|\bm{r}|} \qq{,} \qq{sodass} |\vu{e}_r| = 1.
+\end{align}
+
+\subsection{Das Vektorprodukt}
+
+Das Vektorprodukt (auch: Kreuzprodukt oder äußeres Produkt) bietet eine Möglichkeit, Vektoren miteinander zu multiplizieren, im Sinne eines äußeren Produktes (``Vektor mal Vektor gleich Vektor'')
+\begin{align}
+    &\text{Schreibweise: } & \bm{r}_1 \times \bm{r}_2 &= \bm{r}_3 \notag \\
+    &\text{Konstruktion: } & \bm{r}_1 \times \bm{r}_2 &= \mqty(x_1\\y_1\\z_1) \times \mqty(x_2\\y_2\\z_2) = \mqty(y_1 z_2 - y_2 z_1 \\ z_1 x_2 - z_2 x_1 \\ x_1 y_2 - x_2 y_1). 
+\end{align}
+Das Vektorprodukt $ \bm{r}_1 \times \bm{r}_2$ steht senkrecht sowohl auf $\bm{r}_1$ als auch auf $\bm{r}_2$ und seine Richtung ist rechtsdrehend positiv (Rechte-Hand-Regel, Korkenzieher-Regel).
+
+Für den Betrag des Vektorproduktes gilt:
+\begin{align}
+    | \bm{r}_1 \times \bm{r}_2| = |\bm{r}_1| \cdot |\bm{r}_2|\cdot \sin(\sphericalangle(\bm{r}_1,\bm{r}_2)).
+\end{align}
+
+Der Betrag des Vektorproduktes ist gleich dem Flächeninhalt des durch die Vektoren aufgespannten Parallelogramms. 
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \draw[thick, FSUblau, -{latex}] (0,0) -- (0,2)node[left]{$\bm{r}_1\times \bm{r}_2$};
+        \fill[FSUblau, fill opacity = 0.3] (0,0) -- (1.4,1.2) --+(3,0.5) -- (3,0.5) --cycle;
+        \draw[thick, FSUblau, -{latex}] (0,0) -- (1.4,1.2)node[above]{$\bm{r}_2$};
+        \draw[thick, FSUblau, -{latex}] (0,0) -- (3,0.5)node[below]{$\bm{r}_1$};
+        \draw (0.5,1/12) arc (0:90:0.52);
+        \fill (0.25,0.3) circle (1pt); 
+        \node[rotate=12] (A) at (2.2,0.85){$A = |\bm{r}_1 \times \bm{r}_2|$};
+    \end{tikzpicture}
+\end{figure}
+Beachte: Das Vektorprodukt kann in dieser Form nur in drei Dimensionen existieren. 
+
+\paragraph{Algebraische Eigenschaften des Vektorprodukts}$~$
+
+\begin{itemize}
+    \item nicht kommutativ, $\bm{a}\times \bm{b} \neq \bm{b} \times \bm{a}$, 
+    \item dafür \emph{anti-kommutativ}: $\bm{a}\times\bm{b} = - \bm{b}\times \bm{a} \quad (\Rightarrow \bm{a}\times\bm{a} = \bm{0})$
+    \item nicht assoziativ, $\bm{a}\times (\bm{b}\times \bm{c}) \neq (\bm{a}\times\bm{b})\times\bm{c}$; 
+    \item distributiv, $\bm{a} \times (\bm{b}+\bm{c}) = \bm{a}\times\bm{b} + \bm{a}\times \bm{c}.$
+\end{itemize}
+
+Eine wichtige algebraische Eigenschaft ist die \emph{Jacobi-Identität}, 
+\begin{align}
+    \bm{a} \times (\bm{b}\times\bm{c}) + \bm{b} \times (\bm{c}\times\bm{a}) + \bm{c}\times (\bm{a}\times\bm{b}) = 0.
+\end{align}
+Weiterhin lauten die Vektorprodukte der Basisvektoren: 
+\begin{align}
+    \vu{e}_x \times \vu{e}_y = \vu{e}_z, \quad \vu{e}_y \times \vu{e}_z = \vu{e}_x, \quad \vu{e}_z \times \vu{e}_x = \vu{e}_y.
+\end{align}
+
+
+\subsection{Das Skalarprodukt}
+
+Das Skalarprodukt ist eine Projektion zweier Vektoren aufeinander und stellt ein inneres Produkt dar (``Vektor mal Vektor gleich nicht-Vektor''), da es ein Skalar (hier aus $\mathbb{R}$) ergibt. Es ist 
+\begin{align}
+    \bm{r}_1 \cdot \bm{r}_2 = \mqty(x_1\\y_1\\z_1) \times \mqty(x_2\\y_2\\z_2) = x_1x_2 + y_1y_2+z_1z_2.
+\end{align}
+\begin{figure}[htp]
+    \centering
+    \begin{tikzpicture}
+        \draw[thick, FSUblau, -{latex}] (0,0) -- (3.5,0)node[above right]{$\bm{r}_1$};
+        \draw[thick, FSUblau, -{latex}] (0,0) -- (30:5)node[above]{$\bm{r}_2$}; 
+        \draw[thick, {latex}-{latex}] ($(0,0)+(120:.2)$) --node[above,rotate=30]{$\frac{\bm{r}_1\cdot \bm{r}_2}{|\bm{r}_2|}$} +(30:cos{30}*3.5);
+        \draw[dashed] ($(0,0)+(120:.4)+(30:cos{30}*3.5)$) -- (3.5,0);
+        \draw[dotted] (3.5,0) -- (5,0);
+        \draw[dashed] (30:5) -- +(0,-2.5);
+        \draw[thick, {latex}-{latex}] (0,-.2) --node[below]{$\frac{\bm{r}_1 \cdot \bm{r}_2}{|\bm{r}_1|}$} (5*cos{30},-.2);
+    \end{tikzpicture}
+    \caption{Geometrische Bedeutung des Skalarproduktes. Das Skalarprodukt ist die Länge der Projektion des Vektors $\bm{r}_1$ auf $\bm{r}_2$ (oder umgekehrt) multipliziert mit der Länge des Vektors, auf den projiziert wird.}
+\end{figure}
+Wir können daraus schlussfolgern: 
+\begin{itemize}
+    \item Stehen zwei Vektoren senkrecht aufeinander, dann ist ihr Skalarprodukt Null, 
+    \begin{align}
+        \bm{a} \perp \bm{b} \quad \Longleftrightarrow \quad \bm{a}\cdot \bm{b} = 0. 
+    \end{align}
+    \item Der Nullvektor steht senkrecht auf allen Vektoren. 
+    \item Der Betrag eines Vektors kann mit Hilfe des Skalarproduktes geschrieben werden, 
+    \begin{align}
+        |\bm{a}| = \sqrt{\bm{a}\cdot\bm{a}}.
+    \end{align}
+\end{itemize}
+Das Skalarprodukt kann auch geschrieben werden als 
+\begin{align}
+    \bm{r}_1 \cdot \bm{r}_2 = |\bm{r}_1|\cdot|\bm{r}_2| \cdot \cos(\sphericalangle (\bm{r}_1,\bm{r}_2)). 
+\end{align}
+
+\paragraph{Algebraische Eigenschaften des Skalarproduktes}$~$
+
+\begin{itemize}
+    \item kommutativ, $\bm{a}\cdot \bm{b} = \bm{b}\cdot\bm{a}$; 
+    \item nicht assoziativ\footnote{Assoziativität kann hier gar nicht vorliegen, da es sich um ein inneres Produkt handelt; es existiert kein Skalarprodukt aus drei Faktoren.}, $\bm{a}\cdot (\bm{b}\cdot\bm{c}) \neq (\bm{a}\cdot\bm{b})\cdot\bm{c}$;
+    \item distributive, $\bm{a}\cdot (\bm{b}+\bm{c}) = \bm{a}\cdot\bm{b}+\bm{a}\cdot\bm{c}$.
+\end{itemize}
+Mit Hilfe von Skalar- und Vektorprodukt kann das Volumen des durch drei Vektoren aufgespannten Spates berechnet werden (\emph{Spatprodukt}): 
+\begin{align}
+    V = |(\bm{a}\times\bm{b}) \cdot\bm{c}|.
+\end{align}
