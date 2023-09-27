@@ -73,7 +73,7 @@ Wir können an dieser Darstellung durch das Anfangs- und Endglied bereits die Na
 Die Glieder der arithmetischen Folge sind gleich dem arithmetischen Mittel (s.u.) ihrer Nachbarglieder.
 
 \subsection{Geometrische Reihen}
-Bei einer arithmetischen Folge ist der Quotient $q$ zwei aufeinander folgender Glieder konstant. Wir können die Folge entweder \emph{rekursiv} oder \emph{explizit} definieren 
+Bei einer geometrischen Folge ist der Quotient $q$ zwei aufeinander folgender Glieder konstant. Wir können die Folge entweder \emph{rekursiv} oder \emph{explizit} definieren 
 \begin{subequations}
     \begin{alignat}{3}
             &\qq{rekursiv:}\quad &a_{k+1} &= q \cdot a_k \\
@@ -97,7 +97,7 @@ Wir können, abhängig von $q$, unterschiedliche Fälle unterscheiden:
     q &< 0: \quad \text{Die Folge alterniert.}
 \end{align}
 Wir zeigen durch vollständige Induktion, dass für das $n$-te Glied der Reihe gilt: 
-\begin{mymathbox}[ams align, title={Arithmetische Reihe}, colframe={FSUblau}]
+\begin{mymathbox}[ams align, title={Geometrische Reihe}, colframe={FSUblau}]
     s_n = a_0 \frac{1-q^{n+1}}{1-q} \qq{wobei} q \neq 1.
 \end{mymathbox}
 \begin{enumerate}
@@ -122,7 +122,7 @@ Wir können wieder anhand dieser Darstellung durch das Anfangs- und Endglied ber
     a_{k+1} &= a_0 q^{k+1} \notag \\
     a_{k-1} &= a_0 q^{k-1} \notag \\
     \Rightarrow a_{k+1} \cdot a_{k-1} &= a_0^2 q^{2k} = (a_0 q^k)^2 = a_k^2 \notag \\
-    \Rightarrow a_k &= \uuline{\sqrt{a_{k+1}\cdot a_{k+1}}}.
+    \Rightarrow a_k &= \uuline{\sqrt{a_{k+1}\cdot a_{k-1}}}.
 \end{align}
 Die Glieder der geometrischen Folge sind gleich dem geometrischen Mittel (s.u.) ihrer Nachbarglieder.
 

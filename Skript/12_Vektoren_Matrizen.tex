@@ -238,3 +238,212 @@ Zwei Matrizen $A,B$ können addiert/subtrahiert werden,
     \vdots & \vdots & \ddots & \vdots \\
     a_{m1} \pm b_{m1}& a_{m2} \pm b_{m2}& \hdots & a_{mn}\pm b_{mn}).
 \end{align}
+
+Die \emph{transponierte Matrix} ergibt sich durch Vertauschung von Zeilen und Spalten (bzw. Spiegelung an der Diagonalen), 
+\begin{align}
+    A^T = \mqty(a_{11} & a_{12} & \hdots & a_{1n} \\
+    a_{21} & a_{22} & \hdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{m1} & a_{m2} & \hdots & a_{mn})^T = \mqty(a_{11} & a_{21} & \hdots & a_{m1} \\
+    a_{12} & a_{22} & \hdots & a_{m2} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{1n} & a_{2n} & \hdots & a_{mn}).
+\end{align}
+\begin{itemize}
+    \item Transponieren verwandelt eine ($m\times n$)-Matrix in eine  $(n\times m)$-Matrix.
+    \item Transponieren verwandelt einen Spaltenvektor $\bm{x} = \mqty(x_1 \\ \vdots \\ x_n)$ in einen Zeilenvektor $\bm{x}^T = (x_1,x_2,\hdots, x_n)$. 
+    \item Eine Matrix heißt \emph{symmetrisch}, wenn gilt: $A^T = A$.
+    \item Eine Matrix heißt \emph{antisymmetrisch}, wenn gilt: $A^T = -A$.\\
+    $\Rightarrow $ Jede Diagonalmatrix ist symmetrisch.
+\end{itemize}
+Als \emph{Spur} (engl. trace) einer quadratischen Matrix bezeichnet man die Summe der Diagonalelemente 
+\begin{align}
+    \trace(A) = \sum_{i=1}^n a_{ii}.
+\end{align}
+\emph{Beispiel für Matrixoperationen:}
+\begin{align}
+    A &= \mqty(\alpha & \beta & 0 \\ -\beta &\alpha & 0 \\ 0 & 0 & 1) \qq{,} B = \mqty(\alpha & -\beta & 0 \\ \beta &\alpha & 0 \\ 0 & 0 & 1) \notag \\
+    \qq{Summe:} A+ B &= \mqty(\dmat[0]{2\alpha, 2\alpha, 2}) = 2 \mqty(\dmat[0]{\alpha,\alpha,1}) \\
+    (A+B)^T &= \mqty(\dmat[0]{2\alpha, 2\alpha, 2}) = A + B \quad \Rightarrow \quad A+B \qq{symmetrisch.} \notag \\
+    \trace(A+B) &= 4\alpha +2 = \trace{A} + \trace{B}. \notag \\
+    \qq{Differenz:} A- B &= \mqty(0 & 2\beta & 0 \\ -2\beta & 0 & 0 \\ 0 & 0 &0) = 2\beta \mqty(0 & 1 & 0 \\ -1 & 0 & 0 \\ 0 & 0 &0) \\
+    (A-B)^T &= \mqty(0 & -2\beta & 0 \\ 2\beta & 0 & 0 \\ 0 & 0 &0) = -(A - B) \quad \Rightarrow \quad A-B \qq{antisymmetrisch.} \notag \\
+    \trace(A-B) &= 0 = \trace(A) - \trace(B).\notag
+\end{align}
+
+\subsection{Die Matrixmultiplikation}
+
+Wir möchten ein assoziatives Produkt von Matrizen definieren. 
+
+\emph{Definition:} Sei $A = (a_{ij})$ eine $(m\times n)$-Matrix und sei $B = (b_{ij})$ eine $(n\times a)$-Matrix. Dann ist das Produkt $A\cdot B = C$ eine $(m\times a)$-Matrix $C = (c_{ij})$ mit Einträgen 
+\begin{align}
+    c_{ij} = \sum_{k=1}^n a_{ik} b_{kj} \qq{;} i=1,\hdots,m; \quad j = 1,\hdots,a. 
+\end{align}
+
+Das heißt: Es ergibt sich das Element in $i$-ter zeile und $j$-ter Spalte der resultierenden Matrix, indem die Elemente der $i$-ten Zeile der ersten Matrix mit denen der $j$-ten Spalte der zweiten Matrix multipliziert und aufsummiert werden. 
+
+Beispielsweise ergibt sich für $(3\times 3)$-Matrizen: 
+\begin{align}
+    \mqty(a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}) \cdot \mqty(b_{11} & b_{12} & b_{13}\\ b_{21} & b_{22} & b_{23} \\ b_{31} & b_{32} & b_{33}) = \mqty(
+    a_{11} b_{11} + a_{12} b_{21} + a_{13} b_{31} & a_{11} b_{12} + a_{12} b_{22} + a_{13} b_{32} & \hdots\\
+    a_{21} b_{11} + a_{22} b_{21} + a_{23} b_{31} & a_{21} b_{12} + a_{22} b_{22} + a_{23} b_{32} & \hdots\\
+    a_{31} b_{11} + a_{32} b_{21} + a_{33} b_{31} & a_{31} b_{12} + a_{32} b_{22} + a_{33} b_{32} & \hdots).
+\end{align}
+Wichtig ist, dass die Spaltenzahl der ersten Matrix gleich der Zeilenzahl der zweiten Matrix ist. 
+\begin{align}
+    \qq{Beispiel:} \mqty(1 & 0 & 1 \\ 2 & 1 & -1 \\ 1 & 3 & 0) \cdot \mqty(3 & 7 & 1 \\ 2 & 0 & 5 \\ 1 & 0 & 1) &=\mqty(3+0+1 & 7+0+0 & 1+0+1 \\ 6+2-1 & 14+0+0 & 2+5-1 \\ 3+6+0 & 7+0+0 & 1+15+0) \notag \\
+    &= \mqty(4 & 7 & 2 \\ 7&14&6\\9&7&16). 
+\end{align}
+Man kann das Skalarprodukt zweier Vektoren $\bm{r}_1, \bm{r}_2$ auffassen als das Produkt des Transponierten von $\bm{r}_1$ mit $\bm{r}_2$: 
+\begin{align}
+    (\bm{r}_1)^T \cdot (\bm{r}_2) = \mqty(x_1 & y_1 & z_1) \cdot \mqty(x_2 \\y_2 \\z_2) = x_1 x_2 + y_1y_2 + z_1z_2.
+\end{align} 
+Die Einheitsmatrix ist das Einselement der Matrixmultiplikation, 
+\begin{align}
+    A \cdot \mathds{1}_n = \mathds{1}_n \cdot A = A, \qquad A:(n\times n)\text{-Matrix.}
+\end{align}
+
+\paragraph{Algebraische Eigenschaften der Matrixmultiplikation}$~$
+
+\begin{itemize}
+    \item nicht kommutativ, $A \cdot B \neq B\cdot A$;
+    \item assoziativ, $A\cdot(B\cdot C) = (A\cdot B)\cdot C = A\cdot B\cdot C$;
+    \item distributiv, $A\cdot (B+C) = A\cdot B + A\cdot C.$
+\end{itemize}
+
+\subsection{Die Determinante}
+
+Die Determinante ordnet jeder quadratischen Matrix eine (reelle) Zahl zu. 
+
+\emph{Definition: } Die Determinante einer $(2\times 2)$-Matrix $A$ ist definiert als 
+\begin{align}
+    A = \mqty(a & b \\ c & d) \qquad \det(A) := a\cdot d - c \cdot b.
+\end{align}
+Die Determinante einer $(n\times n)$-Matrix kann mit Hilfe des \emph{Laplace'schen Entwicklungssatzes} bestimmt werden, wobei man die Berechnung auf Dterminanten von $(2\times 2)$-Matrizen zurückführt.
+
+\paragraph{Beispiel einer $(3\times3)$-Matrix: }$~$
+
+Um die Determinante einer $(3\times 3)$-Matrix zu bestimmen, entwickelt man nach einer (beliebigen) Zeile oder Spalte, wobei jeder Koeffizient $a_{ij}$ mit derjenigen Unterdeterminante multipliziert wird, die durch Streichung der $i$-ten Zeile und $j$-ten Spalte entsteht und ein alternierendes Vorzeichen nach dem Muster 
+\begin{align}
+    \mqty(+ & - & + \\ - & + & - \\ + & - & +) \qq{bzw.} (-1)^{i+j}
+\end{align}
+trägt. Sei nun also $A$ definiert als 
+\begin{align}
+    A = \mqty(a_{11} & a_{12} & a_{13}\\ a_{21} & a_{22} & a_{23} \\ a_{31} & a_{32} & a_{33}), \qq{alternative Schreibweise} \det(A) \equiv |A|,
+\end{align}
+dann ergibt sich die Determinante von $A$ zu 
+\begin{align}
+    \det(A) &= a_{11} \cdot \mqty|\textcolor{gray}{a_{11}} & \textcolor{gray}{a_{12}} & \textcolor{gray}{a_{13}}\\ \textcolor{gray}{a_{21}} & a_{22} & a_{23} \\ \textcolor{gray}{a_{31}} & a_{32} & a_{33}| - a_{12} \cdot \mqty|\textcolor{gray}{a_{11}} & \textcolor{gray}{a_{12}} & \textcolor{gray}{a_{13}}\\ a_{21} & \textcolor{gray}{a_{22}} & a_{23} \\ a_{31} & \textcolor{gray}{a_{32}} & a_{33}| + a_{13} \cdot \mqty|\textcolor{gray}{a_{11}} & \textcolor{gray}{a_{12}} & \textcolor{gray}{a_{13}}\\ a_{21} & a_{22} & \textcolor{gray}{a_{23}} \\ a_{31} & a_{32} & \textcolor{gray}{a_{33}}| \notag \\
+    &= a_{11} \cdot \mqty|a_{22} & a_{23} \\ a_{32} & a_{33}| - a_{12} \cdot \mqty|a_{21} & a_{23} \\ a_{31} & a_{33}| + a_{13} \cdot \mqty|a_{21} & a_{22} \\ a_{31} & a_{32}| \notag \\
+    &= a_{11} (a_{22}a_{33}-a_{32}a_{23}) - a_{12}(a_{21}a_{33}-a_{31}a_{23}) + a_{13} (a_{21}a_{32}-a_{31}a_{22}).
+\end{align}
+Hier wurde nach der ersten Zeile entwickelt. Wir hätten genauso nach bspw. der zweitne Spalte entwickeln können:
+\begin{align}
+    \det(A) &= -a_{12} \cdot \mqty|a_{21} & a_{23} \\ a_{31} & a_{33}| + a_{22} \cdot \mqty|a_{11} & a_{13} \\ a_{31} & a_{33}| - a_{32} \cdot \mqty|a_{11} & a_{13} \\ a_{21} & a_{23}| \notag \\
+    &= -a_{12} (a_{21}a_{33}-a_{31}a_{23}) + a_{22}(a_{11}a_{33}-a_{31}a_{13}) - a_{32} (a_{11}a_{23}-a_{21}a_{13}).
+\end{align}
+Praktisch ist, immer nach derjenigen Zeile oder Spalte zu entwickeln, welche die meisten Nullen enthält. Dafür schauen wir uns ein Zahlenbeispiel an: 
+\begin{align}
+    \mqty|7&3&0\\1&2&4\\3&8&5| &= 0 - 4\cdot \mqty|7 & 3\\3&8| + 5\cdot\mqty|7&3\\1&2| \notag \\
+    &= -4(56-9) + 5(14-3) = -188+55 = -133.
+\end{align}
+
+\paragraph{Eigenschaften von Determinanten}$~$
+
+\begin{itemize}
+    \item $\det(A\cdot B) = \det(A)\cdot \det(B)$
+    \item $\det(k\cdot A) = k^n \cdot \det(A)$, wenn $k\in \mathbb{R}$ und $A: (n\times n)$-Matrix 
+    \item $\det(A^T) = \det(A)$
+    \item $\det(\mathds{1}) = 1.$
+\end{itemize}
+
+\paragraph{Beispiel: Spatprodukt} Das Volumen des durch die Vektoren 
+\begin{align}
+    \bm{a} = \mqty(a_x\\a_y\\a_z), \bm{b} = \mqty(b_x\\b_y\\b_z), \bm{c} = \mqty(c_x\\c_y\\c_z)
+\end{align}
+aufgespannten Spates kann als Determinante einer aus $\bm{a},\bm{b}$ und $\bm{c}$ gebildeten Matrix geschrieben werden, 
+\begin{align}
+    V &= \mqty|a_x & b_x&c_x\\a_y&b_y&c_y\\a_z&b_z&c_z|.\\
+\qq{Denn: } \qty[\mqty(a_x\\a_y\\a_z)\times\mqty(b_x\\b_y\\b_z)] &= \mqty(a_yb_z-a_zb_y \\ a_zb_x-a_xb_z\\a_xb_y-a_yb_x)\cdot\mqty(c_x\\c_y\\c_z) \notag \\
+&= c_x(a_yb_z-a_zb_y) - c_y(a_xb_z-a_zb_x + c_z(a_xb_y-a_yb_z)) \notag \\
+\qq{und} \mqty|a_x & b_x&c_x\\a_y&b_y&c_y\\a_z&b_z&c_z| &= c_x \mqty|a_y &b_y\\a_z&b_z| - c_y\mqty|a_x&b_x\\a_z&b_z|+c_z \mqty|a_x&b_x\\a_y&b_y| \notag \\
+&=c_x(a_yb_z-a_zb_y) - c_y(a_xb_z-a_zb_x + c_z(a_xb_y-a_yb_z)).
+\end{align}
+Wir sehen, dass beide Ergebnisse miteinander übereinstimmen.
+
+\newpage
+\subsection{Die inverse Matrix}
+
+Die zu einer quadratischen Matrix $A$ gehörende inverse Matrix $A^{-1}$ ist durch die Bedingung 
+\begin{align}
+    A \cdot A^{-1} = A^{-1}\cdot A = \mathds{1}
+\end{align}
+definiert. Erinnerung: Im Falle reeller Zahlen ist jedem $x\in\mathbb{R}\backslash\{0\}$ ein multiplikatives inverses Element ($x^{-1} = \frac{1}{x}$) zugeordnet, sodass $x\cdot x^{-1} = 1$ gilt.
+
+Beachte: Nicht jede Matrix besitzt ein Inverses (ist invertierbar)! Eine invertierbare Matrix heißt \emph{regulär}; eine nicht invertierbare Matrix heißt \emph{singulär}. 
+\begin{satz}
+    Eine quadratische Matrix $A$ ist genau dann invertierbar, wenn gilt: $\det(A) \neq 0.$
+\end{satz}
+\begin{itemize}
+    \item Eine Matrix heißt \emph{selbstinvers}, wenn gilt $A^{-1} =A$. 
+    \item Eine Matrix heißt \emph{orthogonal}, wenn gilt $A^{-1} = A^T$.
+\end{itemize}
+Die inverse Matrix $A^{-1}$ von $A$ kann, sofern existent, mit Hilfe des sogenannten \emph{Gauß-Jordan-Algorithmus} bestimmt werden. Dabei schreibt man die $(n\times n)$-Matrix $A$ zusammen mit der Einheitsmatrix $\mathds{1}_n$, 
+\begin{align}
+    (A | \mathds{1}_n),
+\end{align}
+und bringt diesen Ausdruck mit Hilfe von elementaren Zeilenumformungen in die Form $(\mathds{1}_n | A^{-1})$ aus der $A^{-1}$ abgelesen werden kann. Erlaubte Zeilenumformungen sind: 
+\begin{itemize}
+    \item Multiplikation einer Zeiele mit einer Zahl $k \in \mathbb{R}\backslash\{0\}$, 
+    \item Hinzuaddieren des $k$-Fachen einer beliebigen Zeile zu einer anderen, 
+    \item Vertauschen zweier Zeilen.
+\end{itemize}
+
+\begin{align}
+    \qq{Beispiel: } A = \mqty(1 & 0 \\ 2 & 3) \quad &\rightarrow \quad \qty(\begin{array}{c c|c c} 
+       1 & 0 & 1 & 0 \\
+       2 & 3 & 0 & 1 
+    \end{array}) \quad \bigg| \quad (\text{II}) + (-2)\cdot (\text{I}) \notag \\
+    &\rightarrow \quad \qty(\begin{array}{c c|c c} 
+        1 & 0 & 1 & 0 \\
+        0 & 3 & \minus2 & 1 
+     \end{array}) \quad \bigg| \quad \frac{1}{3}\cdot(\text{II}) \notag \\
+     &\rightarrow \quad \qty(\begin{array}{c c|c c} 
+        1 & 0 & 1 & 0 \\
+        0 & 1 & \minus \frac{2}{3} & \frac{1}{3} 
+     \end{array})  \quad \Rightarrow A^{-1} = \mqty(1 & 0 \\-\frac{2}{3} & \frac{1}{3}).
+\end{align}
+Wir überprüfen das Ergebnis mit einer Probe: 
+\begin{align}
+    A \cdot A^{-1} = \mqty(1 & 0 \\ 2 & 3) \cdot \mqty(1 & 0 \\-\frac{2}{3} & \frac{1}{3}) = \mqty(1&0\\0&1) = \mathds{1}_2. \quad \checkmark
+\end{align}
+
+\subsection{Anwendungen von Matrizen}
+
+\paragraph{Lösen von linearen Gleichungssystemen}$~$
+
+Wir erinnern uns an das lineare Gleichungssystem mit 3 Unbekannten (siehe~\eqref{eqn:2_LGS_3a} bis~\eqref{eqn:2_LGS_3c})
+\begin{subequations}
+    \begin{align}
+        a_1 x + b_1 y + c_1 z &= k_1, \\
+        a_2 x + b_2 y + c_2 z &= k_2, \\
+        a_3 x + b_3 y + c_3 z &= k_3.
+    \end{align}
+\end{subequations}
+Dieses System kann auch als Matrixgleichung geschrieben werden: 
+\begin{align}
+    \underbrace{\mqty(a_1&b_1&c_1\\a_2&b_2&c_2\\a_3&b_3&c_3)}_{\mathclap{\text{Koeffizientenmatrix}}} \mqty(x\\y\\z) = \mqty(k_1\\k_2\\k_3).
+\end{align}
+Das System nach $x,y,z$ auflösen, heißt also, es auf eine Form zu bringen, in der die Koeffizientenmatrix diagonal ist.
+
+\paragraph{Darstellung physikalischer Größen}$~$
+
+Viele physikalische Größen sind selbst Matrix-wertig. Wir wollen im Folgenden einige Beispiele nennen:
+\begin{itemize}
+    \item Die Trägheitsmomente eines starren Körpers werden in einer Matrix zusammengefasst. 
+    \item Bewegungen und vErformungen, die auf der Wechselwirkung elektromagnetischer Felder mit Ladungen beruhen, werden durch eine Matrix beschrieben, in der die Komponenten des elektrischen und magnetischen Feldes zusammengefasst sind (elektromagnetischer Spannungstensor).
+    \item Das doppelbrechende Verhalten anisotroper Kristalle kann durch eine Matrix-wertige Brechzahl beschrieben werden. 
+    \item Viele Observablen der Quantenmechanik (Energie, Drehimpulse) können als Matrizen dargestellt werden. 
+    \item In der Allgemeinen Relativitätstheorie ist die Geometrie einer Raumzeit durch eine Matrix bestimmt.
+    \item Die sogenannte Dichtematrix ist elementarer Gegenstand der statistischen Quantenmechanik.
+\end{itemize}
