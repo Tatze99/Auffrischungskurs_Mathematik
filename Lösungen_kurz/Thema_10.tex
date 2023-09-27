@@ -1,0 +1,51 @@
+\Titelbanner{10}{Integralrechnung}
+
+\textbf{Aufgabe 1: } \emph{Stammfunktionen}
+\begin{enumerate}[label=(\alph*)]
+\item $F(x)=-\frac{\cos(2x+5)}{2}+C$
+\item $F(x)=\ln(kx+1)+C$
+\item $F(x)=\ln(\sin x)+C$
+\item $F(x)=\frac{a\ln(\sin x)+bx}{c}+C$
+\item $F(x)=x+\ln\left(\frac{x-1}{x+1}\right)+C$
+\item $F(x)=-\frac{k}{\sqrt{x^2+y^2}}+C$
+\end{enumerate}
+\vspace{0.4cm}
+%
+\textbf{Aufgabe 2: } \emph{Partielle Integration}
+\begin{enumerate}[label=(\alph*)]
+\item $\pi$
+\item $6-2e$
+\item $\left(\frac{3}{4}+2\ln 2\right)r_0^2$
+\item $\frac{\ln^2(x)}{2}+C$
+\end{enumerate}
+\vspace{0.4cm}
+%
+\textbf{Aufgabe 3: } \emph{Substitutionen}
+\begin{enumerate}[label=(\alph*)]
+\item $\frac{\pi}{4}$
+\item $\sqrt{\pi}$
+\end{enumerate}\vspace{0.5cm}
+%
+\textbf{Aufgabe 4: } \emph{Vollständige Induktion}\\[0.2cm]
+\begin{enumerate}
+    \setlength{\mathindent}{0cm}
+    \item[(IA)] $n=0: \quad 0! = \int\limits_{0}^{\infty} \e^{-x} \dd{x} = -\e^{-x}\eval_0^\infty = -(0-1) = 1 \quad\checkmark$ 
+    \item[(IV)] $n=k: \quad k! = \int\limits_{0}^{\infty} x^k \e^{-x} \dd{x}$
+    \item[(IB)] $n=k+1: \quad (k+1)! = \int\limits_{0}^{\infty} x^{k+1} \e^{-x} \dd{x}$\\
+    \begin{proof}$~$\\[-1.8cm]
+        \begin{align}
+            \hspace{1.5cm} \int\limits_{0}^{\infty} x^{(k+1)} \e^{-x} \dd{x} \overset{\text{P.I.}}{=} \underbrace{\eval(-x^{k+1} \e^{-x}|_0^\infty}_{=0} + (k+1) \underbrace{\int\limits_{0}^{\infty} x^k \e^{-x} \dd{x}}_{k!} = (k+1)k! = (k+1)!
+        \end{align}
+    \end{proof}
+\end{enumerate}
+
+\textbf{Aufgabe 4: } \emph{Flächenintegral}
+\begin{align*}
+&\frac{A}{4}=\int\limits_0^R \d x \int\limits_0^{\sqrt{R^2-x^2}}\d y=R\int\limits_0^R\d x\sqrt{1-\frac{x^2}{R^2}}\stackrel{(z=x/R)}{=}R^2\int\limits_0^1 \d z\sqrt{1-z^2}\stackrel{\text{Aufg. 3}}{=}\frac{\pi R^2}{4}\\[1ex]
+&\Rightarrow \underline{\underline{A=\pi R^2}}
+\end{align*}\\[0.2cm]
+%
+\textbf{Aufgabe 5: } \emph{Volumenintegral}
+\begin{align*}
+V=ab\left(h_0+y_0-\frac{b^2}{12}\right)+a\sin(b)
+\end{align*}
