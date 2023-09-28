@@ -232,4 +232,153 @@ Natürlich können auch Flächen- und Volumenintegrale über Funktionen betracht
 
 \begin{itemize}
     \item Linearität: $\displaystyle \int\limits_{a}^{b} \qty(\alpha f(x)+\beta g(x)) \dd{x} = \alpha \int\limits_{a}^{b} f(x) \dd{x} + \beta \int\limits_{a}^{b} g(x) \dd{x}$ 
+    \item Zerlegung des Integrationsgebietes: $a < k < b$ 
+    \begin{align}
+        \int\limits_{a}^{b} f(x) \dd{x} = \int\limits_{a}^{k} f(x) \dd{x} + \int\limits_{k}^{b} f(x) \dd{x}
+    \end{align}
+    \item Vertauschung der Grenzen: $\displaystyle \int\limits_{a}^{b} f(x) \dd{x} = - \int\limits_{b}^{a}f(x) \dd{x}$\\
+    Speziell für \emph{gerade Funktionen}, $f(-x) = f(x)$ bzw. \emph{ungerade Funktionen}, $f(-x) = -f(x):$
+    \begin{align}
+        \int\limits_{-a}^{a} f(x) \dd{x} &= \underbrace{\int\limits_{-a}^{0}f(x) \dd{x}} + \int\limits_{0}^{a} f(x) \dd{x} = \begin{cases}
+            2 \int\limits_{0}^{a} f(x) \dd{x} & f(-x) = f(x)\\ 0 & f(-x) = -f(x)
+        \end{cases} \\
+        & \qquad = -\int\limits_{0}^{-a} f(x) \dd{x} = \int\limits_{0}^{a} f(-x) \dd{x}, \quad \text{nach Subst. } x \to -x, \quad \dd{x} \to -\dd{x} \notag 
+    \end{align}
+    Beispiel 1: $f(x) = \cos (x)$ 
+    \begin{align}
+        -\int\limits_{-\pi/2}^{\pi/2} \cos(x) \dd{x} = \sin(x)\eval_{-\frac{\pi}{2}}^{\frac{\pi}{2}}= 2,   \qquad 2 \int\limits_{0}^{\pi/2} \cos(x)\dd{x} = 2 \sin(x)\eval_0^{\frac{\pi}{2}} = 2.
+    \end{align}
+    % Speziell für \emph{ungerade Funktionen}, $f(-x) = -f(x):$
+    % \begin{align}
+    %     \int\limits_{-a}^{a} f(x) \dd{x} &= \underbrace{\int\limits_{-a}^{0}f(x) \dd{x}} + \int\limits_{0}^{a} f(x) \dd{x} = 0\\
+    %     & \qquad = -\int\limits_{0}^{-a} f(x) \dd{x} = \int\limits_{0}^{a} f(-x) \dd{x}, \quad \text{nach Subst. } x \to -x, \quad \dd{x} \to -\dd{x} \notag 
+    % \end{align}
+    Beispiel 2: $f(x) = \sin (x)$ \vspace{-4mm}
+    \begin{align}
+        -\int\limits_{-\pi}^{\pi} \sin(x) \dd{x} = -\cos(x)\eval_{-\pi}^{\pi} = 1+(-1) = 0.
+    \end{align}
+    \item Umkehrung der Ableitung: $\int \dv{f}{x} \dd{x} = \int \dd{f} = f.$
 \end{itemize}
+
+\paragraph{Beispiel: Bewegung mit konstanter Beschleunigung}$~$
+
+Wir gehen nun von einer konstant beschleunigten (Beschleunigung $a$) Bewegung ($v(t)$ - Geschwindigkeit) aus: 
+\begin{align}
+    \dv{v(t)}{t} &= a \quad \bigg| \int \dd{t'} \\ 
+    \int\limits_{t_0}^{t} \dv{v(t')}{t'} \dd{t'} &= \int\limits_{t_0}^{t} a \dd{t'} \quad \Rightarrow \quad\int\limits_{v(t_0)}^{v(t)} \dd{v} = a \cdot (t-t_0) \notag \\
+    v(t) - v(t_0) &= a\cdot (t-t_0)\qq{, wähle $t_0=0$ und $v(0) \equiv v_0$} \notag \\
+    \Rightarrow v(t) &= a\cdot t + v_0. 
+\end{align}
+Nun berechnen wir noch die Funktion des Ortes $x(t)$ durch eine zweite Integration
+\begin{align}
+    \dv{x(t)}{t} &= v(t) = a\cdot t + v_0 \quad \bigg| \int \dd{t'} \\ 
+    \int\limits_{0}^{t} \dv{x(t')}{t'} \dd{t'} &= \int\limits_{0}^{t} (a\cdot t' + v_0) \dd{t'} \quad \Rightarrow \quad\int\limits_{x(0)}^{x(t)} \dd{x} = a \cdot \frac{t^2}{2} + v_0 t \notag \\
+    x(t) - x(0) &= \frac{a}{2} t^2 + v_0 t\qq{, $x(0) \equiv x_0$} \notag \\
+    \Rightarrow x(t) &= \uuline{\frac{a}{2}t^2 + v_0 t + x_0}. 
+\end{align}
+
+Im Folgenden werden noch drei besonders wichtige Methoden zur Umformung von Integralen vorgestellt. 
+
+\paragraph{1. Partielle Integration}$~$
+
+Hier sind: $u=u(x), v=v(x)$ Funktionen und $u' = \dv{u(x)}{x}, v' = \dv{v(x)}{x}$. 
+
+Wir wenden nun die Produktregel der Differentiation auf das Produkt $u\cdot v$ an und integrieren anschließend wieder: 
+\begin{align}
+    (u v)' = u' v + v' u  \qq{bzw.} u v' = (u v)' - vu'  \quad \bigg| \int \dd{x}
+\end{align}
+\begin{mymathbox}[ams align, title={Partielle Integration}, colframe={FSUblau}]
+    \int u(x) v'(x) \dd{x} &= u(x) v(x) - \int v(x) u'(x) \dd{x} \\
+    \qq{mit Grenzen} \int\limits_{a}^{b} u(x) v'(x) \dd{x} &= u(x) v(x)\eval_a^b - \int\limits_a^b v(x) u'(x) \dd{x}
+\end{mymathbox}
+
+\begin{alignat}{3}
+    &\qq{Beispiel 1:}& \int \underbrace{x}_{u} \underbrace{\e^{x}}_{v'} \dd{x}  &= x \e^x - \int \e^x \dd{x} = \uuline{(x-1) \e^x + C}.\\
+    &\qq{Beispiel 2:}& \int \ln(x) \dd{x} &= x \ln(x) - \int \dd{x} = \uuline{x(\ln x -1) + C}. \\
+    & &&\quad\begin{rcases}
+        u = \ln(x) \\ v' = 1 
+    \end{rcases} u' = \frac{1}{x}, \quad v= x \notag \\
+    &\qq{Beispiel 3:}& \int \sin(x)\cos(x) \dd{x} &= -\cos^2(x) - \int \sin(x) \cos(x) \dd{x}. \notag \\
+    & &&\quad \begin{rcases}
+        u = \cos(x) \\ v' = \sin(x) 
+    \end{rcases} u' = -\sin(x), \quad v= -\cos(x) \notag \\
+    & &\hspace{-1cm}\Rightarrow 2 \int \sin(x) \cos(x) \dd{x} &= -\cos^2(x) + C \notag \\
+    & &            \int \sin(x) \cos(x) \dd{x} &= \uuline{-\frac{1}{2}\cos^2(x) + \tilde{C}}
+\end{alignat}
+Bemerkung: Für das letzte Beispiel, kann das Integral mithilfe des Additionstheorems~\eqref{eqn:07_Doppelwinkel_sin} vereinfacht werden zu $\frac{1}{2}\sin(2x)$, wodurch sich das Integral einfach berechnen lässt zu 
+\begin{align}
+    \frac{1}{2}\int \sin(2x) \dd{x} = -\frac{1}{4} \underbrace{\cos(2x)}_{\mathclap{2 \cos^2(x) -1}} + C  = -\frac{1}{2} \cos^2(x) - \underbrace{\frac{1}{4} + C}_{\tilde{C}}.
+\end{align}
+Hier erkennen wir, wie wichtig die Integrationskonstante beim Integrieren ist. Durch das Additionstheorem ist die erhaltene Stammfunktion um $\frac{1}{4}$ gegenüber der vorherigen Methode nach unten verschoben gewesen.
+
+\paragraph{2. Logarithmische Integration}$~$
+
+Steht bei der Integration eines Bruches die Ableitung des Nennerterms im Zähler, so lässt sich das zugehörige Integral einfach berechnen: 
+\begin{mymathbox}[ams align, title={Logarithmische Integration}, colframe={FSUblau}]
+    \int \frac{f'(x)}{f(x)} \dd{x} = \ln|f(x)| + C.
+\end{mymathbox}
+
+\begin{alignat}{3}
+    &\qq{Beispiel 1:}& \int \frac{3x^2+10x+2}{x^3+5x^2+2x} \dd{x} &= \uuline{\ln|x^3+5x^2+2x| + C}. \\
+    &\qq{Beispiel 2:}& \int \frac{1}{\cos^2(x)\tan(x)} \dd{x} &= \int \frac{\frac{1}{\cos^2(x)}}{\tan(x)} \dd{x} = \uuline{\ln|\tan(x)| + C}.
+\end{alignat}
+
+\paragraph{3. Substitution}$~$
+
+Durch Substitution erfolgt ein Wechsel der Integrationsvariable: 
+\begin{align}
+    \int\limits_{a}^{b} f(x) \dd{x} &\qq{, betrachte $z=z(x)$ bzw. $x(z)$} \notag \\
+    & \Rightarrow \qq{Wechsel der Grenzen} a \mapsto z(a), \quad b \mapsto z(b) \notag \\
+    & \Rightarrow \qq{Wechsel des Integrationsmaßes:} \dv{x(z)}{z} = x' \rightarrow \dd{x} = x'(z) \dd{z} \notag \\
+    \int\limits_{a}^{b} f(x) \dd{x} &= \int\limits_{z(a)}^{z(b)} f(x(z)) x'(z) \dd{z}. 
+\end{align}
+
+\begin{alignat}{3}
+    &\qq{Beispiel 1:}& \int \tan(x) \dd{x} &, \qq{Substitution:} z(x) = \tan(x)\\
+    & & \dv{z}{x} &= 1 + \tan^2(x) = 1+z^2 \quad \Rightarrow \quad \dd{x} = \frac{\dd{z}}{1+z^2} \notag \\
+    & & \Rightarrow \int \tan(x) \dd{x} &= \int \frac{z}{1+z^2} \dd{z} = \frac{1}{2} \ln(1+z^2) + C = \frac{1}{2} \underbrace{\ln(1+\tan^2(x))}_{\mathclap{1+\tan^2(x) = \cos^{-2}(x)}} + C \notag \\
+    & & &= \frac{- \ln(\cos^2(x))}{2} + C = \uuline{-\ln|\cos(x)| + C}.
+\end{alignat}
+
+\begin{alignat}{3}
+    &\qq{Beispiel 2:}& \int\limits_0^{\pi/2} \sin^3(x)\cos(x) \dd{x} &, \qq{Substitution:} z(x) = \sin(x), \quad \dv{z}{x} = \cos(x) \notag \\
+    & & \text{Grenzen: } x&=0: z=0, \quad x = \frac{\pi}{2}: z=1, \qq{Maß:} \dd{x} = \frac{\dd{z}}{\cos(x)} \notag \\
+    & & \Rightarrow \int\limits_0^{\pi/2} \sin^3(x)\cos(x) \dd{x} &= \int\limits_{0}^{1} z^3 \dd{z} = \frac{z^4}{4}\eval_0^1 = \uuline{\frac{1}{4}}. 
+\end{alignat}
+
+\paragraph{Integrationstabelle}$~$
+
+Im Folgenden wollen wir noch einmal einige häufige Integrale zusammenstellen.
+\begin{table}[htp]
+    \centering
+    \caption{Integrale spezieller Funktionen}
+    \begin{tabular}[t]{l l}
+        \toprule
+        $f(x)$ & $F(x) + C$ \\
+        \midrule 
+        $x^n$ & $\dfrac{1}{n+1} x^{n+1}$ \\
+        $\dfrac{1}{x}$ & $\ln|x|$ \\[2mm]
+        $\e^x$ & $\e^x$ \\
+        $a^x$ & $\dfrac{a^x}{\ln a}$ \\[2mm]
+        $\sin(x)$ & $-\cos(x)$ \\
+        $\cos(x)$ & $\sin(x)$ \\
+        $\dfrac{1}{\cos^2(x)}$ & $\tan(x)$ \\
+        $\dfrac{1}{\sin^2(x)}$ & $-\cot(x)$ \\
+        $\dfrac{1}{\sqrt{1-x^2}}$ & $\arcsin(x)$ \\
+        $\dfrac{1}{1+x^2}$ & $\arctan(x)$ \\
+    \end{tabular}
+    \hspace{1cm}
+    \begin{tabular}[t]{l l}
+        \toprule
+        $f(x)$ & $F(x) + C$ \\
+        \midrule 
+        $\ln x$ & $x(\ln x- 1)$ \\[2mm]
+        $\log_a x$ & $\dfrac{x}{\ln a}(\ln x- 1)$ \\[2mm]
+        $\tan x$ & $-\ln|\cos x|$ \\[2mm]
+        $\cot x$ & $\ln|\sin x|$ \\[2mm] 
+        $\arcsin x$ & $x \arcsin x + \sqrt{1-x^2}$ \\[2mm]
+        $\arccos x$ & $x \arccos x - \sqrt{1-x^2}$ \\[2mm]
+        $\arctan x$ & $x \arctan x - \dfrac{1}{2} \ln(1+x^2)$\\[2mm]
+        $\text{arccot} \,x$ & $x \,\text{arccot}\, x + \dfrac{1}{2} \ln(1+x^2)$
+    \end{tabular}
+\end{table}
