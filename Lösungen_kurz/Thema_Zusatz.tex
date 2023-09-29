@@ -11,10 +11,11 @@
 \begin{enumerate}[label=(\alph*)]
 \item $59$, $2$, $0$
 \item \begin{align*} \\[-3.5em]\begin{pmatrix}0\\0\\1\end{pmatrix},\quad\begin{pmatrix}0\\0\\1\end{pmatrix},\quad\begin{pmatrix}17\\-7\\-2\end{pmatrix}\end{align*}
-\item \begin{align*} \\[-3.5em]\left|\vec{c}\,\right|=\left|\vec{a}-\vec{b}\,\right|=\sqrt{\left(\vec{a}-\vec{b}\right)^2} \hspace{0.5cm}\Rightarrow\hspace{0.5cm}\underline{\underline{c^2=a^2+b^2-2ab\cos\sphericalangle(\vec{a},\vec{b}\,)}}\end{align*}
+\item \begin{align*} \\[-3.5em]\qty|\vec{c}\,|=\qty|\vec{a}-\vec{b}\,|=\sqrt{\qty(\vec{a}-\vec{b})^2} \hspace{0.5cm}\Rightarrow\hspace{0.5cm}\underline{\underline{c^2=a^2+b^2-2ab\cos\sphericalangle(\vec{a},\vec{b}\,)}}\end{align*}
 \item Die drei Vektoren der Seiten eines Dreiecks spannen jeweils paarweise dasselbe Parallelogramm auf.
 \begin{align*}
-\left|\vec{a}\times\vec{b}\,\right|=\left|\vec{a}\times\vec{c}\,\right|=\left|\vec{b}\times\vec{c}\,\right| \hspace{0.5cm}\Rightarrow\hspace{0.5cm} ab\sin\gamma=ac\sin\beta=bc\sin\alpha \hspace{0.5cm}\Rightarrow\hspace{0.5cm}\underline{\underline{\frac{\sin\alpha}{a}=\frac{\sin\beta}{b}=\frac{\sin\gamma}{c}}}
+\qty|\vec{a}\times\vec{b}\,|=\qty|\vec{a}\times\vec{c}\,|=\qty|\vec{b}\times\vec{c}\,| \hspace{0.5cm}&\Rightarrow\hspace{0.5cm} ab\sin\gamma=ac\sin\beta=bc\sin\alpha \hspace{0.5cm}\\
+&\Rightarrow\hspace{0.5cm}\underline{\underline{\frac{\sin\alpha}{a}=\frac{\sin\beta}{b}=\frac{\sin\gamma}{c}}}
 \end{align*}
 \end{enumerate}
 \vspace{0.4cm}
@@ -59,11 +60,18 @@ In $d$ Dimensionen gibt es $d$ kartesische Achsen $x_1,x_2,\dots,x_d$. Um jede A
 \begin{enumerate}
 \item Rekursionsrelation: $\det(\Delta_n)=-2\det(\Delta_{n-1})-\det(\Delta_{n-2})$
 \item $\det(\Delta_1)=-2$, $\det(\Delta_2)=3$, $\det(\Delta_3)=-4$\ \ \ \ \  $\Rightarrow$\ \ \ \ \  Vermutung:\ \ $\det(\Delta_n)=(-1)^n(n+1)$\\[0.3cm]
-Induktion:
-\begin{align*}
-\det(\Delta_{n+1})&=-2\det(\Delta_{n})-\det(\Delta_{n-1})\\
-&=-2(-1)^n (n+1)-(-1)^{n-1}n\\
-&=(-1)^{n+1}\left(2(n+1)-n\right)\\
-&=(-1)^{n+1}(n+2)
-\end{align*}\hfill$\Box$
+Beweis durch Induktion:
+\begin{enumerate}
+    \item[(IA)] $n=1: \quad \det(\Delta_1) = (-1)^n (n+1) = -2 \quad\checkmark$ 
+    \item[(IV)] $n=k: \quad \det(\Delta_k) = (-1)^k (k+1)$
+    \item[(IB)] $n=k+1: \quad \det(\Delta_{k+1}) = (-1)^{k+1} (k+2)$\\
+    \begin{proof}$~$\\[-1.45cm]
+        \begin{align}
+            \qquad \det(\Delta_{n+1})&=-2\det(\Delta_{n})-\det(\Delta_{n-1})\\
+            &=-2(-1)^n (n+1)-(-1)^{n-1}n\\
+            &=(-1)^{n+1}\qty(2(n+1)-n)\\
+            &=(-1)^{n+1}(n+2).
+        \end{align}
+    \end{proof}
+\end{enumerate}
 \end{enumerate}

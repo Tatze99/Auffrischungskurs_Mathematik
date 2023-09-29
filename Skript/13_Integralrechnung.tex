@@ -33,7 +33,7 @@ Im Gegensatz zur Differentiation existiert im Allgemeinen kein Algorithmus zur B
          &= \frac{3}{2} x^2 + y^2 + 2xy - 2x^2 + 3x + C \notag \\
          &= \qty(\frac{3y^2}{2} - 2)x^2 + (2y-3)x + C \notag \\
     \text{Stammfunktion von} \quad f(y) &= 3xy^2 + 2y - 4x +3 \\
-    F(x) &= \int (3xy^2 + 2y - 4x + 3) \dd{y} \notag \\
+    F(y) &= \int (3xy^2 + 2y - 4x + 3) \dd{y} \notag \\
          &=xy^3 + y^2 - (4x-3)y + C.\notag \\[-1.5cm] \notag 
 \end{align}
 
@@ -67,7 +67,7 @@ Wir führen das Wegintegral ein am Beispiel der Frage ``\emph{Was ist die Arbeit
 \begin{align}
     \text{Arbeit } = \text{ Kraft mal Weg,} \qq{bzw.} W = F\cdot s.
 \end{align}
-Betrachten wir das konkrete Beispiel eines Elektrons (Ladung $q = -e$) im Kondensator mit elektrischer Feldstärke $\bm{F}$, das sich unter Einfluss einer Coulomb-Kraft $\bm{F} = q \cdot \bm{E}$ bewegt. 
+Betrachten wir das konkrete Beispiel eines Elektrons (Ladung $q = -e$) im Kondensator mit elektrischer Feldstärke $\bm{E}$, das sich unter Einfluss einer Coulomb-Kraft $\bm{F} = q \cdot \bm{E}$ bewegt. 
 \begin{figure}[htp]
     \centering
     \begin{tikzpicture}
@@ -123,11 +123,11 @@ Für $n$ Teilstücke ergibt sich die Gesamt-Arbeit zu
 \end{align}
 Wollen wir nun die Gesamtarbeit bestimmen für den Fall, dass das $E$-Feld \emph{kontinuierlich} verändert wird, so habne wir den Weg in unendlich viele Intervalle einzuteilen, sodass das Feld in diesen unendlich kleinen (infinitesimalen) Intervallen konstant ist; das führt auf die Definition des Integrals: 
 \begin{align}
-    W = q \cdot \lim_{\Delta s \to 0} \qty(\sum_{i=1}^{s/\Delta s} E_i \Delta s) =: \int\limits_{0}^{s} E(s') \dd{s'}.
+    W = q \cdot \lim_{\Delta s \to 0} \qty(\sum_{i=1}^{s/\Delta s} E_i \Delta s) =: q\int\limits_{0}^{s} E(s') \dd{s'}.
 \end{align}
 Dabei ist das elektrische Feld nun als eine (kontinuierliche) Funktion $E = E(s)$ aufzufassen. Bildlich gesprochen heißt das: Mit Hilfe des Integrals ``bewegen'' wir uns entlang eines Weges und ``sammeln'' an allen Punkten die Beiträge der Kraft zur Gesamtarbeit ein. 
 \begin{quote}
-    Arbiet ist das Integral über eine Kraft entlang eines Weges.
+    Arbeit ist das Integral über eine Kraft entlang eines Weges.
 \end{quote}
 Der Weg muss hierbei nicht notwendigerweise gerade sein. 
 \begin{figure}[htp]
@@ -246,7 +246,7 @@ Natürlich können auch Flächen- und Volumenintegrale über Funktionen betracht
     \end{align}
     Beispiel 1: $f(x) = \cos (x)$ 
     \begin{align}
-        -\int\limits_{-\pi/2}^{\pi/2} \cos(x) \dd{x} = \sin(x)\eval_{-\frac{\pi}{2}}^{\frac{\pi}{2}}= 2,   \qquad 2 \int\limits_{0}^{\pi/2} \cos(x)\dd{x} = 2 \sin(x)\eval_0^{\frac{\pi}{2}} = 2.
+        \int\limits_{-\pi/2}^{\pi/2} \cos(x) \dd{x} = \sin(x)\eval_{-\frac{\pi}{2}}^{\frac{\pi}{2}}= 2,   \qquad 2 \int\limits_{0}^{\pi/2} \cos(x)\dd{x} = 2 \sin(x)\eval_0^{\frac{\pi}{2}} = 2.
     \end{align}
     % Speziell für \emph{ungerade Funktionen}, $f(-x) = -f(x):$
     % \begin{align}
@@ -255,7 +255,7 @@ Natürlich können auch Flächen- und Volumenintegrale über Funktionen betracht
     % \end{align}
     Beispiel 2: $f(x) = \sin (x)$ \vspace{-4mm}
     \begin{align}
-        -\int\limits_{-\pi}^{\pi} \sin(x) \dd{x} = -\cos(x)\eval_{-\pi}^{\pi} = 1+(-1) = 0.
+        \int\limits_{-\pi}^{\pi} \sin(x) \dd{x} = -\cos(x)\eval_{-\pi}^{\pi} = 1+(-1) = 0.
     \end{align}
     \item Umkehrung der Ableitung: $\int \dv{f}{x} \dd{x} = \int \dd{f} = f.$
 \end{itemize}
@@ -307,7 +307,7 @@ Wir wenden nun die Produktregel der Differentiation auf das Produkt $u\cdot v$ a
 \end{alignat}
 Bemerkung: Für das letzte Beispiel, kann das Integral mithilfe des Additionstheorems~\eqref{eqn:07_Doppelwinkel_sin} vereinfacht werden zu $\frac{1}{2}\sin(2x)$, wodurch sich das Integral einfach berechnen lässt zu 
 \begin{align}
-    \frac{1}{2}\int \sin(2x) \dd{x} = -\frac{1}{4} \underbrace{\cos(2x)}_{\mathclap{2 \cos^2(x) -1}} + C  = -\frac{1}{2} \cos^2(x) - \underbrace{\frac{1}{4} + C}_{\tilde{C}}.
+    \frac{1}{2}\int \sin(2x) \dd{x} = -\frac{1}{4} \underbrace{\cos(2x)}_{\mathclap{2 \cos^2(x) -1}} + C  = -\frac{1}{2} \cos^2(x) + \underbrace{\frac{1}{4} + C}_{\tilde{C}}.
 \end{align}
 Hier erkennen wir, wie wichtig die Integrationskonstante beim Integrieren ist. Durch das Additionstheorem ist die erhaltene Stammfunktion um $\frac{1}{4}$ gegenüber der vorherigen Methode nach unten verschoben gewesen.
 
