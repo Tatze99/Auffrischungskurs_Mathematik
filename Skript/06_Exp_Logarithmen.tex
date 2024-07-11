@@ -1,3 +1,4 @@
+\thispagestyle{plain}
 \section{Exponentialfunktionen und Logarithmen}
 
 Wir wollen uns nun mit Funktionen beschäftigen, die exponentielles Wachstum beschreiben. \emph{Exponentialfunktionen} sind Funktionen, deren Variable im Exponenten steht $f(x) = a^x$. Hierbei muss die Basis $a > 0$ sein. Unabhängig von $a$ gilt dann $a^0 = 1$, d.\,h. alle Exponentialfunktionen schneiden die $y$-Achse im Punkt $(0,1)$. 
@@ -19,7 +20,7 @@ Wir können, abhängig von $a$, drei Fälle unterscheiden
             \addplot[no marks, PAForange, thick, dashed, domain=-1:1]{(1/5)^x};
             \addplot[no marks, Gruen, thick, domain=-1:1]{1};
             \node (A) at (-0.04,0.8){1};
-            \legend{$a = 2 >1$, $a = 5 > 1$,$a = 1/2 <1$, $a=1/5 < 1$, $a=1$};
+            \legend{$a = 2 >1$, $a = 5 > 1$,$a = 1/2 <1$, $a=1/5 < 1$, $a=1$}
         \end{axis}
     \end{tikzpicture}
     \caption{Darstellung von Exponentialfunktionen für verschiedene Werte von $a$.}
@@ -184,7 +185,7 @@ Dabei wird der erste Term $\lg(2,13)$ \emph{Mantisse} und der zweite Term $(-3)$
 \newpage
 \paragraph{Grafische Darstellung}$~$
 
-Da der Logarithmus die Umkehrfunktion der Exponentialfunktion ist, erhält man sie durch Spiegellung an der Geraden $y=x$. Für reelle $y$ ist der Definitionsbereich $0 < x < \infty$. Wir betrachten den Fall $a > 1$.
+Da der Logarithmus die Umkehrfunktion der Exponentialfunktion ist, erhält man sie durch Spiegelung an der Geraden $y=x$. Für reelle $y$ ist der Definitionsbereich $0 < x < \infty$. Wir betrachten den Fall $a > 1$.
 \begin{figure}[htp]
     \centering
     \begin{tikzpicture}[every text node part/.style={align=center}]
@@ -192,7 +193,7 @@ Da der Logarithmus die Umkehrfunktion der Exponentialfunktion ist, erhält man s
             \addplot[no marks, FSUblau, thick, domain=-2.5:4]{exp(x)};
             \addplot[no marks, PAForange, thick, domain=0.03:4]{ln(x)};
             \addplot[no marks, Gruen, thick, domain=-2.5:4]{x};
-            \legend{$y=\e^x$, $y = \log_{\e}(x)$, $y = x$};
+            \legend{$y=\e^x$, $y = \log_{\e}(x)$, $y = x$}
             \draw[gray] (1,0) -- (0,1);
             \coordinate (A1) at ($(2,{ln(2)})$);
             \coordinate (A2) at ($({ln(2)},2)$);

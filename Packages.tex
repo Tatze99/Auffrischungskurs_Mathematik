@@ -34,7 +34,8 @@
 \usepackage{multirow}
 \usepackage{mdframed}               % Deckblatt
 \usepackage{xcolor}                 % Deckblatt
-\usepackage{fancyhdr}               % Kopfzeile
+\usepackage[headsepline]{scrlayer-scrpage}
+% \usepackage{fancyhdr}               % Kopfzeile
 \usepackage{aligned-overset}        % Ausrichtungen mit stackrel oder overset
 \usepackage{cancel}
 \usepackage{float}
@@ -103,6 +104,11 @@ every axis post/.style={legend cell align={left}}}
 \setlength{\parindent}{0px}         % keine Absätze durch Leerzeilen im Code
 \numberwithin{equation}{section}
 
+% Supress warning of incompatibility of SIunitx and physics with \qty 
+\ExplSyntaxOn
+\msg_redirect_name:nnn { siunitx } { physics-pkg } { none }
+\ExplSyntaxOff
+
 % Remove page number from \thispagestyle{empty}
 \makeatletter\let\ps@plain\ps@fancy\makeatother
 
@@ -134,22 +140,31 @@ every axis post/.style={legend cell align={left}}}
     \end{mdframed}
   \end{titlepage}
 
-  \pagestyle{fancy}
-  \fancyhead[R]{\textbf{#5}}
-  \fancyfoot[R]{\bfseries\thepage}
-  \fancyfoot[C]{}
-  \fancyhead[L]{\rightmark}
+  % Set the default page style to scrheadings
+  \pagestyle{scrheadings}
+  \automark{subsection}
+  \renewcommand{\headfont}{\upshape}
 
-  \fancypagestyle{plain}{
-    \fancyfoot[R]{\bfseries\thepage}
-    \fancyfoot[C]{}
-    \fancyhead[R]{}
-    \fancyhead[L]{}
-    \renewcommand{\headrulewidth}{0pt}
-  }
+  % Configure headers and footers
+  \clearpairofpagestyles
+  \ihead{\rightmark} % inner header
+  \ohead{\textbf{#5}} % outer header
+  \ofoot*{\bfseries\thepage} % outer footer
+  % \pagestyle{fancy}
+  % \fancyhead[R]{\textbf{#5}}
+  % \fancyfoot[R]{\bfseries\thepage}
+  % \fancyfoot[C]{}
+  % \fancyhead[L]{\rightmark}
+
+  % \fancypagestyle{plain}{
+  %   \fancyfoot[R]{\bfseries\thepage}
+  %   \fancyfoot[C]{}
+  %   \fancyhead[R]{}
+  %   \fancyhead[L]{}
+  %   \renewcommand{\headrulewidth}{0pt}
 }
-\renewcommand{\sectionmark}[1]{\markright{#1}}
-\renewcommand{\headrulewidth}{0.5pt}
-\renewcommand{\footrulewidth}{0pt}
+% \renewcommand{\sectionmark}[1]{\markright{#1}}
+% \renewcommand{\headrulewidth}{0.5pt}
+% \renewcommand{\footrulewidth}{0pt}
 
 

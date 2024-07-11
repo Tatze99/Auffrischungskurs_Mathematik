@@ -1,3 +1,4 @@
+\thispagestyle{plain}
 \section{Rechnen mit Vektoren und Matrizen}
 
 Vektoren und Matrizen kommen in allen Teilbereichen der Physik fundamentale Rollen zu. Hier betrachten wir den dreidimensionalen euklidischen Raum $\mathbb{R}^3$, bestehend aus Punkten, die durch Angabe ihrer Koordinaten $x,y,z$ in einem kartesischen Koordinatensystem gekennzeichnet sind. 
@@ -44,7 +45,7 @@ Offenbar können Vektoren \emph{addiert} bzw. \emph{subtrahiert} werden,
         \draw[thick, FSUblau, -{latex}] (1.5,2) --node[right]{$\bm{r}_3$} (3,0);
         \end{scope}
     \end{tikzpicture}
-    \caption{Addition (links) und Subtraktion (rechts) von zwei Vektoren $\bm{r}_1$ und $\bm{r}_2$.}
+    \caption{Addition (links) und Subtraktion (rechts) von zwei Vektoren $\bm{r}_1$ und $\bm{r}_2$. \emph{Hinweis:} Es ist nicht sofort offensichtlich in welche Richtung der Differenzvektor $\bm{r}$ zeigt, stellt man allerdings die Gleichung um zu $\bm{r}_1 = \bm{r}_2 + \bm{r}_3$, dann wird schnell ersichtlich, dass $\bm{r}_3$ zur Spitze von $\bm{r}_1$ zeigt.}
 \end{figure}
 
 Jeder dreidimensionale Vektor kann als Linearkombination dreier \emph{Basisvektoren} geschrieben werden, 
@@ -159,7 +160,7 @@ Das Skalarprodukt kann auch geschrieben werden als
 \begin{itemize}
     \item kommutativ, $\bm{a}\cdot \bm{b} = \bm{b}\cdot\bm{a}$; 
     \item nicht assoziativ\footnote{Assoziativität kann hier gar nicht vorliegen, da es sich um ein inneres Produkt handelt; es existiert kein Skalarprodukt aus drei Faktoren.}, $\bm{a}\cdot (\bm{b}\cdot\bm{c}) \neq (\bm{a}\cdot\bm{b})\cdot\bm{c}$;
-    \item distributive, $\bm{a}\cdot (\bm{b}+\bm{c}) = \bm{a}\cdot\bm{b}+\bm{a}\cdot\bm{c}$.
+    \item distributiv, $\bm{a}\cdot (\bm{b}+\bm{c}) = \bm{a}\cdot\bm{b}+\bm{a}\cdot\bm{c}$.
 \end{itemize}
 Mit Hilfe von Skalar- und Vektorprodukt kann das Volumen des durch drei Vektoren aufgespannten Spates berechnet werden (\emph{Spatprodukt}): 
 \begin{align}
